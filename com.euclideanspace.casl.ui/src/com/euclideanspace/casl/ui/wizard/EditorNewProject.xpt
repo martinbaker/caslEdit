@@ -1,0 +1,28 @@
+«IMPORT com::euclideanspace::casl::ui::wizard»
+
+«DEFINE main FOR EditorProjectInfo»
+«EXPAND model FOR this»
+«EXPAND workflow FOR this»
+«ENDDEFINE»
+
+«DEFINE model FOR EditorProjectInfo»
+«FILE "src/model/Model.casl"-»
+/*
+ * This is an example model
+ */
+Hello Xtext!
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE workflow FOR EditorProjectInfo»
+«FILE "src/Generator.mwe2"-»
+module Generator
+
+var targetDir = "src-gen"
+var modelPath = "src/model"
+
+Workflow {
+	component = @workflow.EditorGenerator auto-inject {}
+}
+«ENDFILE»
+«ENDDEFINE»

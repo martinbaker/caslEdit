@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.euclideanspace.casl/src-gen" editDirectory="/com.euclideanspace.casl.edit/src"
+    editorDirectory="/com.euclideanspace.casl.editor/src" modelPluginID="com.euclideanspace.casl"
+    forceOverwrite="true" modelName="Editor" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="com.euclideanspace.casl.edit"
+    editorPluginID="com.euclideanspace.casl.editor" runtimeVersion="2.8">
+  <genPackages prefix="Editor" basePackage="com.euclideanspace.casl" disposableProviderFactory="true"
+      ecorePackage="Editor.ecore#/">
+    <genClasses ecoreClass="Editor.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Model/basicSpec"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//BasicSpec">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BasicSpec/basicItems"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//BasicSpec/empty"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//BasicItems">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BasicItems/s"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BasicItems/datatypeDecl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BasicItems/datatypeDecl2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BasicItems/s2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BasicItems/varDecl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BasicItems/varDecl2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BasicItems/formula"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BasicItems/formula2"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//SigItems">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//SigItems/sortItem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//SigItems/sortItem2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//SigItems/opItem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//SigItems/opItem2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//SigItems/predItem"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//SigItems/predItem2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//SigItems/datatypeDecl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//SigItems/datatypeDecl2"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//SortItem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//SortItem/sort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//SortItem/sort2"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//OpItem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//OpItem/opName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//OpItem/opName2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//OpItem/opType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//OpItem/opAttr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//OpItem/opHead"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//OpItem/term"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//OpType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//OpType/sort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//OpType/sort2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//OpType/sort3"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//OpAttr">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//OpAttr/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//OpAttr/term"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//OpHead">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//OpHead/sort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//OpHead/argDecl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//OpHead/argDecl2"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//ArgDecl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ArgDecl/var"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ArgDecl/var2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//ArgDecl/sort"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//PredItem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PredItem/predName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PredItem/predName2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PredItem/predType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PredItem/predHead"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PredItem/formula"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//PredType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PredType/sort"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PredType/sort2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//PredType/b"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//PredHead">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PredHead/argDecl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PredHead/argDecl2"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//DatatypeDecl"/>
+    <genClasses ecoreClass="Editor.ecore#//Alternative">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Alternative/opName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Alternative/component"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Alternative/component2"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//Component">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Component/opName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Component/opName2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Component/sort"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//VarDecl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//VarDecl/var"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//VarDecl/var2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//VarDecl/sort"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//Formu">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Formu/quantifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Formu/varDecl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Formu/varDecl2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Formu/formula"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Formu/e3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Formu/t"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Formu/t2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Formu/form"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Formu/misfix"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Formu/misfix2"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//Quantifier">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Quantifier/q"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//Terms">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Terms/term"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Terms/term2"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//Term">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Term/misfix"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Term/misfix2"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//Mfix">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Mfix/misfix"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Mfix/op1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Mfix/op2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Mfix/op3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Mfix/op4"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Mfix/op5"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Mfix/op6"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Mfix/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Mfix/left"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//QualPredName"/>
+    <genClasses ecoreClass="Editor.ecore#//QualVarName"/>
+    <genClasses ecoreClass="Editor.ecore#//QualOpName"/>
+    <genClasses ecoreClass="Editor.ecore#//Sort">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Sort/alternative"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Sort/alternative2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Sort/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//OpName">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//OpName/opType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//OpName/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//PredName">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PredName/predType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//PredName/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//Var">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Var/sort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Var/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//Token">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Token/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Token/num"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Token/t"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//Literal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Literal/str"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Literal/num"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//FormulaAnd">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FormulaAnd/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FormulaAnd/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FormulaAnd/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//FormulaOr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FormulaOr/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FormulaOr/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FormulaOr/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//FormulaImplies">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FormulaImplies/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FormulaImplies/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FormulaImplies/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//FormulaIf">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FormulaIf/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FormulaIf/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FormulaIf/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//FormulaEquiv">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FormulaEquiv/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FormulaEquiv/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FormulaEquiv/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//UnaryExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//UnaryExpression/uop"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//UnaryExpression/expr"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//Misfix">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Misfix/sort"/>
+    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//MisfixWhen">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//MisfixWhen/formula"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//MisfixWhen/op0"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//MisfixWhen/right"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

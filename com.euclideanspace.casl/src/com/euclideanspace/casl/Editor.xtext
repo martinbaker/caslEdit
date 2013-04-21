@@ -1,0 +1,246 @@
+grammar com.euclideanspace.casl.Editor
+
+generate editor "http://www.euclideanspace.com/casl/Editor"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+Model:
+	basicSpec=BasicSpec;
+	
+BasicSpec:
+	basicItems += BasicItems+ | empty='{''}';
+
+BasicItems:
+	s=SigItems |
+	('free' ('type'|'types')
+       datatypeDecl=DatatypeDecl
+       (';' datatypeDecl2 += DatatypeDecl)* ';'?)|
+	('generated' ('type'|'types')
+       datatypeDecl=DatatypeDecl
+       (';' datatypeDecl2 += DatatypeDecl)* ';'?)|
+	('generated' '{' s2+=SigItems+ '}' ';'?)|
+	(('var'|'vars') varDecl = VarDecl
+       (';' varDecl2 += VarDecl )* ';'?) |
+	('forall' varDecl = VarDecl
+       (';' varDecl2 += VarDecl )*
+       '.' formula = Formula
+       (';' formula2 += Formula )* ';'?)
+	;
+
+SigItems:
+	(('sort'|'sorts')
+       sortItem=SortItem
+       (';' sortItem2 += SortItem)* ';'?)|
+	(('op'|'ops')
+       opItem=OpItem
+       (';' opItem2 += OpItem)* ';'?)|
+	(('pred'|'preds')
+       predItem=PredItem
+       (';' predItem2 += PredItem)* ';'?)|
+	(('type'|'types')
+       datatypeDecl=DatatypeDecl
+       (';' datatypeDecl2 += DatatypeDecl)* ';'?)
+    ;
+    
+SortItem:
+	sort=Sort
+       (',' sort2 += Sort)* ;
+
+OpItem:
+	(opName=OpName
+       (',' opName2 += OpName)* ':' opType=OpType
+       (',' opAttr += OpAttr)*) |
+	(opName=OpName
+       opHead=OpHead '=' term=Term)
+    ;
+
+OpType:
+	('?')? sort = Sort |
+	sort = Sort ('*' sort2+=Sort)* ('?')? '->' sort3 = Sort;
+
+OpAttr:
+	op='assoc'|op='comm'|op='idem'|op='unit' term=Term;
+
+OpHead:
+	(':' ('?')? sort = Sort) |
+	argDecl=ArgDecl (';' argDecl2+=ArgDecl)* ':' ('?')? sort = Sort
+    ;
+
+ArgDecl:
+	var = Var (';' var2 += Var )* ':' sort=Sort;
+
+PredItem:
+	(predName=PredName (',' predName2 += PredName )*
+	':' predType += PredType) |
+	predName=PredName predHead=PredHead? '<=>' formula=Formula
+	;
+
+PredType:
+	sort=Sort
+       ('*' sort2 += Sort)* | b='(' ')'
+    ;
+
+PredHead:
+	argDecl=ArgDecl (';' argDecl2+=ArgDecl)*;
+
+DatatypeDecl:
+	Sort '::=' alternative=Alternative (';' alternative2+=Alternative)*;
+
+Alternative:
+	opName=OpName
+    (component=Component (';' component2+=Component)* '?'?)?;
+
+Component:
+	(opName=OpName (',' opName2 += OpName)* ':' '?'?)
+    sort=Sort;
+
+VarDecl:
+	var=Var (',' var2 += Var)* ':'
+    sort=Sort;
+
+/*
+The following LALR(1) rule is converted to xtext format
+FORMULA ::= QUANTIFIER VAR-DECL ;...; VAR-DECL '.' FORMULA
+            | FORMULA /\ FORMULA /\.../\ FORMULA
+            | FORMULA \/ FORMULA \/...\/ FORMULA
+            | FORMULA => FORMULA
+            | FORMULA if FORMULA
+            | FORMULA <=> FORMULA
+            | not FORMULA
+            | true | false
+            | def TERM
+            | TERM =e= TERM
+            | TERM = TERM
+            | (FORMULA)
+            | MISFIX...MISFIX
+ */
+
+Formula returns Formu:
+	(quantifier=Quantifier varDecl=VarDecl
+           (';' varDecl2+=VarDecl)* '.' formula = Formula) |
+    formula = FormulaAnd
+    ;
+
+FormulaAnd returns Formu:
+   FormulaOr
+  ({FormulaAnd.left=current} op='/\\' right = FormulaOr)*
+   ;
+
+FormulaOr returns Formu:
+   FormulaImplies
+  ({FormulaOr.left=current} op='\\/' right = FormulaImplies)*
+   ;
+
+FormulaImplies returns Formu:
+   FormulaIf
+  ({FormulaImplies.left=current} op='=>' right = FormulaIf)?
+   ;
+
+FormulaIf returns Formu:
+   FormulaEquiv
+  ({FormulaIf.left=current} op='if' right = FormulaEquiv)?
+   ;
+
+FormulaEquiv returns Formu:
+   FormulaUnary
+  ({FormulaEquiv.left=current} op='<=>' right = FormulaUnary)?
+   ;
+
+FormulaUnary returns Formu:
+  ({UnaryExpression} uop='not' expr=Formula) |
+  e3='true' |
+  e3='false' |
+  e3='def' t=Term|
+  t=Term '=e=' t2=Term|
+  t=Term '=' t2=Term|
+  e3='(' form=Formula ')'
+  | misfix=Misfix (misfix2+=Misfix)*
+;
+
+Quantifier:
+	q='forall'|q='exists'|q='exists!';
+
+Terms:
+	term=Term (',' term2+=Term)*;
+
+Term:
+	misfix=Misfix (misfix2+=Misfix)*;
+
+/*
+The following LALR(1) rule is converted to xtext format
+MISFIX ::= TOKEN | LITERAL | PLACE
+         | QUAL-PRED-NAME | QUAL-VAR-NAME | QUAL-OP-NAME
+         | TERM : SORT
+         | TERM when FORMULA else TERM
+         | (TERMS)
+         | [TERMS] | []
+         | {TERMS} | {}
+*/
+Misfix returns Mfix:
+	MisfixWhen 
+	({Misfix.left=current} op=':' sort=Sort)?
+	;
+
+MisfixWhen returns Mfix:
+	MisfixUnary 
+	({MisfixWhen.left=current} op='when' formula=Formula op0='when' right=MisfixUnary)?
+	;
+
+MisfixUnary returns Mfix:
+	'(' misfix=Misfix ')' |
+	'[' misfix=Misfix ']' |
+	'{' misfix=Misfix '}' |
+	op1=Token | op2=Literal | op3=Place |
+	op4=QualPredName | op5=QualVarName |
+	op6=QualOpName | op='[' ']' | op='{' '}'
+	;
+
+QualPredName:
+	'(' 'var' Var ':' sort=Sort ')';
+
+QualVarName:
+	'(' 'pred' PredName ':' predType=PredType ')';
+
+QualOpName:
+	'(' 'op' OpName ':' opType=OpType ')';
+
+Sort:
+	name=ID;
+
+OpName:
+	name=ID;
+
+PredName:
+	name=ID;
+	
+Var:
+	name=ID;
+	
+Token:
+	name=ID | num=INT | (name=ID '.' t=Token);
+
+Literal:
+	str=STRING | num=INT;
+
+Place:
+	'__';
+
+
+
+terminal ID : '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+terminal INT returns ecore::EInt: ('0'..'9')+;
+terminal STRING :
+'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
+"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'"
+;
+terminal ML_COMMENT : '%{' -> '}%';
+terminal SL_COMMENT : '%%' !('\n'|'\r')* ('\r'? '\n')?;
+
+terminal WS : (' '|'\t'|'\r'|'\n')+;
+
+terminal ANY_OTHER: .;
+
+
+
+
+	
