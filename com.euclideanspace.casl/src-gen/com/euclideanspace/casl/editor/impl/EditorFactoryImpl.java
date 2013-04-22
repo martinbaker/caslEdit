@@ -100,9 +100,7 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
       case EditorPackage.FORMULA_IMPLIES: return createFormulaImplies();
       case EditorPackage.FORMULA_IF: return createFormulaIf();
       case EditorPackage.FORMULA_EQUIV: return createFormulaEquiv();
-      case EditorPackage.UNARY_EXPRESSION: return createUnaryExpression();
       case EditorPackage.MISFIX: return createMisfix();
-      case EditorPackage.MISFIX_WHEN: return createMisfixWhen();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -509,32 +507,10 @@ public class EditorFactoryImpl extends EFactoryImpl implements EditorFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public UnaryExpression createUnaryExpression()
-  {
-    UnaryExpressionImpl unaryExpression = new UnaryExpressionImpl();
-    return unaryExpression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Misfix createMisfix()
   {
     MisfixImpl misfix = new MisfixImpl();
     return misfix;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public MisfixWhen createMisfixWhen()
-  {
-    MisfixWhenImpl misfixWhen = new MisfixWhenImpl();
-    return misfixWhen;
   }
 
   /**

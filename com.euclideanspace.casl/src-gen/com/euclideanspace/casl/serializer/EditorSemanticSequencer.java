@@ -15,7 +15,6 @@ import com.euclideanspace.casl.editor.FormulaOr;
 import com.euclideanspace.casl.editor.Literal;
 import com.euclideanspace.casl.editor.Mfix;
 import com.euclideanspace.casl.editor.Misfix;
-import com.euclideanspace.casl.editor.MisfixWhen;
 import com.euclideanspace.casl.editor.Model;
 import com.euclideanspace.casl.editor.OpAttr;
 import com.euclideanspace.casl.editor.OpHead;
@@ -33,7 +32,6 @@ import com.euclideanspace.casl.editor.SortItem;
 import com.euclideanspace.casl.editor.Term;
 import com.euclideanspace.casl.editor.Terms;
 import com.euclideanspace.casl.editor.Token;
-import com.euclideanspace.casl.editor.UnaryExpression;
 import com.euclideanspace.casl.editor.Var;
 import com.euclideanspace.casl.editor.VarDecl;
 import com.euclideanspace.casl.services.EditorGrammarAccess;
@@ -171,7 +169,6 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				if(context == grammarAccess.getMisfixRule() ||
 				   context == grammarAccess.getMisfixUnaryRule() ||
 				   context == grammarAccess.getMisfixWhenRule() ||
-				   context == grammarAccess.getMisfixWhenAccess().getMisfixWhenLeftAction_1_0() ||
 				   context == grammarAccess.getMisfixAccess().getMisfixLeftAction_1_0()) {
 					sequence_MisfixUnary(context, (Mfix) semanticObject); 
 					return; 
@@ -180,14 +177,6 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.MISFIX:
 				if(context == grammarAccess.getMisfixRule()) {
 					sequence_Misfix(context, (Misfix) semanticObject); 
-					return; 
-				}
-				else break;
-			case EditorPackage.MISFIX_WHEN:
-				if(context == grammarAccess.getMisfixRule() ||
-				   context == grammarAccess.getMisfixWhenRule() ||
-				   context == grammarAccess.getMisfixAccess().getMisfixLeftAction_1_0()) {
-					sequence_MisfixWhen(context, (MisfixWhen) semanticObject); 
 					return; 
 				}
 				else break;
@@ -302,22 +291,6 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case EditorPackage.TOKEN:
 				if(context == grammarAccess.getTokenRule()) {
 					sequence_Token(context, (Token) semanticObject); 
-					return; 
-				}
-				else break;
-			case EditorPackage.UNARY_EXPRESSION:
-				if(context == grammarAccess.getFormulaAndRule() ||
-				   context == grammarAccess.getFormulaAndAccess().getFormulaAndLeftAction_1_0() ||
-				   context == grammarAccess.getFormulaEquivRule() ||
-				   context == grammarAccess.getFormulaEquivAccess().getFormulaEquivLeftAction_1_0() ||
-				   context == grammarAccess.getFormulaIfRule() ||
-				   context == grammarAccess.getFormulaIfAccess().getFormulaIfLeftAction_1_0() ||
-				   context == grammarAccess.getFormulaImpliesRule() ||
-				   context == grammarAccess.getFormulaImpliesAccess().getFormulaImpliesLeftAction_1_0() ||
-				   context == grammarAccess.getFormulaOrRule() ||
-				   context == grammarAccess.getFormulaOrAccess().getFormulaOrLeftAction_1_0() ||
-				   context == grammarAccess.getFormulaUnaryRule()) {
-					sequence_FormulaUnary(context, (UnaryExpression) semanticObject); 
 					return; 
 				}
 				else break;
@@ -449,15 +422,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         e3='true' | 
-	 *         e3='false' | 
-	 *         (e3='def' t=Term) | 
-	 *         (t=Term t2=Term) | 
-	 *         (t=Term t2=Term) | 
-	 *         (e3='(' form=Formula) | 
-	 *         (misfix=Misfix misfix2+=Misfix*)
-	 *     )
+	 *     (e3='true' | e3='false' | (e3='def' t=Term) | (t=Term e3='=e=' t2=Term))
 	 */
 	protected void sequence_FormulaUnary(EObject context, Formu semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -466,16 +431,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (uop='not' expr=Formula)
-	 */
-	protected void sequence_FormulaUnary(EObject context, UnaryExpression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     ((quantifier=Quantifier varDecl=VarDecl varDecl2+=VarDecl* formula=Formula) | formula=FormulaAnd)
+	 *     formula=FormulaAnd
 	 */
 	protected void sequence_Formula(EObject context, Formu semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -484,10 +440,17 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (str=STRING | num=INT)
+	 *     str=STRING
 	 */
 	protected void sequence_Literal(EObject context, Literal semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.LITERAL__STR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.LITERAL__STR));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getLiteralAccess().getStrSTRINGTerminalRuleCall_0(), semanticObject.getStr());
+		feeder.finish();
 	}
 	
 	
@@ -508,15 +471,6 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     )
 	 */
 	protected void sequence_MisfixUnary(EObject context, Mfix semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (left=MisfixWhen_MisfixWhen_1_0 op='when' formula=Formula op0='when' right=MisfixUnary)
-	 */
-	protected void sequence_MisfixWhen(EObject context, MisfixWhen semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

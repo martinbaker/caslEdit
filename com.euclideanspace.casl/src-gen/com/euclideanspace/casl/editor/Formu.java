@@ -2,8 +2,6 @@
  */
 package com.euclideanspace.casl.editor;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,16 +12,13 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.euclideanspace.casl.editor.Formu#getQuantifier <em>Quantifier</em>}</li>
- *   <li>{@link com.euclideanspace.casl.editor.Formu#getVarDecl <em>Var Decl</em>}</li>
- *   <li>{@link com.euclideanspace.casl.editor.Formu#getVarDecl2 <em>Var Decl2</em>}</li>
  *   <li>{@link com.euclideanspace.casl.editor.Formu#getFormula <em>Formula</em>}</li>
  *   <li>{@link com.euclideanspace.casl.editor.Formu#getE3 <em>E3</em>}</li>
  *   <li>{@link com.euclideanspace.casl.editor.Formu#getT <em>T</em>}</li>
  *   <li>{@link com.euclideanspace.casl.editor.Formu#getT2 <em>T2</em>}</li>
- *   <li>{@link com.euclideanspace.casl.editor.Formu#getForm <em>Form</em>}</li>
- *   <li>{@link com.euclideanspace.casl.editor.Formu#getMisfix <em>Misfix</em>}</li>
- *   <li>{@link com.euclideanspace.casl.editor.Formu#getMisfix2 <em>Misfix2</em>}</li>
+ *   <li>{@link com.euclideanspace.casl.editor.Formu#getLeft <em>Left</em>}</li>
+ *   <li>{@link com.euclideanspace.casl.editor.Formu#getOp <em>Op</em>}</li>
+ *   <li>{@link com.euclideanspace.casl.editor.Formu#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,74 +28,6 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Formu extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Quantifier</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Quantifier</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Quantifier</em>' containment reference.
-   * @see #setQuantifier(Quantifier)
-   * @see com.euclideanspace.casl.editor.EditorPackage#getFormu_Quantifier()
-   * @model containment="true"
-   * @generated
-   */
-  Quantifier getQuantifier();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.casl.editor.Formu#getQuantifier <em>Quantifier</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Quantifier</em>' containment reference.
-   * @see #getQuantifier()
-   * @generated
-   */
-  void setQuantifier(Quantifier value);
-
-  /**
-   * Returns the value of the '<em><b>Var Decl</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Var Decl</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Var Decl</em>' containment reference.
-   * @see #setVarDecl(VarDecl)
-   * @see com.euclideanspace.casl.editor.EditorPackage#getFormu_VarDecl()
-   * @model containment="true"
-   * @generated
-   */
-  VarDecl getVarDecl();
-
-  /**
-   * Sets the value of the '{@link com.euclideanspace.casl.editor.Formu#getVarDecl <em>Var Decl</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var Decl</em>' containment reference.
-   * @see #getVarDecl()
-   * @generated
-   */
-  void setVarDecl(VarDecl value);
-
-  /**
-   * Returns the value of the '<em><b>Var Decl2</b></em>' containment reference list.
-   * The list contents are of type {@link com.euclideanspace.casl.editor.VarDecl}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Var Decl2</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Var Decl2</em>' containment reference list.
-   * @see com.euclideanspace.casl.editor.EditorPackage#getFormu_VarDecl2()
-   * @model containment="true"
-   * @generated
-   */
-  EList<VarDecl> getVarDecl2();
-
   /**
    * Returns the value of the '<em><b>Formula</b></em>' containment reference.
    * <!-- begin-user-doc -->
@@ -206,71 +133,81 @@ public interface Formu extends EObject
   void setT2(Term value);
 
   /**
-   * Returns the value of the '<em><b>Form</b></em>' containment reference.
+   * Returns the value of the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Form</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Left</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Form</em>' containment reference.
-   * @see #setForm(Formu)
-   * @see com.euclideanspace.casl.editor.EditorPackage#getFormu_Form()
+   * @return the value of the '<em>Left</em>' containment reference.
+   * @see #setLeft(Formu)
+   * @see com.euclideanspace.casl.editor.EditorPackage#getFormu_Left()
    * @model containment="true"
    * @generated
    */
-  Formu getForm();
+  Formu getLeft();
 
   /**
-   * Sets the value of the '{@link com.euclideanspace.casl.editor.Formu#getForm <em>Form</em>}' containment reference.
+   * Sets the value of the '{@link com.euclideanspace.casl.editor.Formu#getLeft <em>Left</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Form</em>' containment reference.
-   * @see #getForm()
+   * @param value the new value of the '<em>Left</em>' containment reference.
+   * @see #getLeft()
    * @generated
    */
-  void setForm(Formu value);
+  void setLeft(Formu value);
 
   /**
-   * Returns the value of the '<em><b>Misfix</b></em>' containment reference.
+   * Returns the value of the '<em><b>Op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Misfix</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Op</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Misfix</em>' containment reference.
-   * @see #setMisfix(Mfix)
-   * @see com.euclideanspace.casl.editor.EditorPackage#getFormu_Misfix()
-   * @model containment="true"
+   * @return the value of the '<em>Op</em>' attribute.
+   * @see #setOp(String)
+   * @see com.euclideanspace.casl.editor.EditorPackage#getFormu_Op()
+   * @model
    * @generated
    */
-  Mfix getMisfix();
+  String getOp();
 
   /**
-   * Sets the value of the '{@link com.euclideanspace.casl.editor.Formu#getMisfix <em>Misfix</em>}' containment reference.
+   * Sets the value of the '{@link com.euclideanspace.casl.editor.Formu#getOp <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Misfix</em>' containment reference.
-   * @see #getMisfix()
+   * @param value the new value of the '<em>Op</em>' attribute.
+   * @see #getOp()
    * @generated
    */
-  void setMisfix(Mfix value);
+  void setOp(String value);
 
   /**
-   * Returns the value of the '<em><b>Misfix2</b></em>' containment reference list.
-   * The list contents are of type {@link com.euclideanspace.casl.editor.Mfix}.
+   * Returns the value of the '<em><b>Right</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Misfix2</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Right</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Misfix2</em>' containment reference list.
-   * @see com.euclideanspace.casl.editor.EditorPackage#getFormu_Misfix2()
+   * @return the value of the '<em>Right</em>' containment reference.
+   * @see #setRight(Formu)
+   * @see com.euclideanspace.casl.editor.EditorPackage#getFormu_Right()
    * @model containment="true"
    * @generated
    */
-  EList<Mfix> getMisfix2();
+  Formu getRight();
+
+  /**
+   * Sets the value of the '{@link com.euclideanspace.casl.editor.Formu#getRight <em>Right</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Right</em>' containment reference.
+   * @see #getRight()
+   * @generated
+   */
+  void setRight(Formu value);
 
 } // Formu

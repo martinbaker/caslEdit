@@ -3,6 +3,7 @@
 package com.euclideanspace.casl.editor.impl;
 
 import com.euclideanspace.casl.editor.EditorPackage;
+import com.euclideanspace.casl.editor.Mfix;
 import com.euclideanspace.casl.editor.Misfix;
 import com.euclideanspace.casl.editor.Sort;
 
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.euclideanspace.casl.editor.impl.MisfixImpl#getLeft <em>Left</em>}</li>
  *   <li>{@link com.euclideanspace.casl.editor.impl.MisfixImpl#getSort <em>Sort</em>}</li>
  * </ul>
  * </p>
@@ -29,6 +31,16 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class MisfixImpl extends MfixImpl implements Misfix
 {
+  /**
+   * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLeft()
+   * @generated
+   * @ordered
+   */
+  protected Mfix left;
+
   /**
    * The cached value of the '{@link #getSort() <em>Sort</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -58,6 +70,54 @@ public class MisfixImpl extends MfixImpl implements Misfix
   protected EClass eStaticClass()
   {
     return EditorPackage.Literals.MISFIX;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Mfix getLeft()
+  {
+    return left;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetLeft(Mfix newLeft, NotificationChain msgs)
+  {
+    Mfix oldLeft = left;
+    left = newLeft;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.MISFIX__LEFT, oldLeft, newLeft);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLeft(Mfix newLeft)
+  {
+    if (newLeft != left)
+    {
+      NotificationChain msgs = null;
+      if (left != null)
+        msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.MISFIX__LEFT, null, msgs);
+      if (newLeft != null)
+        msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.MISFIX__LEFT, null, msgs);
+      msgs = basicSetLeft(newLeft, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.MISFIX__LEFT, newLeft, newLeft));
   }
 
   /**
@@ -118,6 +178,8 @@ public class MisfixImpl extends MfixImpl implements Misfix
   {
     switch (featureID)
     {
+      case EditorPackage.MISFIX__LEFT:
+        return basicSetLeft(null, msgs);
       case EditorPackage.MISFIX__SORT:
         return basicSetSort(null, msgs);
     }
@@ -134,6 +196,8 @@ public class MisfixImpl extends MfixImpl implements Misfix
   {
     switch (featureID)
     {
+      case EditorPackage.MISFIX__LEFT:
+        return getLeft();
       case EditorPackage.MISFIX__SORT:
         return getSort();
     }
@@ -150,6 +214,9 @@ public class MisfixImpl extends MfixImpl implements Misfix
   {
     switch (featureID)
     {
+      case EditorPackage.MISFIX__LEFT:
+        setLeft((Mfix)newValue);
+        return;
       case EditorPackage.MISFIX__SORT:
         setSort((Sort)newValue);
         return;
@@ -167,6 +234,9 @@ public class MisfixImpl extends MfixImpl implements Misfix
   {
     switch (featureID)
     {
+      case EditorPackage.MISFIX__LEFT:
+        setLeft((Mfix)null);
+        return;
       case EditorPackage.MISFIX__SORT:
         setSort((Sort)null);
         return;
@@ -184,6 +254,8 @@ public class MisfixImpl extends MfixImpl implements Misfix
   {
     switch (featureID)
     {
+      case EditorPackage.MISFIX__LEFT:
+        return left != null;
       case EditorPackage.MISFIX__SORT:
         return sort != null;
     }

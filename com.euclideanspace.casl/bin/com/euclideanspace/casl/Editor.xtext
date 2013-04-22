@@ -98,8 +98,7 @@ VarDecl:
 	var=Var (',' var2 += Var)* ':'
     sort=Sort;
 
-/*
-The following LALR(1) rule is converted to xtext format
+/*The following LALR(1) rule is converted to xtext format
 FORMULA ::= QUANTIFIER VAR-DECL ;...; VAR-DECL '.' FORMULA
             | FORMULA /\ FORMULA /\.../\ FORMULA
             | FORMULA \/ FORMULA \/...\/ FORMULA
@@ -116,8 +115,9 @@ FORMULA ::= QUANTIFIER VAR-DECL ;...; VAR-DECL '.' FORMULA
  */
 
 Formula returns Formu:
-	(quantifier=Quantifier varDecl=VarDecl
-           (';' varDecl2+=VarDecl)* '.' formula = Formula) |
+	// option below causes recursive rule invocations
+	//(quantifier=Quantifier varDecl=VarDecl
+    //       (';' varDecl2+=VarDecl)* '.')?
     formula = FormulaAnd
     ;
 
@@ -147,14 +147,15 @@ FormulaEquiv returns Formu:
    ;
 
 FormulaUnary returns Formu:
-  ({UnaryExpression} uop='not' expr=Formula) |
-  e3='true' |
-  e3='false' |
-  e3='def' t=Term|
-  t=Term '=e=' t2=Term|
-  t=Term '=' t2=Term|
-  e3='(' form=Formula ')'
-  | misfix=Misfix (misfix2+=Misfix)*
+  // option below causes: Decision can match input
+  // such as "'/\\'" using multiple alternatives
+  //(uop='not' expr=Formula) |
+  e3='true' | e3='false' |
+  (e3='def' t=Term) |
+  (t=Term e3='=e=' t2=Term) //|
+//  (t=Term e3='=' t2=Term) |
+//  (e3='(' form=Formula ')') |
+//  (misfix=Misfix (misfix2+=Misfix)*)
 ;
 
 Quantifier:
@@ -183,7 +184,7 @@ Misfix returns Mfix:
 
 MisfixWhen returns Mfix:
 	MisfixUnary 
-	({MisfixWhen.left=current} op='when' formula=Formula op0='when' right=MisfixUnary)?
+//	({MisfixWhen.left=current} op='when' formula=Formula op0='when' right=MisfixUnary)?
 	;
 
 MisfixUnary returns Mfix:
@@ -220,7 +221,7 @@ Token:
 	name=ID | num=INT | (name=ID '.' t=Token);
 
 Literal:
-	str=STRING | num=INT;
+	str=STRING /*| num=INT*/;
 
 Place:
 	'__';

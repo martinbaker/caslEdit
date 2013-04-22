@@ -4,26 +4,16 @@ package com.euclideanspace.casl.editor.impl;
 
 import com.euclideanspace.casl.editor.EditorPackage;
 import com.euclideanspace.casl.editor.Formu;
-import com.euclideanspace.casl.editor.Mfix;
-import com.euclideanspace.casl.editor.Quantifier;
 import com.euclideanspace.casl.editor.Term;
-import com.euclideanspace.casl.editor.VarDecl;
-
-import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,16 +22,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.euclideanspace.casl.editor.impl.FormuImpl#getQuantifier <em>Quantifier</em>}</li>
- *   <li>{@link com.euclideanspace.casl.editor.impl.FormuImpl#getVarDecl <em>Var Decl</em>}</li>
- *   <li>{@link com.euclideanspace.casl.editor.impl.FormuImpl#getVarDecl2 <em>Var Decl2</em>}</li>
  *   <li>{@link com.euclideanspace.casl.editor.impl.FormuImpl#getFormula <em>Formula</em>}</li>
  *   <li>{@link com.euclideanspace.casl.editor.impl.FormuImpl#getE3 <em>E3</em>}</li>
  *   <li>{@link com.euclideanspace.casl.editor.impl.FormuImpl#getT <em>T</em>}</li>
  *   <li>{@link com.euclideanspace.casl.editor.impl.FormuImpl#getT2 <em>T2</em>}</li>
- *   <li>{@link com.euclideanspace.casl.editor.impl.FormuImpl#getForm <em>Form</em>}</li>
- *   <li>{@link com.euclideanspace.casl.editor.impl.FormuImpl#getMisfix <em>Misfix</em>}</li>
- *   <li>{@link com.euclideanspace.casl.editor.impl.FormuImpl#getMisfix2 <em>Misfix2</em>}</li>
+ *   <li>{@link com.euclideanspace.casl.editor.impl.FormuImpl#getLeft <em>Left</em>}</li>
+ *   <li>{@link com.euclideanspace.casl.editor.impl.FormuImpl#getOp <em>Op</em>}</li>
+ *   <li>{@link com.euclideanspace.casl.editor.impl.FormuImpl#getRight <em>Right</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,36 +36,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class FormuImpl extends MinimalEObjectImpl.Container implements Formu
 {
-  /**
-   * The cached value of the '{@link #getQuantifier() <em>Quantifier</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getQuantifier()
-   * @generated
-   * @ordered
-   */
-  protected Quantifier quantifier;
-
-  /**
-   * The cached value of the '{@link #getVarDecl() <em>Var Decl</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVarDecl()
-   * @generated
-   * @ordered
-   */
-  protected VarDecl varDecl;
-
-  /**
-   * The cached value of the '{@link #getVarDecl2() <em>Var Decl2</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVarDecl2()
-   * @generated
-   * @ordered
-   */
-  protected EList<VarDecl> varDecl2;
-
   /**
    * The cached value of the '{@link #getFormula() <em>Formula</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -130,34 +87,44 @@ public class FormuImpl extends MinimalEObjectImpl.Container implements Formu
   protected Term t2;
 
   /**
-   * The cached value of the '{@link #getForm() <em>Form</em>}' containment reference.
+   * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getForm()
+   * @see #getLeft()
    * @generated
    * @ordered
    */
-  protected Formu form;
+  protected Formu left;
 
   /**
-   * The cached value of the '{@link #getMisfix() <em>Misfix</em>}' containment reference.
+   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMisfix()
+   * @see #getOp()
    * @generated
    * @ordered
    */
-  protected Mfix misfix;
+  protected static final String OP_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getMisfix2() <em>Misfix2</em>}' containment reference list.
+   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMisfix2()
+   * @see #getOp()
    * @generated
    * @ordered
    */
-  protected EList<Mfix> misfix2;
+  protected String op = OP_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRight()
+   * @generated
+   * @ordered
+   */
+  protected Formu right;
 
   /**
    * <!-- begin-user-doc -->
@@ -178,116 +145,6 @@ public class FormuImpl extends MinimalEObjectImpl.Container implements Formu
   protected EClass eStaticClass()
   {
     return EditorPackage.Literals.FORMU;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Quantifier getQuantifier()
-  {
-    return quantifier;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetQuantifier(Quantifier newQuantifier, NotificationChain msgs)
-  {
-    Quantifier oldQuantifier = quantifier;
-    quantifier = newQuantifier;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.FORMU__QUANTIFIER, oldQuantifier, newQuantifier);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setQuantifier(Quantifier newQuantifier)
-  {
-    if (newQuantifier != quantifier)
-    {
-      NotificationChain msgs = null;
-      if (quantifier != null)
-        msgs = ((InternalEObject)quantifier).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FORMU__QUANTIFIER, null, msgs);
-      if (newQuantifier != null)
-        msgs = ((InternalEObject)newQuantifier).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FORMU__QUANTIFIER, null, msgs);
-      msgs = basicSetQuantifier(newQuantifier, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FORMU__QUANTIFIER, newQuantifier, newQuantifier));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VarDecl getVarDecl()
-  {
-    return varDecl;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetVarDecl(VarDecl newVarDecl, NotificationChain msgs)
-  {
-    VarDecl oldVarDecl = varDecl;
-    varDecl = newVarDecl;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.FORMU__VAR_DECL, oldVarDecl, newVarDecl);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setVarDecl(VarDecl newVarDecl)
-  {
-    if (newVarDecl != varDecl)
-    {
-      NotificationChain msgs = null;
-      if (varDecl != null)
-        msgs = ((InternalEObject)varDecl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FORMU__VAR_DECL, null, msgs);
-      if (newVarDecl != null)
-        msgs = ((InternalEObject)newVarDecl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FORMU__VAR_DECL, null, msgs);
-      msgs = basicSetVarDecl(newVarDecl, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FORMU__VAR_DECL, newVarDecl, newVarDecl));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<VarDecl> getVarDecl2()
-  {
-    if (varDecl2 == null)
-    {
-      varDecl2 = new EObjectContainmentEList<VarDecl>(VarDecl.class, this, EditorPackage.FORMU__VAR_DECL2);
-    }
-    return varDecl2;
   }
 
   /**
@@ -462,9 +319,9 @@ public class FormuImpl extends MinimalEObjectImpl.Container implements Formu
    * <!-- end-user-doc -->
    * @generated
    */
-  public Formu getForm()
+  public Formu getLeft()
   {
-    return form;
+    return left;
   }
 
   /**
@@ -472,13 +329,13 @@ public class FormuImpl extends MinimalEObjectImpl.Container implements Formu
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetForm(Formu newForm, NotificationChain msgs)
+  public NotificationChain basicSetLeft(Formu newLeft, NotificationChain msgs)
   {
-    Formu oldForm = form;
-    form = newForm;
+    Formu oldLeft = left;
+    left = newLeft;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.FORMU__FORM, oldForm, newForm);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.FORMU__LEFT, oldLeft, newLeft);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -489,20 +346,20 @@ public class FormuImpl extends MinimalEObjectImpl.Container implements Formu
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setForm(Formu newForm)
+  public void setLeft(Formu newLeft)
   {
-    if (newForm != form)
+    if (newLeft != left)
     {
       NotificationChain msgs = null;
-      if (form != null)
-        msgs = ((InternalEObject)form).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FORMU__FORM, null, msgs);
-      if (newForm != null)
-        msgs = ((InternalEObject)newForm).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FORMU__FORM, null, msgs);
-      msgs = basicSetForm(newForm, msgs);
+      if (left != null)
+        msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FORMU__LEFT, null, msgs);
+      if (newLeft != null)
+        msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FORMU__LEFT, null, msgs);
+      msgs = basicSetLeft(newLeft, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FORMU__FORM, newForm, newForm));
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FORMU__LEFT, newLeft, newLeft));
   }
 
   /**
@@ -510,9 +367,9 @@ public class FormuImpl extends MinimalEObjectImpl.Container implements Formu
    * <!-- end-user-doc -->
    * @generated
    */
-  public Mfix getMisfix()
+  public String getOp()
   {
-    return misfix;
+    return op;
   }
 
   /**
@@ -520,13 +377,36 @@ public class FormuImpl extends MinimalEObjectImpl.Container implements Formu
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetMisfix(Mfix newMisfix, NotificationChain msgs)
+  public void setOp(String newOp)
   {
-    Mfix oldMisfix = misfix;
-    misfix = newMisfix;
+    String oldOp = op;
+    op = newOp;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FORMU__OP, oldOp, op));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Formu getRight()
+  {
+    return right;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRight(Formu newRight, NotificationChain msgs)
+  {
+    Formu oldRight = right;
+    right = newRight;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.FORMU__MISFIX, oldMisfix, newMisfix);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.FORMU__RIGHT, oldRight, newRight);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -537,34 +417,20 @@ public class FormuImpl extends MinimalEObjectImpl.Container implements Formu
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setMisfix(Mfix newMisfix)
+  public void setRight(Formu newRight)
   {
-    if (newMisfix != misfix)
+    if (newRight != right)
     {
       NotificationChain msgs = null;
-      if (misfix != null)
-        msgs = ((InternalEObject)misfix).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FORMU__MISFIX, null, msgs);
-      if (newMisfix != null)
-        msgs = ((InternalEObject)newMisfix).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FORMU__MISFIX, null, msgs);
-      msgs = basicSetMisfix(newMisfix, msgs);
+      if (right != null)
+        msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FORMU__RIGHT, null, msgs);
+      if (newRight != null)
+        msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.FORMU__RIGHT, null, msgs);
+      msgs = basicSetRight(newRight, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FORMU__MISFIX, newMisfix, newMisfix));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Mfix> getMisfix2()
-  {
-    if (misfix2 == null)
-    {
-      misfix2 = new EObjectContainmentEList<Mfix>(Mfix.class, this, EditorPackage.FORMU__MISFIX2);
-    }
-    return misfix2;
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.FORMU__RIGHT, newRight, newRight));
   }
 
   /**
@@ -577,24 +443,16 @@ public class FormuImpl extends MinimalEObjectImpl.Container implements Formu
   {
     switch (featureID)
     {
-      case EditorPackage.FORMU__QUANTIFIER:
-        return basicSetQuantifier(null, msgs);
-      case EditorPackage.FORMU__VAR_DECL:
-        return basicSetVarDecl(null, msgs);
-      case EditorPackage.FORMU__VAR_DECL2:
-        return ((InternalEList<?>)getVarDecl2()).basicRemove(otherEnd, msgs);
       case EditorPackage.FORMU__FORMULA:
         return basicSetFormula(null, msgs);
       case EditorPackage.FORMU__T:
         return basicSetT(null, msgs);
       case EditorPackage.FORMU__T2:
         return basicSetT2(null, msgs);
-      case EditorPackage.FORMU__FORM:
-        return basicSetForm(null, msgs);
-      case EditorPackage.FORMU__MISFIX:
-        return basicSetMisfix(null, msgs);
-      case EditorPackage.FORMU__MISFIX2:
-        return ((InternalEList<?>)getMisfix2()).basicRemove(otherEnd, msgs);
+      case EditorPackage.FORMU__LEFT:
+        return basicSetLeft(null, msgs);
+      case EditorPackage.FORMU__RIGHT:
+        return basicSetRight(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -609,12 +467,6 @@ public class FormuImpl extends MinimalEObjectImpl.Container implements Formu
   {
     switch (featureID)
     {
-      case EditorPackage.FORMU__QUANTIFIER:
-        return getQuantifier();
-      case EditorPackage.FORMU__VAR_DECL:
-        return getVarDecl();
-      case EditorPackage.FORMU__VAR_DECL2:
-        return getVarDecl2();
       case EditorPackage.FORMU__FORMULA:
         return getFormula();
       case EditorPackage.FORMU__E3:
@@ -623,12 +475,12 @@ public class FormuImpl extends MinimalEObjectImpl.Container implements Formu
         return getT();
       case EditorPackage.FORMU__T2:
         return getT2();
-      case EditorPackage.FORMU__FORM:
-        return getForm();
-      case EditorPackage.FORMU__MISFIX:
-        return getMisfix();
-      case EditorPackage.FORMU__MISFIX2:
-        return getMisfix2();
+      case EditorPackage.FORMU__LEFT:
+        return getLeft();
+      case EditorPackage.FORMU__OP:
+        return getOp();
+      case EditorPackage.FORMU__RIGHT:
+        return getRight();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -638,22 +490,11 @@ public class FormuImpl extends MinimalEObjectImpl.Container implements Formu
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case EditorPackage.FORMU__QUANTIFIER:
-        setQuantifier((Quantifier)newValue);
-        return;
-      case EditorPackage.FORMU__VAR_DECL:
-        setVarDecl((VarDecl)newValue);
-        return;
-      case EditorPackage.FORMU__VAR_DECL2:
-        getVarDecl2().clear();
-        getVarDecl2().addAll((Collection<? extends VarDecl>)newValue);
-        return;
       case EditorPackage.FORMU__FORMULA:
         setFormula((Formu)newValue);
         return;
@@ -666,15 +507,14 @@ public class FormuImpl extends MinimalEObjectImpl.Container implements Formu
       case EditorPackage.FORMU__T2:
         setT2((Term)newValue);
         return;
-      case EditorPackage.FORMU__FORM:
-        setForm((Formu)newValue);
+      case EditorPackage.FORMU__LEFT:
+        setLeft((Formu)newValue);
         return;
-      case EditorPackage.FORMU__MISFIX:
-        setMisfix((Mfix)newValue);
+      case EditorPackage.FORMU__OP:
+        setOp((String)newValue);
         return;
-      case EditorPackage.FORMU__MISFIX2:
-        getMisfix2().clear();
-        getMisfix2().addAll((Collection<? extends Mfix>)newValue);
+      case EditorPackage.FORMU__RIGHT:
+        setRight((Formu)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -690,15 +530,6 @@ public class FormuImpl extends MinimalEObjectImpl.Container implements Formu
   {
     switch (featureID)
     {
-      case EditorPackage.FORMU__QUANTIFIER:
-        setQuantifier((Quantifier)null);
-        return;
-      case EditorPackage.FORMU__VAR_DECL:
-        setVarDecl((VarDecl)null);
-        return;
-      case EditorPackage.FORMU__VAR_DECL2:
-        getVarDecl2().clear();
-        return;
       case EditorPackage.FORMU__FORMULA:
         setFormula((Formu)null);
         return;
@@ -711,14 +542,14 @@ public class FormuImpl extends MinimalEObjectImpl.Container implements Formu
       case EditorPackage.FORMU__T2:
         setT2((Term)null);
         return;
-      case EditorPackage.FORMU__FORM:
-        setForm((Formu)null);
+      case EditorPackage.FORMU__LEFT:
+        setLeft((Formu)null);
         return;
-      case EditorPackage.FORMU__MISFIX:
-        setMisfix((Mfix)null);
+      case EditorPackage.FORMU__OP:
+        setOp(OP_EDEFAULT);
         return;
-      case EditorPackage.FORMU__MISFIX2:
-        getMisfix2().clear();
+      case EditorPackage.FORMU__RIGHT:
+        setRight((Formu)null);
         return;
     }
     super.eUnset(featureID);
@@ -734,12 +565,6 @@ public class FormuImpl extends MinimalEObjectImpl.Container implements Formu
   {
     switch (featureID)
     {
-      case EditorPackage.FORMU__QUANTIFIER:
-        return quantifier != null;
-      case EditorPackage.FORMU__VAR_DECL:
-        return varDecl != null;
-      case EditorPackage.FORMU__VAR_DECL2:
-        return varDecl2 != null && !varDecl2.isEmpty();
       case EditorPackage.FORMU__FORMULA:
         return formula != null;
       case EditorPackage.FORMU__E3:
@@ -748,12 +573,12 @@ public class FormuImpl extends MinimalEObjectImpl.Container implements Formu
         return t != null;
       case EditorPackage.FORMU__T2:
         return t2 != null;
-      case EditorPackage.FORMU__FORM:
-        return form != null;
-      case EditorPackage.FORMU__MISFIX:
-        return misfix != null;
-      case EditorPackage.FORMU__MISFIX2:
-        return misfix2 != null && !misfix2.isEmpty();
+      case EditorPackage.FORMU__LEFT:
+        return left != null;
+      case EditorPackage.FORMU__OP:
+        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
+      case EditorPackage.FORMU__RIGHT:
+        return right != null;
     }
     return super.eIsSet(featureID);
   }
@@ -771,6 +596,8 @@ public class FormuImpl extends MinimalEObjectImpl.Container implements Formu
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (e3: ");
     result.append(e3);
+    result.append(", op: ");
+    result.append(op);
     result.append(')');
     return result.toString();
   }

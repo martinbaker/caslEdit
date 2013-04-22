@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.euclideanspace.casl.editor.impl.LiteralImpl#getStr <em>Str</em>}</li>
- *   <li>{@link com.euclideanspace.casl.editor.impl.LiteralImpl#getNum <em>Num</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,26 +46,6 @@ public class LiteralImpl extends MinimalEObjectImpl.Container implements Literal
    * @ordered
    */
   protected String str = STR_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getNum() <em>Num</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getNum()
-   * @generated
-   * @ordered
-   */
-  protected static final int NUM_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getNum() <em>Num</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getNum()
-   * @generated
-   * @ordered
-   */
-  protected int num = NUM_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,29 +96,6 @@ public class LiteralImpl extends MinimalEObjectImpl.Container implements Literal
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getNum()
-  {
-    return num;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setNum(int newNum)
-  {
-    int oldNum = num;
-    num = newNum;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.LITERAL__NUM, oldNum, num));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -147,8 +103,6 @@ public class LiteralImpl extends MinimalEObjectImpl.Container implements Literal
     {
       case EditorPackage.LITERAL__STR:
         return getStr();
-      case EditorPackage.LITERAL__NUM:
-        return getNum();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -165,9 +119,6 @@ public class LiteralImpl extends MinimalEObjectImpl.Container implements Literal
     {
       case EditorPackage.LITERAL__STR:
         setStr((String)newValue);
-        return;
-      case EditorPackage.LITERAL__NUM:
-        setNum((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -186,9 +137,6 @@ public class LiteralImpl extends MinimalEObjectImpl.Container implements Literal
       case EditorPackage.LITERAL__STR:
         setStr(STR_EDEFAULT);
         return;
-      case EditorPackage.LITERAL__NUM:
-        setNum(NUM_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -205,8 +153,6 @@ public class LiteralImpl extends MinimalEObjectImpl.Container implements Literal
     {
       case EditorPackage.LITERAL__STR:
         return STR_EDEFAULT == null ? str != null : !STR_EDEFAULT.equals(str);
-      case EditorPackage.LITERAL__NUM:
-        return num != NUM_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -224,8 +170,6 @@ public class LiteralImpl extends MinimalEObjectImpl.Container implements Literal
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (str: ");
     result.append(str);
-    result.append(", num: ");
-    result.append(num);
     result.append(')');
     return result.toString();
   }

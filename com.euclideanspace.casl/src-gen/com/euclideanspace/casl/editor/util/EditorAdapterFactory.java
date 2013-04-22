@@ -255,19 +255,9 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
         return createFormulaEquivAdapter();
       }
       @Override
-      public Adapter caseUnaryExpression(UnaryExpression object)
-      {
-        return createUnaryExpressionAdapter();
-      }
-      @Override
       public Adapter caseMisfix(Misfix object)
       {
         return createMisfixAdapter();
-      }
-      @Override
-      public Adapter caseMisfixWhen(MisfixWhen object)
-      {
-        return createMisfixWhenAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -832,21 +822,6 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.casl.editor.UnaryExpression <em>Unary Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.casl.editor.UnaryExpression
-   * @generated
-   */
-  public Adapter createUnaryExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link com.euclideanspace.casl.editor.Misfix <em>Misfix</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -857,21 +832,6 @@ public class EditorAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMisfixAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.euclideanspace.casl.editor.MisfixWhen <em>Misfix When</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.euclideanspace.casl.editor.MisfixWhen
-   * @generated
-   */
-  public Adapter createMisfixWhenAdapter()
   {
     return null;
   }

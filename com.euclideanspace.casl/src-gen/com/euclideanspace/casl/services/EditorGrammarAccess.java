@@ -1293,24 +1293,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class FormulaElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Formula");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Assignment cQuantifierAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
-		private final RuleCall cQuantifierQuantifierParserRuleCall_0_0_0 = (RuleCall)cQuantifierAssignment_0_0.eContents().get(0);
-		private final Assignment cVarDeclAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cVarDeclVarDeclParserRuleCall_0_1_0 = (RuleCall)cVarDeclAssignment_0_1.eContents().get(0);
-		private final Group cGroup_0_2 = (Group)cGroup_0.eContents().get(2);
-		private final Keyword cSemicolonKeyword_0_2_0 = (Keyword)cGroup_0_2.eContents().get(0);
-		private final Assignment cVarDecl2Assignment_0_2_1 = (Assignment)cGroup_0_2.eContents().get(1);
-		private final RuleCall cVarDecl2VarDeclParserRuleCall_0_2_1_0 = (RuleCall)cVarDecl2Assignment_0_2_1.eContents().get(0);
-		private final Keyword cFullStopKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
-		private final Assignment cFormulaAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
-		private final RuleCall cFormulaFormulaParserRuleCall_0_4_0 = (RuleCall)cFormulaAssignment_0_4.eContents().get(0);
-		private final Assignment cFormulaAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cFormulaFormulaAndParserRuleCall_1_0 = (RuleCall)cFormulaAssignment_1.eContents().get(0);
+		private final Assignment cFormulaAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cFormulaFormulaAndParserRuleCall_0 = (RuleCall)cFormulaAssignment.eContents().get(0);
 		
-		/// *
-		//The following LALR(1) rule is converted to xtext format
+		/// *The following LALR(1) rule is converted to xtext format
 		//FORMULA ::= QUANTIFIER VAR-DECL ;...; VAR-DECL '.' FORMULA
 		//            | FORMULA /\ FORMULA /\.../\ FORMULA
 		//            | FORMULA \/ FORMULA \/...\/ FORMULA
@@ -1324,54 +1310,20 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//            | TERM = TERM
 		//            | (FORMULA)
 		//            | MISFIX...MISFIX
-		// * / Formula returns Formu:
-		//	quantifier=Quantifier varDecl=VarDecl (";" varDecl2+=VarDecl)* "." formula=Formula | formula=FormulaAnd;
+		// * / Formula returns Formu: // option below causes recursive rule invocations
+		////(quantifier=Quantifier varDecl=VarDecl
+		////       (';' varDecl2+=VarDecl)* '.')?
+		//	formula=FormulaAnd;
 		public ParserRule getRule() { return rule; }
 
-		//quantifier=Quantifier varDecl=VarDecl (";" varDecl2+=VarDecl)* "." formula=Formula | formula=FormulaAnd
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//quantifier=Quantifier varDecl=VarDecl (";" varDecl2+=VarDecl)* "." formula=Formula
-		public Group getGroup_0() { return cGroup_0; }
-
-		//quantifier=Quantifier
-		public Assignment getQuantifierAssignment_0_0() { return cQuantifierAssignment_0_0; }
-
-		//Quantifier
-		public RuleCall getQuantifierQuantifierParserRuleCall_0_0_0() { return cQuantifierQuantifierParserRuleCall_0_0_0; }
-
-		//varDecl=VarDecl
-		public Assignment getVarDeclAssignment_0_1() { return cVarDeclAssignment_0_1; }
-
-		//VarDecl
-		public RuleCall getVarDeclVarDeclParserRuleCall_0_1_0() { return cVarDeclVarDeclParserRuleCall_0_1_0; }
-
-		//(";" varDecl2+=VarDecl)*
-		public Group getGroup_0_2() { return cGroup_0_2; }
-
-		//";"
-		public Keyword getSemicolonKeyword_0_2_0() { return cSemicolonKeyword_0_2_0; }
-
-		//varDecl2+=VarDecl
-		public Assignment getVarDecl2Assignment_0_2_1() { return cVarDecl2Assignment_0_2_1; }
-
-		//VarDecl
-		public RuleCall getVarDecl2VarDeclParserRuleCall_0_2_1_0() { return cVarDecl2VarDeclParserRuleCall_0_2_1_0; }
-
-		//"."
-		public Keyword getFullStopKeyword_0_3() { return cFullStopKeyword_0_3; }
-
-		//formula=Formula
-		public Assignment getFormulaAssignment_0_4() { return cFormulaAssignment_0_4; }
-
-		//Formula
-		public RuleCall getFormulaFormulaParserRuleCall_0_4_0() { return cFormulaFormulaParserRuleCall_0_4_0; }
-
+		//// option below causes recursive rule invocations
+		////(quantifier=Quantifier varDecl=VarDecl
+		////       (';' varDecl2+=VarDecl)* '.')?
 		//formula=FormulaAnd
-		public Assignment getFormulaAssignment_1() { return cFormulaAssignment_1; }
+		public Assignment getFormulaAssignment() { return cFormulaAssignment; }
 
 		//FormulaAnd
-		public RuleCall getFormulaFormulaAndParserRuleCall_1_0() { return cFormulaFormulaAndParserRuleCall_1_0; }
+		public RuleCall getFormulaFormulaAndParserRuleCall_0() { return cFormulaFormulaAndParserRuleCall_0; }
 	}
 
 	public class FormulaAndElements extends AbstractParserRuleElementFinder {
@@ -1577,167 +1529,90 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	public class FormulaUnaryElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FormulaUnary");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cUnaryExpressionAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Assignment cUopAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final Keyword cUopNotKeyword_0_1_0 = (Keyword)cUopAssignment_0_1.eContents().get(0);
-		private final Assignment cExprAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cExprFormulaParserRuleCall_0_2_0 = (RuleCall)cExprAssignment_0_2.eContents().get(0);
+		private final Assignment cE3Assignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final Keyword cE3TrueKeyword_0_0 = (Keyword)cE3Assignment_0.eContents().get(0);
 		private final Assignment cE3Assignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final Keyword cE3TrueKeyword_1_0 = (Keyword)cE3Assignment_1.eContents().get(0);
-		private final Assignment cE3Assignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final Keyword cE3FalseKeyword_2_0 = (Keyword)cE3Assignment_2.eContents().get(0);
+		private final Keyword cE3FalseKeyword_1_0 = (Keyword)cE3Assignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Assignment cE3Assignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final Keyword cE3DefKeyword_2_0_0 = (Keyword)cE3Assignment_2_0.eContents().get(0);
+		private final Assignment cTAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cTTermParserRuleCall_2_1_0 = (RuleCall)cTAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Assignment cE3Assignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
-		private final Keyword cE3DefKeyword_3_0_0 = (Keyword)cE3Assignment_3_0.eContents().get(0);
-		private final Assignment cTAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cTTermParserRuleCall_3_1_0 = (RuleCall)cTAssignment_3_1.eContents().get(0);
-		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final Assignment cTAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final RuleCall cTTermParserRuleCall_4_0_0 = (RuleCall)cTAssignment_4_0.eContents().get(0);
-		private final Keyword cEKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cT2Assignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cT2TermParserRuleCall_4_2_0 = (RuleCall)cT2Assignment_4_2.eContents().get(0);
-		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final Assignment cTAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
-		private final RuleCall cTTermParserRuleCall_5_0_0 = (RuleCall)cTAssignment_5_0.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cT2Assignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cT2TermParserRuleCall_5_2_0 = (RuleCall)cT2Assignment_5_2.eContents().get(0);
-		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
-		private final Assignment cE3Assignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
-		private final Keyword cE3LeftParenthesisKeyword_6_0_0 = (Keyword)cE3Assignment_6_0.eContents().get(0);
-		private final Assignment cFormAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cFormFormulaParserRuleCall_6_1_0 = (RuleCall)cFormAssignment_6_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
-		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
-		private final Assignment cMisfixAssignment_7_0 = (Assignment)cGroup_7.eContents().get(0);
-		private final RuleCall cMisfixMisfixParserRuleCall_7_0_0 = (RuleCall)cMisfixAssignment_7_0.eContents().get(0);
-		private final Assignment cMisfix2Assignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cMisfix2MisfixParserRuleCall_7_1_0 = (RuleCall)cMisfix2Assignment_7_1.eContents().get(0);
+		private final Assignment cTAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cTTermParserRuleCall_3_0_0 = (RuleCall)cTAssignment_3_0.eContents().get(0);
+		private final Assignment cE3Assignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final Keyword cE3EKeyword_3_1_0 = (Keyword)cE3Assignment_3_1.eContents().get(0);
+		private final Assignment cT2Assignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cT2TermParserRuleCall_3_2_0 = (RuleCall)cT2Assignment_3_2.eContents().get(0);
 		
-		//FormulaUnary returns Formu:
-		//	{UnaryExpression} uop="not" expr=Formula | e3="true" | e3="false" | e3="def" t=Term | t=Term "=e=" t2=Term | t=Term
-		//	"=" t2=Term | e3="(" form=Formula ")" | misfix=Misfix misfix2+=Misfix*;
+		////  (t=Term e3='=' t2=Term) |
+		////  (e3='(' form=Formula ')') |
+		////  (misfix=Misfix (misfix2+=Misfix)*)
+		//FormulaUnary returns Formu: // option below causes: Decision can match input
+		//// such as "'/\\'" using multiple alternatives
+		////(uop='not' expr=Formula) |
+		//	e3="true" //|
+		//	| e3="false" | e3="def" t=Term | t=Term e3="=e=" t2=Term;
 		public ParserRule getRule() { return rule; }
 
-		//{UnaryExpression} uop="not" expr=Formula | e3="true" | e3="false" | e3="def" t=Term | t=Term "=e=" t2=Term | t=Term "="
-		//t2=Term | e3="(" form=Formula ")" | misfix=Misfix misfix2+=Misfix*
+		//// option below causes: Decision can match input
+		//// such as "'/\\'" using multiple alternatives
+		////(uop='not' expr=Formula) |
+		//e3="true" //|
+		//| e3="false" | e3="def" t=Term | t=Term e3="=e=" t2=Term
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//{UnaryExpression} uop="not" expr=Formula
-		public Group getGroup_0() { return cGroup_0; }
-
-		//{UnaryExpression}
-		public Action getUnaryExpressionAction_0_0() { return cUnaryExpressionAction_0_0; }
-
-		//uop="not"
-		public Assignment getUopAssignment_0_1() { return cUopAssignment_0_1; }
-
-		//"not"
-		public Keyword getUopNotKeyword_0_1_0() { return cUopNotKeyword_0_1_0; }
-
-		//expr=Formula
-		public Assignment getExprAssignment_0_2() { return cExprAssignment_0_2; }
-
-		//Formula
-		public RuleCall getExprFormulaParserRuleCall_0_2_0() { return cExprFormulaParserRuleCall_0_2_0; }
-
+		//// option below causes: Decision can match input
+		//// such as "'/\\'" using multiple alternatives
+		////(uop='not' expr=Formula) |
 		//e3="true"
-		public Assignment getE3Assignment_1() { return cE3Assignment_1; }
+		public Assignment getE3Assignment_0() { return cE3Assignment_0; }
 
 		//"true"
-		public Keyword getE3TrueKeyword_1_0() { return cE3TrueKeyword_1_0; }
+		public Keyword getE3TrueKeyword_0_0() { return cE3TrueKeyword_0_0; }
 
 		//e3="false"
-		public Assignment getE3Assignment_2() { return cE3Assignment_2; }
+		public Assignment getE3Assignment_1() { return cE3Assignment_1; }
 
 		//"false"
-		public Keyword getE3FalseKeyword_2_0() { return cE3FalseKeyword_2_0; }
+		public Keyword getE3FalseKeyword_1_0() { return cE3FalseKeyword_1_0; }
 
 		//e3="def" t=Term
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_2() { return cGroup_2; }
 
 		//e3="def"
-		public Assignment getE3Assignment_3_0() { return cE3Assignment_3_0; }
+		public Assignment getE3Assignment_2_0() { return cE3Assignment_2_0; }
 
 		//"def"
-		public Keyword getE3DefKeyword_3_0_0() { return cE3DefKeyword_3_0_0; }
+		public Keyword getE3DefKeyword_2_0_0() { return cE3DefKeyword_2_0_0; }
 
 		//t=Term
-		public Assignment getTAssignment_3_1() { return cTAssignment_3_1; }
+		public Assignment getTAssignment_2_1() { return cTAssignment_2_1; }
 
 		//Term
-		public RuleCall getTTermParserRuleCall_3_1_0() { return cTTermParserRuleCall_3_1_0; }
+		public RuleCall getTTermParserRuleCall_2_1_0() { return cTTermParserRuleCall_2_1_0; }
 
-		//t=Term "=e=" t2=Term
-		public Group getGroup_4() { return cGroup_4; }
+		//t=Term e3="=e=" t2=Term
+		public Group getGroup_3() { return cGroup_3; }
 
 		//t=Term
-		public Assignment getTAssignment_4_0() { return cTAssignment_4_0; }
+		public Assignment getTAssignment_3_0() { return cTAssignment_3_0; }
 
 		//Term
-		public RuleCall getTTermParserRuleCall_4_0_0() { return cTTermParserRuleCall_4_0_0; }
+		public RuleCall getTTermParserRuleCall_3_0_0() { return cTTermParserRuleCall_3_0_0; }
+
+		//e3="=e="
+		public Assignment getE3Assignment_3_1() { return cE3Assignment_3_1; }
 
 		//"=e="
-		public Keyword getEKeyword_4_1() { return cEKeyword_4_1; }
+		public Keyword getE3EKeyword_3_1_0() { return cE3EKeyword_3_1_0; }
 
 		//t2=Term
-		public Assignment getT2Assignment_4_2() { return cT2Assignment_4_2; }
+		public Assignment getT2Assignment_3_2() { return cT2Assignment_3_2; }
 
 		//Term
-		public RuleCall getT2TermParserRuleCall_4_2_0() { return cT2TermParserRuleCall_4_2_0; }
-
-		//t=Term "=" t2=Term
-		public Group getGroup_5() { return cGroup_5; }
-
-		//t=Term
-		public Assignment getTAssignment_5_0() { return cTAssignment_5_0; }
-
-		//Term
-		public RuleCall getTTermParserRuleCall_5_0_0() { return cTTermParserRuleCall_5_0_0; }
-
-		//"="
-		public Keyword getEqualsSignKeyword_5_1() { return cEqualsSignKeyword_5_1; }
-
-		//t2=Term
-		public Assignment getT2Assignment_5_2() { return cT2Assignment_5_2; }
-
-		//Term
-		public RuleCall getT2TermParserRuleCall_5_2_0() { return cT2TermParserRuleCall_5_2_0; }
-
-		//e3="(" form=Formula ")"
-		public Group getGroup_6() { return cGroup_6; }
-
-		//e3="("
-		public Assignment getE3Assignment_6_0() { return cE3Assignment_6_0; }
-
-		//"("
-		public Keyword getE3LeftParenthesisKeyword_6_0_0() { return cE3LeftParenthesisKeyword_6_0_0; }
-
-		//form=Formula
-		public Assignment getFormAssignment_6_1() { return cFormAssignment_6_1; }
-
-		//Formula
-		public RuleCall getFormFormulaParserRuleCall_6_1_0() { return cFormFormulaParserRuleCall_6_1_0; }
-
-		//")"
-		public Keyword getRightParenthesisKeyword_6_2() { return cRightParenthesisKeyword_6_2; }
-
-		//misfix=Misfix misfix2+=Misfix*
-		public Group getGroup_7() { return cGroup_7; }
-
-		//misfix=Misfix
-		public Assignment getMisfixAssignment_7_0() { return cMisfixAssignment_7_0; }
-
-		//Misfix
-		public RuleCall getMisfixMisfixParserRuleCall_7_0_0() { return cMisfixMisfixParserRuleCall_7_0_0; }
-
-		//misfix2+=Misfix*
-		public Assignment getMisfix2Assignment_7_1() { return cMisfix2Assignment_7_1; }
-
-		//Misfix
-		public RuleCall getMisfix2MisfixParserRuleCall_7_1_0() { return cMisfix2MisfixParserRuleCall_7_1_0; }
+		public RuleCall getT2TermParserRuleCall_3_2_0() { return cT2TermParserRuleCall_3_2_0; }
 	}
 
 	public class QuantifierElements extends AbstractParserRuleElementFinder {
@@ -1891,58 +1766,15 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class MisfixWhenElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MisfixWhen");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cMisfixUnaryParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Action cMisfixWhenLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cOpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final Keyword cOpWhenKeyword_1_1_0 = (Keyword)cOpAssignment_1_1.eContents().get(0);
-		private final Assignment cFormulaAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cFormulaFormulaParserRuleCall_1_2_0 = (RuleCall)cFormulaAssignment_1_2.eContents().get(0);
-		private final Assignment cOp0Assignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
-		private final Keyword cOp0WhenKeyword_1_3_0 = (Keyword)cOp0Assignment_1_3.eContents().get(0);
-		private final Assignment cRightAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
-		private final RuleCall cRightMisfixUnaryParserRuleCall_1_4_0 = (RuleCall)cRightAssignment_1_4.eContents().get(0);
+		private final RuleCall cMisfixUnaryParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
+		////	({MisfixWhen.left=current} op='when' formula=Formula op0='when' right=MisfixUnary)?
 		//MisfixWhen returns Mfix:
-		//	MisfixUnary ({MisfixWhen.left=current} op="when" formula=Formula op0="when" right=MisfixUnary)?;
+		//	MisfixUnary;
 		public ParserRule getRule() { return rule; }
 
-		//MisfixUnary ({MisfixWhen.left=current} op="when" formula=Formula op0="when" right=MisfixUnary)?
-		public Group getGroup() { return cGroup; }
-
 		//MisfixUnary
-		public RuleCall getMisfixUnaryParserRuleCall_0() { return cMisfixUnaryParserRuleCall_0; }
-
-		//({MisfixWhen.left=current} op="when" formula=Formula op0="when" right=MisfixUnary)?
-		public Group getGroup_1() { return cGroup_1; }
-
-		//{MisfixWhen.left=current}
-		public Action getMisfixWhenLeftAction_1_0() { return cMisfixWhenLeftAction_1_0; }
-
-		//op="when"
-		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
-
-		//"when"
-		public Keyword getOpWhenKeyword_1_1_0() { return cOpWhenKeyword_1_1_0; }
-
-		//formula=Formula
-		public Assignment getFormulaAssignment_1_2() { return cFormulaAssignment_1_2; }
-
-		//Formula
-		public RuleCall getFormulaFormulaParserRuleCall_1_2_0() { return cFormulaFormulaParserRuleCall_1_2_0; }
-
-		//op0="when"
-		public Assignment getOp0Assignment_1_3() { return cOp0Assignment_1_3; }
-
-		//"when"
-		public Keyword getOp0WhenKeyword_1_3_0() { return cOp0WhenKeyword_1_3_0; }
-
-		//right=MisfixUnary
-		public Assignment getRightAssignment_1_4() { return cRightAssignment_1_4; }
-
-		//MisfixUnary
-		public RuleCall getRightMisfixUnaryParserRuleCall_1_4_0() { return cRightMisfixUnaryParserRuleCall_1_4_0; }
+		public RuleCall getMisfixUnaryParserRuleCall() { return cMisfixUnaryParserRuleCall; }
 	}
 
 	public class MisfixUnaryElements extends AbstractParserRuleElementFinder {
@@ -2337,30 +2169,18 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class LiteralElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Literal");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cStrAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cStrSTRINGTerminalRuleCall_0_0 = (RuleCall)cStrAssignment_0.eContents().get(0);
-		private final Assignment cNumAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cNumINTTerminalRuleCall_1_0 = (RuleCall)cNumAssignment_1.eContents().get(0);
+		private final Assignment cStrAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cStrSTRINGTerminalRuleCall_0 = (RuleCall)cStrAssignment.eContents().get(0);
 		
-		//Literal:
-		//	str=STRING | num=INT;
+		/// *| num=INT* / Literal:
+		//	str=STRING;
 		public ParserRule getRule() { return rule; }
 
-		//str=STRING | num=INT
-		public Alternatives getAlternatives() { return cAlternatives; }
-
 		//str=STRING
-		public Assignment getStrAssignment_0() { return cStrAssignment_0; }
+		public Assignment getStrAssignment() { return cStrAssignment; }
 
 		//STRING
-		public RuleCall getStrSTRINGTerminalRuleCall_0_0() { return cStrSTRINGTerminalRuleCall_0_0; }
-
-		//num=INT
-		public Assignment getNumAssignment_1() { return cNumAssignment_1; }
-
-		//INT
-		public RuleCall getNumINTTerminalRuleCall_1_0() { return cNumINTTerminalRuleCall_1_0; }
+		public RuleCall getStrSTRINGTerminalRuleCall_0() { return cStrSTRINGTerminalRuleCall_0; }
 	}
 
 	public class PlaceElements extends AbstractParserRuleElementFinder {
@@ -2631,8 +2451,7 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getVarDeclAccess().getRule();
 	}
 
-	/// *
-	//The following LALR(1) rule is converted to xtext format
+	/// *The following LALR(1) rule is converted to xtext format
 	//FORMULA ::= QUANTIFIER VAR-DECL ;...; VAR-DECL '.' FORMULA
 	//            | FORMULA /\ FORMULA /\.../\ FORMULA
 	//            | FORMULA \/ FORMULA \/...\/ FORMULA
@@ -2646,8 +2465,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	//            | TERM = TERM
 	//            | (FORMULA)
 	//            | MISFIX...MISFIX
-	// * / Formula returns Formu:
-	//	quantifier=Quantifier varDecl=VarDecl (";" varDecl2+=VarDecl)* "." formula=Formula | formula=FormulaAnd;
+	// * / Formula returns Formu: // option below causes recursive rule invocations
+	////(quantifier=Quantifier varDecl=VarDecl
+	////       (';' varDecl2+=VarDecl)* '.')?
+	//	formula=FormulaAnd;
 	public FormulaElements getFormulaAccess() {
 		return (pFormula != null) ? pFormula : (pFormula = new FormulaElements());
 	}
@@ -2706,9 +2527,14 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getFormulaEquivAccess().getRule();
 	}
 
-	//FormulaUnary returns Formu:
-	//	{UnaryExpression} uop="not" expr=Formula | e3="true" | e3="false" | e3="def" t=Term | t=Term "=e=" t2=Term | t=Term
-	//	"=" t2=Term | e3="(" form=Formula ")" | misfix=Misfix misfix2+=Misfix*;
+	////  (t=Term e3='=' t2=Term) |
+	////  (e3='(' form=Formula ')') |
+	////  (misfix=Misfix (misfix2+=Misfix)*)
+	//FormulaUnary returns Formu: // option below causes: Decision can match input
+	//// such as "'/\\'" using multiple alternatives
+	////(uop='not' expr=Formula) |
+	//	e3="true" //|
+	//	| e3="false" | e3="def" t=Term | t=Term e3="=e=" t2=Term;
 	public FormulaUnaryElements getFormulaUnaryAccess() {
 		return (pFormulaUnary != null) ? pFormulaUnary : (pFormulaUnary = new FormulaUnaryElements());
 	}
@@ -2766,8 +2592,9 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getMisfixAccess().getRule();
 	}
 
+	////	({MisfixWhen.left=current} op='when' formula=Formula op0='when' right=MisfixUnary)?
 	//MisfixWhen returns Mfix:
-	//	MisfixUnary ({MisfixWhen.left=current} op="when" formula=Formula op0="when" right=MisfixUnary)?;
+	//	MisfixUnary;
 	public MisfixWhenElements getMisfixWhenAccess() {
 		return (pMisfixWhen != null) ? pMisfixWhen : (pMisfixWhen = new MisfixWhenElements());
 	}
@@ -2867,8 +2694,8 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		return getTokenAccess().getRule();
 	}
 
-	//Literal:
-	//	str=STRING | num=INT;
+	/// *| num=INT* / Literal:
+	//	str=STRING;
 	public LiteralElements getLiteralAccess() {
 		return (pLiteral != null) ? pLiteral : (pLiteral = new LiteralElements());
 	}

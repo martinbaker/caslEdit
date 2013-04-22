@@ -515,28 +515,8 @@
     <type metamodel="//@metamodelDeclarations.0">
       <classifier xsi:type="ecore:EClass" href="http://www.euclideanspace.com/casl/Editor#//Formu"/>
     </type>
-    <alternatives xsi:type="xtext:Alternatives">
-      <elements xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Assignment" feature="quantifier" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="//@rules.24"/>
-        </elements>
-        <elements xsi:type="xtext:Assignment" feature="varDecl" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="//@rules.16"/>
-        </elements>
-        <elements xsi:type="xtext:Group" cardinality="*">
-          <elements xsi:type="xtext:Keyword" value=";"/>
-          <elements xsi:type="xtext:Assignment" feature="varDecl2" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="//@rules.16"/>
-          </elements>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="."/>
-        <elements xsi:type="xtext:Assignment" feature="formula" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="//@rules.17"/>
-        </elements>
-      </elements>
-      <elements xsi:type="xtext:Assignment" feature="formula" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.18"/>
-      </elements>
+    <alternatives xsi:type="xtext:Assignment" feature="formula" operator="=">
+      <terminal xsi:type="xtext:RuleCall" rule="//@rules.18"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="FormulaAnd">
@@ -649,19 +629,6 @@
       <classifier xsi:type="ecore:EClass" href="http://www.euclideanspace.com/casl/Editor#//Formu"/>
     </type>
     <alternatives xsi:type="xtext:Alternatives">
-      <elements xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Action">
-          <type metamodel="//@metamodelDeclarations.0">
-            <classifier xsi:type="ecore:EClass" href="http://www.euclideanspace.com/casl/Editor#//UnaryExpression"/>
-          </type>
-        </elements>
-        <elements xsi:type="xtext:Assignment" feature="uop" operator="=">
-          <terminal xsi:type="xtext:Keyword" value="not"/>
-        </elements>
-        <elements xsi:type="xtext:Assignment" feature="expr" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="//@rules.17"/>
-        </elements>
-      </elements>
       <elements xsi:type="xtext:Assignment" feature="e3" operator="=">
         <terminal xsi:type="xtext:Keyword" value="true"/>
       </elements>
@@ -680,35 +647,11 @@
         <elements xsi:type="xtext:Assignment" feature="t" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="//@rules.26"/>
         </elements>
-        <elements xsi:type="xtext:Keyword" value="=e="/>
-        <elements xsi:type="xtext:Assignment" feature="t2" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="//@rules.26"/>
-        </elements>
-      </elements>
-      <elements xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Assignment" feature="t" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="//@rules.26"/>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value="="/>
-        <elements xsi:type="xtext:Assignment" feature="t2" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="//@rules.26"/>
-        </elements>
-      </elements>
-      <elements xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" feature="e3" operator="=">
-          <terminal xsi:type="xtext:Keyword" value="("/>
+          <terminal xsi:type="xtext:Keyword" value="=e="/>
         </elements>
-        <elements xsi:type="xtext:Assignment" feature="form" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="//@rules.17"/>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value=")"/>
-      </elements>
-      <elements xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Assignment" feature="misfix" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="//@rules.27"/>
-        </elements>
-        <elements xsi:type="xtext:Assignment" cardinality="*" feature="misfix2" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="//@rules.27"/>
+        <elements xsi:type="xtext:Assignment" feature="t2" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.26"/>
         </elements>
       </elements>
     </alternatives>
@@ -783,28 +726,7 @@
     <type metamodel="//@metamodelDeclarations.0">
       <classifier xsi:type="ecore:EClass" href="http://www.euclideanspace.com/casl/Editor#//Mfix"/>
     </type>
-    <alternatives xsi:type="xtext:Group">
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.29"/>
-      <elements xsi:type="xtext:Group" cardinality="?">
-        <elements xsi:type="xtext:Action" feature="left" operator="=">
-          <type metamodel="//@metamodelDeclarations.0">
-            <classifier xsi:type="ecore:EClass" href="http://www.euclideanspace.com/casl/Editor#//MisfixWhen"/>
-          </type>
-        </elements>
-        <elements xsi:type="xtext:Assignment" feature="op" operator="=">
-          <terminal xsi:type="xtext:Keyword" value="when"/>
-        </elements>
-        <elements xsi:type="xtext:Assignment" feature="formula" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="//@rules.17"/>
-        </elements>
-        <elements xsi:type="xtext:Assignment" feature="op0" operator="=">
-          <terminal xsi:type="xtext:Keyword" value="when"/>
-        </elements>
-        <elements xsi:type="xtext:Assignment" feature="right" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="//@rules.29"/>
-        </elements>
-      </elements>
-    </alternatives>
+    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.29"/>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="MisfixUnary">
     <type metamodel="//@metamodelDeclarations.0">
@@ -967,13 +889,8 @@
     <type metamodel="//@metamodelDeclarations.0">
       <classifier xsi:type="ecore:EClass" href="http://www.euclideanspace.com/casl/Editor#//Literal"/>
     </type>
-    <alternatives xsi:type="xtext:Alternatives">
-      <elements xsi:type="xtext:Assignment" feature="str" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.42"/>
-      </elements>
-      <elements xsi:type="xtext:Assignment" feature="num" operator="=">
-        <terminal xsi:type="xtext:RuleCall" rule="//@rules.41"/>
-      </elements>
+    <alternatives xsi:type="xtext:Assignment" feature="str" operator="=">
+      <terminal xsi:type="xtext:RuleCall" rule="//@rules.42"/>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="Place">

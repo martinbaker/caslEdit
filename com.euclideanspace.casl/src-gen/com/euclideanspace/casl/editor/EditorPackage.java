@@ -903,40 +903,13 @@ public interface EditorPackage extends EPackage
   int FORMU = 17;
 
   /**
-   * The feature id for the '<em><b>Quantifier</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMU__QUANTIFIER = 0;
-
-  /**
-   * The feature id for the '<em><b>Var Decl</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMU__VAR_DECL = 1;
-
-  /**
-   * The feature id for the '<em><b>Var Decl2</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMU__VAR_DECL2 = 2;
-
-  /**
    * The feature id for the '<em><b>Formula</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FORMU__FORMULA = 3;
+  int FORMU__FORMULA = 0;
 
   /**
    * The feature id for the '<em><b>E3</b></em>' attribute.
@@ -945,7 +918,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORMU__E3 = 4;
+  int FORMU__E3 = 1;
 
   /**
    * The feature id for the '<em><b>T</b></em>' containment reference.
@@ -954,7 +927,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORMU__T = 5;
+  int FORMU__T = 2;
 
   /**
    * The feature id for the '<em><b>T2</b></em>' containment reference.
@@ -963,34 +936,34 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORMU__T2 = 6;
+  int FORMU__T2 = 3;
 
   /**
-   * The feature id for the '<em><b>Form</b></em>' containment reference.
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FORMU__FORM = 7;
+  int FORMU__LEFT = 4;
 
   /**
-   * The feature id for the '<em><b>Misfix</b></em>' containment reference.
+   * The feature id for the '<em><b>Op</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FORMU__MISFIX = 8;
+  int FORMU__OP = 5;
 
   /**
-   * The feature id for the '<em><b>Misfix2</b></em>' containment reference list.
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FORMU__MISFIX2 = 9;
+  int FORMU__RIGHT = 6;
 
   /**
    * The number of structural features of the '<em>Formu</em>' class.
@@ -999,7 +972,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORMU_FEATURE_COUNT = 10;
+  int FORMU_FEATURE_COUNT = 7;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.casl.editor.impl.QuantifierImpl <em>Quantifier</em>}' class.
@@ -1186,22 +1159,13 @@ public interface EditorPackage extends EPackage
   int MFIX__OP = 7;
 
   /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MFIX__LEFT = 8;
-
-  /**
    * The number of structural features of the '<em>Mfix</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MFIX_FEATURE_COUNT = 9;
+  int MFIX_FEATURE_COUNT = 8;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.casl.editor.impl.QualPredNameImpl <em>Qual Pred Name</em>}' class.
@@ -1483,22 +1447,13 @@ public interface EditorPackage extends EPackage
   int LITERAL__STR = 0;
 
   /**
-   * The feature id for the '<em><b>Num</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LITERAL__NUM = 1;
-
-  /**
    * The number of structural features of the '<em>Literal</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LITERAL_FEATURE_COUNT = 2;
+  int LITERAL_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.casl.editor.impl.FormulaAndImpl <em>Formula And</em>}' class.
@@ -1509,33 +1464,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   int FORMULA_AND = 31;
-
-  /**
-   * The feature id for the '<em><b>Quantifier</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_AND__QUANTIFIER = FORMU__QUANTIFIER;
-
-  /**
-   * The feature id for the '<em><b>Var Decl</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_AND__VAR_DECL = FORMU__VAR_DECL;
-
-  /**
-   * The feature id for the '<em><b>Var Decl2</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_AND__VAR_DECL2 = FORMU__VAR_DECL2;
 
   /**
    * The feature id for the '<em><b>Formula</b></em>' containment reference.
@@ -1574,40 +1502,13 @@ public interface EditorPackage extends EPackage
   int FORMULA_AND__T2 = FORMU__T2;
 
   /**
-   * The feature id for the '<em><b>Form</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_AND__FORM = FORMU__FORM;
-
-  /**
-   * The feature id for the '<em><b>Misfix</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_AND__MISFIX = FORMU__MISFIX;
-
-  /**
-   * The feature id for the '<em><b>Misfix2</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_AND__MISFIX2 = FORMU__MISFIX2;
-
-  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FORMULA_AND__LEFT = FORMU_FEATURE_COUNT + 0;
+  int FORMULA_AND__LEFT = FORMU__LEFT;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1616,7 +1517,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORMULA_AND__OP = FORMU_FEATURE_COUNT + 1;
+  int FORMULA_AND__OP = FORMU__OP;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1625,7 +1526,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORMULA_AND__RIGHT = FORMU_FEATURE_COUNT + 2;
+  int FORMULA_AND__RIGHT = FORMU__RIGHT;
 
   /**
    * The number of structural features of the '<em>Formula And</em>' class.
@@ -1634,7 +1535,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORMULA_AND_FEATURE_COUNT = FORMU_FEATURE_COUNT + 3;
+  int FORMULA_AND_FEATURE_COUNT = FORMU_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.casl.editor.impl.FormulaOrImpl <em>Formula Or</em>}' class.
@@ -1645,33 +1546,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   int FORMULA_OR = 32;
-
-  /**
-   * The feature id for the '<em><b>Quantifier</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_OR__QUANTIFIER = FORMU__QUANTIFIER;
-
-  /**
-   * The feature id for the '<em><b>Var Decl</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_OR__VAR_DECL = FORMU__VAR_DECL;
-
-  /**
-   * The feature id for the '<em><b>Var Decl2</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_OR__VAR_DECL2 = FORMU__VAR_DECL2;
 
   /**
    * The feature id for the '<em><b>Formula</b></em>' containment reference.
@@ -1710,40 +1584,13 @@ public interface EditorPackage extends EPackage
   int FORMULA_OR__T2 = FORMU__T2;
 
   /**
-   * The feature id for the '<em><b>Form</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_OR__FORM = FORMU__FORM;
-
-  /**
-   * The feature id for the '<em><b>Misfix</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_OR__MISFIX = FORMU__MISFIX;
-
-  /**
-   * The feature id for the '<em><b>Misfix2</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_OR__MISFIX2 = FORMU__MISFIX2;
-
-  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FORMULA_OR__LEFT = FORMU_FEATURE_COUNT + 0;
+  int FORMULA_OR__LEFT = FORMU__LEFT;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1752,7 +1599,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORMULA_OR__OP = FORMU_FEATURE_COUNT + 1;
+  int FORMULA_OR__OP = FORMU__OP;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1761,7 +1608,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORMULA_OR__RIGHT = FORMU_FEATURE_COUNT + 2;
+  int FORMULA_OR__RIGHT = FORMU__RIGHT;
 
   /**
    * The number of structural features of the '<em>Formula Or</em>' class.
@@ -1770,7 +1617,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORMULA_OR_FEATURE_COUNT = FORMU_FEATURE_COUNT + 3;
+  int FORMULA_OR_FEATURE_COUNT = FORMU_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.casl.editor.impl.FormulaImpliesImpl <em>Formula Implies</em>}' class.
@@ -1781,33 +1628,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   int FORMULA_IMPLIES = 33;
-
-  /**
-   * The feature id for the '<em><b>Quantifier</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_IMPLIES__QUANTIFIER = FORMU__QUANTIFIER;
-
-  /**
-   * The feature id for the '<em><b>Var Decl</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_IMPLIES__VAR_DECL = FORMU__VAR_DECL;
-
-  /**
-   * The feature id for the '<em><b>Var Decl2</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_IMPLIES__VAR_DECL2 = FORMU__VAR_DECL2;
 
   /**
    * The feature id for the '<em><b>Formula</b></em>' containment reference.
@@ -1846,40 +1666,13 @@ public interface EditorPackage extends EPackage
   int FORMULA_IMPLIES__T2 = FORMU__T2;
 
   /**
-   * The feature id for the '<em><b>Form</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_IMPLIES__FORM = FORMU__FORM;
-
-  /**
-   * The feature id for the '<em><b>Misfix</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_IMPLIES__MISFIX = FORMU__MISFIX;
-
-  /**
-   * The feature id for the '<em><b>Misfix2</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_IMPLIES__MISFIX2 = FORMU__MISFIX2;
-
-  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FORMULA_IMPLIES__LEFT = FORMU_FEATURE_COUNT + 0;
+  int FORMULA_IMPLIES__LEFT = FORMU__LEFT;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -1888,7 +1681,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORMULA_IMPLIES__OP = FORMU_FEATURE_COUNT + 1;
+  int FORMULA_IMPLIES__OP = FORMU__OP;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1897,7 +1690,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORMULA_IMPLIES__RIGHT = FORMU_FEATURE_COUNT + 2;
+  int FORMULA_IMPLIES__RIGHT = FORMU__RIGHT;
 
   /**
    * The number of structural features of the '<em>Formula Implies</em>' class.
@@ -1906,7 +1699,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORMULA_IMPLIES_FEATURE_COUNT = FORMU_FEATURE_COUNT + 3;
+  int FORMULA_IMPLIES_FEATURE_COUNT = FORMU_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.casl.editor.impl.FormulaIfImpl <em>Formula If</em>}' class.
@@ -1917,33 +1710,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   int FORMULA_IF = 34;
-
-  /**
-   * The feature id for the '<em><b>Quantifier</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_IF__QUANTIFIER = FORMU__QUANTIFIER;
-
-  /**
-   * The feature id for the '<em><b>Var Decl</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_IF__VAR_DECL = FORMU__VAR_DECL;
-
-  /**
-   * The feature id for the '<em><b>Var Decl2</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_IF__VAR_DECL2 = FORMU__VAR_DECL2;
 
   /**
    * The feature id for the '<em><b>Formula</b></em>' containment reference.
@@ -1982,40 +1748,13 @@ public interface EditorPackage extends EPackage
   int FORMULA_IF__T2 = FORMU__T2;
 
   /**
-   * The feature id for the '<em><b>Form</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_IF__FORM = FORMU__FORM;
-
-  /**
-   * The feature id for the '<em><b>Misfix</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_IF__MISFIX = FORMU__MISFIX;
-
-  /**
-   * The feature id for the '<em><b>Misfix2</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_IF__MISFIX2 = FORMU__MISFIX2;
-
-  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FORMULA_IF__LEFT = FORMU_FEATURE_COUNT + 0;
+  int FORMULA_IF__LEFT = FORMU__LEFT;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -2024,7 +1763,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORMULA_IF__OP = FORMU_FEATURE_COUNT + 1;
+  int FORMULA_IF__OP = FORMU__OP;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -2033,7 +1772,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORMULA_IF__RIGHT = FORMU_FEATURE_COUNT + 2;
+  int FORMULA_IF__RIGHT = FORMU__RIGHT;
 
   /**
    * The number of structural features of the '<em>Formula If</em>' class.
@@ -2042,7 +1781,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORMULA_IF_FEATURE_COUNT = FORMU_FEATURE_COUNT + 3;
+  int FORMULA_IF_FEATURE_COUNT = FORMU_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.casl.editor.impl.FormulaEquivImpl <em>Formula Equiv</em>}' class.
@@ -2053,33 +1792,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   int FORMULA_EQUIV = 35;
-
-  /**
-   * The feature id for the '<em><b>Quantifier</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_EQUIV__QUANTIFIER = FORMU__QUANTIFIER;
-
-  /**
-   * The feature id for the '<em><b>Var Decl</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_EQUIV__VAR_DECL = FORMU__VAR_DECL;
-
-  /**
-   * The feature id for the '<em><b>Var Decl2</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_EQUIV__VAR_DECL2 = FORMU__VAR_DECL2;
 
   /**
    * The feature id for the '<em><b>Formula</b></em>' containment reference.
@@ -2118,40 +1830,13 @@ public interface EditorPackage extends EPackage
   int FORMULA_EQUIV__T2 = FORMU__T2;
 
   /**
-   * The feature id for the '<em><b>Form</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_EQUIV__FORM = FORMU__FORM;
-
-  /**
-   * The feature id for the '<em><b>Misfix</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_EQUIV__MISFIX = FORMU__MISFIX;
-
-  /**
-   * The feature id for the '<em><b>Misfix2</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FORMULA_EQUIV__MISFIX2 = FORMU__MISFIX2;
-
-  /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FORMULA_EQUIV__LEFT = FORMU_FEATURE_COUNT + 0;
+  int FORMULA_EQUIV__LEFT = FORMU__LEFT;
 
   /**
    * The feature id for the '<em><b>Op</b></em>' attribute.
@@ -2160,7 +1845,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORMULA_EQUIV__OP = FORMU_FEATURE_COUNT + 1;
+  int FORMULA_EQUIV__OP = FORMU__OP;
 
   /**
    * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -2169,7 +1854,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORMULA_EQUIV__RIGHT = FORMU_FEATURE_COUNT + 2;
+  int FORMULA_EQUIV__RIGHT = FORMU__RIGHT;
 
   /**
    * The number of structural features of the '<em>Formula Equiv</em>' class.
@@ -2178,134 +1863,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FORMULA_EQUIV_FEATURE_COUNT = FORMU_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.casl.editor.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.casl.editor.impl.UnaryExpressionImpl
-   * @see com.euclideanspace.casl.editor.impl.EditorPackageImpl#getUnaryExpression()
-   * @generated
-   */
-  int UNARY_EXPRESSION = 36;
-
-  /**
-   * The feature id for the '<em><b>Quantifier</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNARY_EXPRESSION__QUANTIFIER = FORMU__QUANTIFIER;
-
-  /**
-   * The feature id for the '<em><b>Var Decl</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNARY_EXPRESSION__VAR_DECL = FORMU__VAR_DECL;
-
-  /**
-   * The feature id for the '<em><b>Var Decl2</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNARY_EXPRESSION__VAR_DECL2 = FORMU__VAR_DECL2;
-
-  /**
-   * The feature id for the '<em><b>Formula</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNARY_EXPRESSION__FORMULA = FORMU__FORMULA;
-
-  /**
-   * The feature id for the '<em><b>E3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNARY_EXPRESSION__E3 = FORMU__E3;
-
-  /**
-   * The feature id for the '<em><b>T</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNARY_EXPRESSION__T = FORMU__T;
-
-  /**
-   * The feature id for the '<em><b>T2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNARY_EXPRESSION__T2 = FORMU__T2;
-
-  /**
-   * The feature id for the '<em><b>Form</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNARY_EXPRESSION__FORM = FORMU__FORM;
-
-  /**
-   * The feature id for the '<em><b>Misfix</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNARY_EXPRESSION__MISFIX = FORMU__MISFIX;
-
-  /**
-   * The feature id for the '<em><b>Misfix2</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNARY_EXPRESSION__MISFIX2 = FORMU__MISFIX2;
-
-  /**
-   * The feature id for the '<em><b>Uop</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNARY_EXPRESSION__UOP = FORMU_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Expr</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNARY_EXPRESSION__EXPR = FORMU_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Unary Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNARY_EXPRESSION_FEATURE_COUNT = FORMU_FEATURE_COUNT + 2;
+  int FORMULA_EQUIV_FEATURE_COUNT = FORMU_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.casl.editor.impl.MisfixImpl <em>Misfix</em>}' class.
@@ -2315,7 +1873,7 @@ public interface EditorPackage extends EPackage
    * @see com.euclideanspace.casl.editor.impl.EditorPackageImpl#getMisfix()
    * @generated
    */
-  int MISFIX = 37;
+  int MISFIX = 36;
 
   /**
    * The feature id for the '<em><b>Misfix</b></em>' containment reference.
@@ -2396,7 +1954,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MISFIX__LEFT = MFIX__LEFT;
+  int MISFIX__LEFT = MFIX_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Sort</b></em>' containment reference.
@@ -2405,7 +1963,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MISFIX__SORT = MFIX_FEATURE_COUNT + 0;
+  int MISFIX__SORT = MFIX_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Misfix</em>' class.
@@ -2414,134 +1972,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MISFIX_FEATURE_COUNT = MFIX_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link com.euclideanspace.casl.editor.impl.MisfixWhenImpl <em>Misfix When</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.euclideanspace.casl.editor.impl.MisfixWhenImpl
-   * @see com.euclideanspace.casl.editor.impl.EditorPackageImpl#getMisfixWhen()
-   * @generated
-   */
-  int MISFIX_WHEN = 38;
-
-  /**
-   * The feature id for the '<em><b>Misfix</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MISFIX_WHEN__MISFIX = MFIX__MISFIX;
-
-  /**
-   * The feature id for the '<em><b>Op1</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MISFIX_WHEN__OP1 = MFIX__OP1;
-
-  /**
-   * The feature id for the '<em><b>Op2</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MISFIX_WHEN__OP2 = MFIX__OP2;
-
-  /**
-   * The feature id for the '<em><b>Op3</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MISFIX_WHEN__OP3 = MFIX__OP3;
-
-  /**
-   * The feature id for the '<em><b>Op4</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MISFIX_WHEN__OP4 = MFIX__OP4;
-
-  /**
-   * The feature id for the '<em><b>Op5</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MISFIX_WHEN__OP5 = MFIX__OP5;
-
-  /**
-   * The feature id for the '<em><b>Op6</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MISFIX_WHEN__OP6 = MFIX__OP6;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MISFIX_WHEN__OP = MFIX__OP;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MISFIX_WHEN__LEFT = MFIX__LEFT;
-
-  /**
-   * The feature id for the '<em><b>Formula</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MISFIX_WHEN__FORMULA = MFIX_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op0</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MISFIX_WHEN__OP0 = MFIX_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MISFIX_WHEN__RIGHT = MFIX_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Misfix When</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MISFIX_WHEN_FEATURE_COUNT = MFIX_FEATURE_COUNT + 3;
+  int MISFIX_FEATURE_COUNT = MFIX_FEATURE_COUNT + 2;
 
 
   /**
@@ -3352,39 +2783,6 @@ public interface EditorPackage extends EPackage
   EClass getFormu();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.Formu#getQuantifier <em>Quantifier</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Quantifier</em>'.
-   * @see com.euclideanspace.casl.editor.Formu#getQuantifier()
-   * @see #getFormu()
-   * @generated
-   */
-  EReference getFormu_Quantifier();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.Formu#getVarDecl <em>Var Decl</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Var Decl</em>'.
-   * @see com.euclideanspace.casl.editor.Formu#getVarDecl()
-   * @see #getFormu()
-   * @generated
-   */
-  EReference getFormu_VarDecl();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.casl.editor.Formu#getVarDecl2 <em>Var Decl2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Var Decl2</em>'.
-   * @see com.euclideanspace.casl.editor.Formu#getVarDecl2()
-   * @see #getFormu()
-   * @generated
-   */
-  EReference getFormu_VarDecl2();
-
-  /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.Formu#getFormula <em>Formula</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3429,37 +2827,37 @@ public interface EditorPackage extends EPackage
   EReference getFormu_T2();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.Formu#getForm <em>Form</em>}'.
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.Formu#getLeft <em>Left</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Form</em>'.
-   * @see com.euclideanspace.casl.editor.Formu#getForm()
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.euclideanspace.casl.editor.Formu#getLeft()
    * @see #getFormu()
    * @generated
    */
-  EReference getFormu_Form();
+  EReference getFormu_Left();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.Formu#getMisfix <em>Misfix</em>}'.
+   * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.Formu#getOp <em>Op</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Misfix</em>'.
-   * @see com.euclideanspace.casl.editor.Formu#getMisfix()
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see com.euclideanspace.casl.editor.Formu#getOp()
    * @see #getFormu()
    * @generated
    */
-  EReference getFormu_Misfix();
+  EAttribute getFormu_Op();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.casl.editor.Formu#getMisfix2 <em>Misfix2</em>}'.
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.Formu#getRight <em>Right</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Misfix2</em>'.
-   * @see com.euclideanspace.casl.editor.Formu#getMisfix2()
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see com.euclideanspace.casl.editor.Formu#getRight()
    * @see #getFormu()
    * @generated
    */
-  EReference getFormu_Misfix2();
+  EReference getFormu_Right();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.casl.editor.Quantifier <em>Quantifier</em>}'.
@@ -3643,17 +3041,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EAttribute getMfix_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.Mfix#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.casl.editor.Mfix#getLeft()
-   * @see #getMfix()
-   * @generated
-   */
-  EReference getMfix_Left();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.casl.editor.QualPredName <em>Qual Pred Name</em>}'.
@@ -3889,17 +3276,6 @@ public interface EditorPackage extends EPackage
   EAttribute getLiteral_Str();
 
   /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.Literal#getNum <em>Num</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Num</em>'.
-   * @see com.euclideanspace.casl.editor.Literal#getNum()
-   * @see #getLiteral()
-   * @generated
-   */
-  EAttribute getLiteral_Num();
-
-  /**
    * Returns the meta object for class '{@link com.euclideanspace.casl.editor.FormulaAnd <em>Formula And</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3908,39 +3284,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EClass getFormulaAnd();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.FormulaAnd#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.casl.editor.FormulaAnd#getLeft()
-   * @see #getFormulaAnd()
-   * @generated
-   */
-  EReference getFormulaAnd_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.FormulaAnd#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.casl.editor.FormulaAnd#getOp()
-   * @see #getFormulaAnd()
-   * @generated
-   */
-  EAttribute getFormulaAnd_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.FormulaAnd#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.casl.editor.FormulaAnd#getRight()
-   * @see #getFormulaAnd()
-   * @generated
-   */
-  EReference getFormulaAnd_Right();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.casl.editor.FormulaOr <em>Formula Or</em>}'.
@@ -3953,39 +3296,6 @@ public interface EditorPackage extends EPackage
   EClass getFormulaOr();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.FormulaOr#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.casl.editor.FormulaOr#getLeft()
-   * @see #getFormulaOr()
-   * @generated
-   */
-  EReference getFormulaOr_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.FormulaOr#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.casl.editor.FormulaOr#getOp()
-   * @see #getFormulaOr()
-   * @generated
-   */
-  EAttribute getFormulaOr_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.FormulaOr#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.casl.editor.FormulaOr#getRight()
-   * @see #getFormulaOr()
-   * @generated
-   */
-  EReference getFormulaOr_Right();
-
-  /**
    * Returns the meta object for class '{@link com.euclideanspace.casl.editor.FormulaImplies <em>Formula Implies</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3994,39 +3304,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EClass getFormulaImplies();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.FormulaImplies#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.casl.editor.FormulaImplies#getLeft()
-   * @see #getFormulaImplies()
-   * @generated
-   */
-  EReference getFormulaImplies_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.FormulaImplies#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.casl.editor.FormulaImplies#getOp()
-   * @see #getFormulaImplies()
-   * @generated
-   */
-  EAttribute getFormulaImplies_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.FormulaImplies#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.casl.editor.FormulaImplies#getRight()
-   * @see #getFormulaImplies()
-   * @generated
-   */
-  EReference getFormulaImplies_Right();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.casl.editor.FormulaIf <em>Formula If</em>}'.
@@ -4039,39 +3316,6 @@ public interface EditorPackage extends EPackage
   EClass getFormulaIf();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.FormulaIf#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.casl.editor.FormulaIf#getLeft()
-   * @see #getFormulaIf()
-   * @generated
-   */
-  EReference getFormulaIf_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.FormulaIf#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.casl.editor.FormulaIf#getOp()
-   * @see #getFormulaIf()
-   * @generated
-   */
-  EAttribute getFormulaIf_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.FormulaIf#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.casl.editor.FormulaIf#getRight()
-   * @see #getFormulaIf()
-   * @generated
-   */
-  EReference getFormulaIf_Right();
-
-  /**
    * Returns the meta object for class '{@link com.euclideanspace.casl.editor.FormulaEquiv <em>Formula Equiv</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4080,71 +3324,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EClass getFormulaEquiv();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.FormulaEquiv#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see com.euclideanspace.casl.editor.FormulaEquiv#getLeft()
-   * @see #getFormulaEquiv()
-   * @generated
-   */
-  EReference getFormulaEquiv_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.FormulaEquiv#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see com.euclideanspace.casl.editor.FormulaEquiv#getOp()
-   * @see #getFormulaEquiv()
-   * @generated
-   */
-  EAttribute getFormulaEquiv_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.FormulaEquiv#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.casl.editor.FormulaEquiv#getRight()
-   * @see #getFormulaEquiv()
-   * @generated
-   */
-  EReference getFormulaEquiv_Right();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.casl.editor.UnaryExpression <em>Unary Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Unary Expression</em>'.
-   * @see com.euclideanspace.casl.editor.UnaryExpression
-   * @generated
-   */
-  EClass getUnaryExpression();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.UnaryExpression#getUop <em>Uop</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Uop</em>'.
-   * @see com.euclideanspace.casl.editor.UnaryExpression#getUop()
-   * @see #getUnaryExpression()
-   * @generated
-   */
-  EAttribute getUnaryExpression_Uop();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.UnaryExpression#getExpr <em>Expr</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expr</em>'.
-   * @see com.euclideanspace.casl.editor.UnaryExpression#getExpr()
-   * @see #getUnaryExpression()
-   * @generated
-   */
-  EReference getUnaryExpression_Expr();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.casl.editor.Misfix <em>Misfix</em>}'.
@@ -4157,6 +3336,17 @@ public interface EditorPackage extends EPackage
   EClass getMisfix();
 
   /**
+   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.Misfix#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see com.euclideanspace.casl.editor.Misfix#getLeft()
+   * @see #getMisfix()
+   * @generated
+   */
+  EReference getMisfix_Left();
+
+  /**
    * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.Misfix#getSort <em>Sort</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4166,49 +3356,6 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EReference getMisfix_Sort();
-
-  /**
-   * Returns the meta object for class '{@link com.euclideanspace.casl.editor.MisfixWhen <em>Misfix When</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Misfix When</em>'.
-   * @see com.euclideanspace.casl.editor.MisfixWhen
-   * @generated
-   */
-  EClass getMisfixWhen();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.MisfixWhen#getFormula <em>Formula</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Formula</em>'.
-   * @see com.euclideanspace.casl.editor.MisfixWhen#getFormula()
-   * @see #getMisfixWhen()
-   * @generated
-   */
-  EReference getMisfixWhen_Formula();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.MisfixWhen#getOp0 <em>Op0</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op0</em>'.
-   * @see com.euclideanspace.casl.editor.MisfixWhen#getOp0()
-   * @see #getMisfixWhen()
-   * @generated
-   */
-  EAttribute getMisfixWhen_Op0();
-
-  /**
-   * Returns the meta object for the containment reference '{@link com.euclideanspace.casl.editor.MisfixWhen#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see com.euclideanspace.casl.editor.MisfixWhen#getRight()
-   * @see #getMisfixWhen()
-   * @generated
-   */
-  EReference getMisfixWhen_Right();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -4870,30 +4017,6 @@ public interface EditorPackage extends EPackage
     EClass FORMU = eINSTANCE.getFormu();
 
     /**
-     * The meta object literal for the '<em><b>Quantifier</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FORMU__QUANTIFIER = eINSTANCE.getFormu_Quantifier();
-
-    /**
-     * The meta object literal for the '<em><b>Var Decl</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FORMU__VAR_DECL = eINSTANCE.getFormu_VarDecl();
-
-    /**
-     * The meta object literal for the '<em><b>Var Decl2</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FORMU__VAR_DECL2 = eINSTANCE.getFormu_VarDecl2();
-
-    /**
      * The meta object literal for the '<em><b>Formula</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4926,28 +4049,28 @@ public interface EditorPackage extends EPackage
     EReference FORMU__T2 = eINSTANCE.getFormu_T2();
 
     /**
-     * The meta object literal for the '<em><b>Form</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FORMU__FORM = eINSTANCE.getFormu_Form();
+    EReference FORMU__LEFT = eINSTANCE.getFormu_Left();
 
     /**
-     * The meta object literal for the '<em><b>Misfix</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FORMU__MISFIX = eINSTANCE.getFormu_Misfix();
+    EAttribute FORMU__OP = eINSTANCE.getFormu_Op();
 
     /**
-     * The meta object literal for the '<em><b>Misfix2</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FORMU__MISFIX2 = eINSTANCE.getFormu_Misfix2();
+    EReference FORMU__RIGHT = eINSTANCE.getFormu_Right();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.casl.editor.impl.QuantifierImpl <em>Quantifier</em>}' class.
@@ -5092,14 +4215,6 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EAttribute MFIX__OP = eINSTANCE.getMfix_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MFIX__LEFT = eINSTANCE.getMfix_Left();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.casl.editor.impl.QualPredNameImpl <em>Qual Pred Name</em>}' class.
@@ -5296,14 +4411,6 @@ public interface EditorPackage extends EPackage
     EAttribute LITERAL__STR = eINSTANCE.getLiteral_Str();
 
     /**
-     * The meta object literal for the '<em><b>Num</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LITERAL__NUM = eINSTANCE.getLiteral_Num();
-
-    /**
      * The meta object literal for the '{@link com.euclideanspace.casl.editor.impl.FormulaAndImpl <em>Formula And</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5312,30 +4419,6 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EClass FORMULA_AND = eINSTANCE.getFormulaAnd();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FORMULA_AND__LEFT = eINSTANCE.getFormulaAnd_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FORMULA_AND__OP = eINSTANCE.getFormulaAnd_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FORMULA_AND__RIGHT = eINSTANCE.getFormulaAnd_Right();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.casl.editor.impl.FormulaOrImpl <em>Formula Or</em>}' class.
@@ -5348,30 +4431,6 @@ public interface EditorPackage extends EPackage
     EClass FORMULA_OR = eINSTANCE.getFormulaOr();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FORMULA_OR__LEFT = eINSTANCE.getFormulaOr_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FORMULA_OR__OP = eINSTANCE.getFormulaOr_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FORMULA_OR__RIGHT = eINSTANCE.getFormulaOr_Right();
-
-    /**
      * The meta object literal for the '{@link com.euclideanspace.casl.editor.impl.FormulaImpliesImpl <em>Formula Implies</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5380,30 +4439,6 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EClass FORMULA_IMPLIES = eINSTANCE.getFormulaImplies();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FORMULA_IMPLIES__LEFT = eINSTANCE.getFormulaImplies_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FORMULA_IMPLIES__OP = eINSTANCE.getFormulaImplies_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FORMULA_IMPLIES__RIGHT = eINSTANCE.getFormulaImplies_Right();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.casl.editor.impl.FormulaIfImpl <em>Formula If</em>}' class.
@@ -5416,30 +4451,6 @@ public interface EditorPackage extends EPackage
     EClass FORMULA_IF = eINSTANCE.getFormulaIf();
 
     /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FORMULA_IF__LEFT = eINSTANCE.getFormulaIf_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FORMULA_IF__OP = eINSTANCE.getFormulaIf_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FORMULA_IF__RIGHT = eINSTANCE.getFormulaIf_Right();
-
-    /**
      * The meta object literal for the '{@link com.euclideanspace.casl.editor.impl.FormulaEquivImpl <em>Formula Equiv</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5448,56 +4459,6 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EClass FORMULA_EQUIV = eINSTANCE.getFormulaEquiv();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FORMULA_EQUIV__LEFT = eINSTANCE.getFormulaEquiv_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FORMULA_EQUIV__OP = eINSTANCE.getFormulaEquiv_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FORMULA_EQUIV__RIGHT = eINSTANCE.getFormulaEquiv_Right();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.casl.editor.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.casl.editor.impl.UnaryExpressionImpl
-     * @see com.euclideanspace.casl.editor.impl.EditorPackageImpl#getUnaryExpression()
-     * @generated
-     */
-    EClass UNARY_EXPRESSION = eINSTANCE.getUnaryExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Uop</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute UNARY_EXPRESSION__UOP = eINSTANCE.getUnaryExpression_Uop();
-
-    /**
-     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference UNARY_EXPRESSION__EXPR = eINSTANCE.getUnaryExpression_Expr();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.casl.editor.impl.MisfixImpl <em>Misfix</em>}' class.
@@ -5510,46 +4471,20 @@ public interface EditorPackage extends EPackage
     EClass MISFIX = eINSTANCE.getMisfix();
 
     /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MISFIX__LEFT = eINSTANCE.getMisfix_Left();
+
+    /**
      * The meta object literal for the '<em><b>Sort</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference MISFIX__SORT = eINSTANCE.getMisfix_Sort();
-
-    /**
-     * The meta object literal for the '{@link com.euclideanspace.casl.editor.impl.MisfixWhenImpl <em>Misfix When</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.euclideanspace.casl.editor.impl.MisfixWhenImpl
-     * @see com.euclideanspace.casl.editor.impl.EditorPackageImpl#getMisfixWhen()
-     * @generated
-     */
-    EClass MISFIX_WHEN = eINSTANCE.getMisfixWhen();
-
-    /**
-     * The meta object literal for the '<em><b>Formula</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MISFIX_WHEN__FORMULA = eINSTANCE.getMisfixWhen_Formula();
-
-    /**
-     * The meta object literal for the '<em><b>Op0</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MISFIX_WHEN__OP0 = eINSTANCE.getMisfixWhen_Op0();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MISFIX_WHEN__RIGHT = eINSTANCE.getMisfixWhen_Right();
 
   }
 

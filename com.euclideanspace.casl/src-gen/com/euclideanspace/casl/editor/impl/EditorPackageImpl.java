@@ -19,7 +19,6 @@ import com.euclideanspace.casl.editor.FormulaOr;
 import com.euclideanspace.casl.editor.Literal;
 import com.euclideanspace.casl.editor.Mfix;
 import com.euclideanspace.casl.editor.Misfix;
-import com.euclideanspace.casl.editor.MisfixWhen;
 import com.euclideanspace.casl.editor.Model;
 import com.euclideanspace.casl.editor.OpAttr;
 import com.euclideanspace.casl.editor.OpHead;
@@ -40,7 +39,6 @@ import com.euclideanspace.casl.editor.SortItem;
 import com.euclideanspace.casl.editor.Term;
 import com.euclideanspace.casl.editor.Terms;
 import com.euclideanspace.casl.editor.Token;
-import com.euclideanspace.casl.editor.UnaryExpression;
 import com.euclideanspace.casl.editor.Var;
 import com.euclideanspace.casl.editor.VarDecl;
 
@@ -316,21 +314,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass unaryExpressionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass misfixEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass misfixWhenEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -1150,7 +1134,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFormu_Quantifier()
+  public EReference getFormu_Formula()
   {
     return (EReference)formuEClass.getEStructuralFeatures().get(0);
   }
@@ -1160,39 +1144,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFormu_VarDecl()
-  {
-    return (EReference)formuEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFormu_VarDecl2()
-  {
-    return (EReference)formuEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFormu_Formula()
-  {
-    return (EReference)formuEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getFormu_E3()
   {
-    return (EAttribute)formuEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)formuEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1202,7 +1156,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    */
   public EReference getFormu_T()
   {
-    return (EReference)formuEClass.getEStructuralFeatures().get(5);
+    return (EReference)formuEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1212,37 +1166,37 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    */
   public EReference getFormu_T2()
   {
+    return (EReference)formuEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFormu_Left()
+  {
+    return (EReference)formuEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFormu_Op()
+  {
+    return (EAttribute)formuEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFormu_Right()
+  {
     return (EReference)formuEClass.getEStructuralFeatures().get(6);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFormu_Form()
-  {
-    return (EReference)formuEClass.getEStructuralFeatures().get(7);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFormu_Misfix()
-  {
-    return (EReference)formuEClass.getEStructuralFeatures().get(8);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFormu_Misfix2()
-  {
-    return (EReference)formuEClass.getEStructuralFeatures().get(9);
   }
 
   /**
@@ -1413,16 +1367,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
   public EAttribute getMfix_Op()
   {
     return (EAttribute)mfixEClass.getEStructuralFeatures().get(7);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getMfix_Left()
-  {
-    return (EReference)mfixEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -1650,49 +1594,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLiteral_Num()
-  {
-    return (EAttribute)literalEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getFormulaAnd()
   {
     return formulaAndEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFormulaAnd_Left()
-  {
-    return (EReference)formulaAndEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFormulaAnd_Op()
-  {
-    return (EAttribute)formulaAndEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFormulaAnd_Right()
-  {
-    return (EReference)formulaAndEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1710,69 +1614,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFormulaOr_Left()
-  {
-    return (EReference)formulaOrEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFormulaOr_Op()
-  {
-    return (EAttribute)formulaOrEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFormulaOr_Right()
-  {
-    return (EReference)formulaOrEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getFormulaImplies()
   {
     return formulaImpliesEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFormulaImplies_Left()
-  {
-    return (EReference)formulaImpliesEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFormulaImplies_Op()
-  {
-    return (EAttribute)formulaImpliesEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFormulaImplies_Right()
-  {
-    return (EReference)formulaImpliesEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1790,99 +1634,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getFormulaIf_Left()
-  {
-    return (EReference)formulaIfEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFormulaIf_Op()
-  {
-    return (EAttribute)formulaIfEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFormulaIf_Right()
-  {
-    return (EReference)formulaIfEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getFormulaEquiv()
   {
     return formulaEquivEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFormulaEquiv_Left()
-  {
-    return (EReference)formulaEquivEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFormulaEquiv_Op()
-  {
-    return (EAttribute)formulaEquivEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFormulaEquiv_Right()
-  {
-    return (EReference)formulaEquivEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getUnaryExpression()
-  {
-    return unaryExpressionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getUnaryExpression_Uop()
-  {
-    return (EAttribute)unaryExpressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getUnaryExpression_Expr()
-  {
-    return (EReference)unaryExpressionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1900,7 +1654,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMisfix_Sort()
+  public EReference getMisfix_Left()
   {
     return (EReference)misfixEClass.getEStructuralFeatures().get(0);
   }
@@ -1910,39 +1664,9 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMisfixWhen()
+  public EReference getMisfix_Sort()
   {
-    return misfixWhenEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getMisfixWhen_Formula()
-  {
-    return (EReference)misfixWhenEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getMisfixWhen_Op0()
-  {
-    return (EAttribute)misfixWhenEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getMisfixWhen_Right()
-  {
-    return (EReference)misfixWhenEClass.getEStructuralFeatures().get(2);
+    return (EReference)misfixEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2067,16 +1791,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(varDeclEClass, VAR_DECL__SORT);
 
     formuEClass = createEClass(FORMU);
-    createEReference(formuEClass, FORMU__QUANTIFIER);
-    createEReference(formuEClass, FORMU__VAR_DECL);
-    createEReference(formuEClass, FORMU__VAR_DECL2);
     createEReference(formuEClass, FORMU__FORMULA);
     createEAttribute(formuEClass, FORMU__E3);
     createEReference(formuEClass, FORMU__T);
     createEReference(formuEClass, FORMU__T2);
-    createEReference(formuEClass, FORMU__FORM);
-    createEReference(formuEClass, FORMU__MISFIX);
-    createEReference(formuEClass, FORMU__MISFIX2);
+    createEReference(formuEClass, FORMU__LEFT);
+    createEAttribute(formuEClass, FORMU__OP);
+    createEReference(formuEClass, FORMU__RIGHT);
 
     quantifierEClass = createEClass(QUANTIFIER);
     createEAttribute(quantifierEClass, QUANTIFIER__Q);
@@ -2098,7 +1819,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(mfixEClass, MFIX__OP5);
     createEReference(mfixEClass, MFIX__OP6);
     createEAttribute(mfixEClass, MFIX__OP);
-    createEReference(mfixEClass, MFIX__LEFT);
 
     qualPredNameEClass = createEClass(QUAL_PRED_NAME);
 
@@ -2130,44 +1850,20 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     literalEClass = createEClass(LITERAL);
     createEAttribute(literalEClass, LITERAL__STR);
-    createEAttribute(literalEClass, LITERAL__NUM);
 
     formulaAndEClass = createEClass(FORMULA_AND);
-    createEReference(formulaAndEClass, FORMULA_AND__LEFT);
-    createEAttribute(formulaAndEClass, FORMULA_AND__OP);
-    createEReference(formulaAndEClass, FORMULA_AND__RIGHT);
 
     formulaOrEClass = createEClass(FORMULA_OR);
-    createEReference(formulaOrEClass, FORMULA_OR__LEFT);
-    createEAttribute(formulaOrEClass, FORMULA_OR__OP);
-    createEReference(formulaOrEClass, FORMULA_OR__RIGHT);
 
     formulaImpliesEClass = createEClass(FORMULA_IMPLIES);
-    createEReference(formulaImpliesEClass, FORMULA_IMPLIES__LEFT);
-    createEAttribute(formulaImpliesEClass, FORMULA_IMPLIES__OP);
-    createEReference(formulaImpliesEClass, FORMULA_IMPLIES__RIGHT);
 
     formulaIfEClass = createEClass(FORMULA_IF);
-    createEReference(formulaIfEClass, FORMULA_IF__LEFT);
-    createEAttribute(formulaIfEClass, FORMULA_IF__OP);
-    createEReference(formulaIfEClass, FORMULA_IF__RIGHT);
 
     formulaEquivEClass = createEClass(FORMULA_EQUIV);
-    createEReference(formulaEquivEClass, FORMULA_EQUIV__LEFT);
-    createEAttribute(formulaEquivEClass, FORMULA_EQUIV__OP);
-    createEReference(formulaEquivEClass, FORMULA_EQUIV__RIGHT);
-
-    unaryExpressionEClass = createEClass(UNARY_EXPRESSION);
-    createEAttribute(unaryExpressionEClass, UNARY_EXPRESSION__UOP);
-    createEReference(unaryExpressionEClass, UNARY_EXPRESSION__EXPR);
 
     misfixEClass = createEClass(MISFIX);
+    createEReference(misfixEClass, MISFIX__LEFT);
     createEReference(misfixEClass, MISFIX__SORT);
-
-    misfixWhenEClass = createEClass(MISFIX_WHEN);
-    createEReference(misfixWhenEClass, MISFIX_WHEN__FORMULA);
-    createEAttribute(misfixWhenEClass, MISFIX_WHEN__OP0);
-    createEReference(misfixWhenEClass, MISFIX_WHEN__RIGHT);
   }
 
   /**
@@ -2208,9 +1904,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     formulaImpliesEClass.getESuperTypes().add(this.getFormu());
     formulaIfEClass.getESuperTypes().add(this.getFormu());
     formulaEquivEClass.getESuperTypes().add(this.getFormu());
-    unaryExpressionEClass.getESuperTypes().add(this.getFormu());
     misfixEClass.getESuperTypes().add(this.getMfix());
-    misfixWhenEClass.getESuperTypes().add(this.getMfix());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2305,16 +1999,13 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getVarDecl_Sort(), this.getSort(), null, "sort", null, 0, 1, VarDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(formuEClass, Formu.class, "Formu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFormu_Quantifier(), this.getQuantifier(), null, "quantifier", null, 0, 1, Formu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFormu_VarDecl(), this.getVarDecl(), null, "varDecl", null, 0, 1, Formu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFormu_VarDecl2(), this.getVarDecl(), null, "varDecl2", null, 0, -1, Formu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFormu_Formula(), this.getFormu(), null, "formula", null, 0, 1, Formu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFormu_E3(), ecorePackage.getEString(), "e3", null, 0, 1, Formu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFormu_T(), this.getTerm(), null, "t", null, 0, 1, Formu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFormu_T2(), this.getTerm(), null, "t2", null, 0, 1, Formu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFormu_Form(), this.getFormu(), null, "form", null, 0, 1, Formu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFormu_Misfix(), this.getMfix(), null, "misfix", null, 0, 1, Formu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFormu_Misfix2(), this.getMfix(), null, "misfix2", null, 0, -1, Formu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFormu_Left(), this.getFormu(), null, "left", null, 0, 1, Formu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFormu_Op(), ecorePackage.getEString(), "op", null, 0, 1, Formu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFormu_Right(), this.getFormu(), null, "right", null, 0, 1, Formu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(quantifierEClass, Quantifier.class, "Quantifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getQuantifier_Q(), ecorePackage.getEString(), "q", null, 0, 1, Quantifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2336,7 +2027,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getMfix_Op5(), this.getQualVarName(), null, "op5", null, 0, 1, Mfix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMfix_Op6(), this.getQualOpName(), null, "op6", null, 0, 1, Mfix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getMfix_Op(), ecorePackage.getEString(), "op", null, 0, 1, Mfix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMfix_Left(), this.getMfix(), null, "left", null, 0, 1, Mfix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(qualPredNameEClass, QualPredName.class, "QualPredName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2368,44 +2058,20 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     initEClass(literalEClass, Literal.class, "Literal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLiteral_Str(), ecorePackage.getEString(), "str", null, 0, 1, Literal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLiteral_Num(), ecorePackage.getEInt(), "num", null, 0, 1, Literal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(formulaAndEClass, FormulaAnd.class, "FormulaAnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFormulaAnd_Left(), this.getFormu(), null, "left", null, 0, 1, FormulaAnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFormulaAnd_Op(), ecorePackage.getEString(), "op", null, 0, 1, FormulaAnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFormulaAnd_Right(), this.getFormu(), null, "right", null, 0, 1, FormulaAnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(formulaOrEClass, FormulaOr.class, "FormulaOr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFormulaOr_Left(), this.getFormu(), null, "left", null, 0, 1, FormulaOr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFormulaOr_Op(), ecorePackage.getEString(), "op", null, 0, 1, FormulaOr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFormulaOr_Right(), this.getFormu(), null, "right", null, 0, 1, FormulaOr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(formulaImpliesEClass, FormulaImplies.class, "FormulaImplies", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFormulaImplies_Left(), this.getFormu(), null, "left", null, 0, 1, FormulaImplies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFormulaImplies_Op(), ecorePackage.getEString(), "op", null, 0, 1, FormulaImplies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFormulaImplies_Right(), this.getFormu(), null, "right", null, 0, 1, FormulaImplies.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(formulaIfEClass, FormulaIf.class, "FormulaIf", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFormulaIf_Left(), this.getFormu(), null, "left", null, 0, 1, FormulaIf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFormulaIf_Op(), ecorePackage.getEString(), "op", null, 0, 1, FormulaIf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFormulaIf_Right(), this.getFormu(), null, "right", null, 0, 1, FormulaIf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(formulaEquivEClass, FormulaEquiv.class, "FormulaEquiv", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getFormulaEquiv_Left(), this.getFormu(), null, "left", null, 0, 1, FormulaEquiv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFormulaEquiv_Op(), ecorePackage.getEString(), "op", null, 0, 1, FormulaEquiv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFormulaEquiv_Right(), this.getFormu(), null, "right", null, 0, 1, FormulaEquiv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(unaryExpressionEClass, UnaryExpression.class, "UnaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getUnaryExpression_Uop(), ecorePackage.getEString(), "uop", null, 0, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getUnaryExpression_Expr(), this.getFormu(), null, "expr", null, 0, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(misfixEClass, Misfix.class, "Misfix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMisfix_Left(), this.getMfix(), null, "left", null, 0, 1, Misfix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMisfix_Sort(), this.getSort(), null, "sort", null, 0, 1, Misfix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(misfixWhenEClass, MisfixWhen.class, "MisfixWhen", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMisfixWhen_Formula(), this.getFormu(), null, "formula", null, 0, 1, MisfixWhen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMisfixWhen_Op0(), ecorePackage.getEString(), "op0", null, 0, 1, MisfixWhen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMisfixWhen_Right(), this.getMfix(), null, "right", null, 0, 1, MisfixWhen.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

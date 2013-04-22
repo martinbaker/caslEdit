@@ -98,16 +98,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//VarDecl/sort"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Formu">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Formu/quantifier"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Formu/varDecl"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Formu/varDecl2"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Formu/formula"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Formu/e3"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Formu/t"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Formu/t2"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Formu/form"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Formu/misfix"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Formu/misfix2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Formu/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Formu/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Formu/right"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Quantifier">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Quantifier/q"/>
@@ -129,7 +126,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Mfix/op5"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Mfix/op6"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Mfix/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Mfix/left"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//QualPredName"/>
     <genClasses ecoreClass="Editor.ecore#//QualVarName"/>
@@ -158,44 +154,15 @@
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Literal">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Literal/str"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//Literal/num"/>
     </genClasses>
-    <genClasses ecoreClass="Editor.ecore#//FormulaAnd">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FormulaAnd/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FormulaAnd/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FormulaAnd/right"/>
-    </genClasses>
-    <genClasses ecoreClass="Editor.ecore#//FormulaOr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FormulaOr/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FormulaOr/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FormulaOr/right"/>
-    </genClasses>
-    <genClasses ecoreClass="Editor.ecore#//FormulaImplies">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FormulaImplies/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FormulaImplies/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FormulaImplies/right"/>
-    </genClasses>
-    <genClasses ecoreClass="Editor.ecore#//FormulaIf">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FormulaIf/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FormulaIf/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FormulaIf/right"/>
-    </genClasses>
-    <genClasses ecoreClass="Editor.ecore#//FormulaEquiv">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FormulaEquiv/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//FormulaEquiv/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//FormulaEquiv/right"/>
-    </genClasses>
-    <genClasses ecoreClass="Editor.ecore#//UnaryExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//UnaryExpression/uop"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//UnaryExpression/expr"/>
-    </genClasses>
+    <genClasses ecoreClass="Editor.ecore#//FormulaAnd"/>
+    <genClasses ecoreClass="Editor.ecore#//FormulaOr"/>
+    <genClasses ecoreClass="Editor.ecore#//FormulaImplies"/>
+    <genClasses ecoreClass="Editor.ecore#//FormulaIf"/>
+    <genClasses ecoreClass="Editor.ecore#//FormulaEquiv"/>
     <genClasses ecoreClass="Editor.ecore#//Misfix">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Misfix/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Misfix/sort"/>
-    </genClasses>
-    <genClasses ecoreClass="Editor.ecore#//MisfixWhen">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//MisfixWhen/formula"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//MisfixWhen/op0"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//MisfixWhen/right"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

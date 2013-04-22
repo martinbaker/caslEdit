@@ -135,23 +135,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="sort" eType="#//Sort" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Formu">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="quantifier" eType="#//Quantifier"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="varDecl" eType="#//VarDecl"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="varDecl2" upperBound="-1"
-        eType="#//VarDecl" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="formula" eType="#//Formu"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="e3" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t" eType="#//Term" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="t2" eType="#//Term" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="form" eType="#//Formu"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Formu"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="misfix" eType="#//Mfix"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Formu"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="misfix2" upperBound="-1"
-        eType="#//Mfix" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Quantifier">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="q" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -181,7 +174,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="op6" eType="#//QualOpName"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Mfix" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QualPredName"/>
   <eClassifiers xsi:type="ecore:EClass" name="QualVarName"/>
@@ -214,56 +206,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Literal">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="str" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="num" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FormulaAnd" eSuperTypes="#//Formu">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Formu"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Formu"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FormulaOr" eSuperTypes="#//Formu">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Formu"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Formu"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FormulaImplies" eSuperTypes="#//Formu">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Formu"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Formu"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FormulaIf" eSuperTypes="#//Formu">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Formu"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Formu"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FormulaEquiv" eSuperTypes="#//Formu">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Formu"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Formu"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UnaryExpression" eSuperTypes="#//Formu">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uop" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//Formu"
-        containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FormulaAnd" eSuperTypes="#//Formu"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FormulaOr" eSuperTypes="#//Formu"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FormulaImplies" eSuperTypes="#//Formu"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FormulaIf" eSuperTypes="#//Formu"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FormulaEquiv" eSuperTypes="#//Formu"/>
   <eClassifiers xsi:type="ecore:EClass" name="Misfix" eSuperTypes="#//Mfix">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Mfix" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sort" eType="#//Sort" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MisfixWhen" eSuperTypes="#//Mfix">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="formula" eType="#//Formu"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op0" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Mfix"
-        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -34,7 +34,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link com.euclideanspace.casl.editor.impl.MfixImpl#getOp5 <em>Op5</em>}</li>
  *   <li>{@link com.euclideanspace.casl.editor.impl.MfixImpl#getOp6 <em>Op6</em>}</li>
  *   <li>{@link com.euclideanspace.casl.editor.impl.MfixImpl#getOp <em>Op</em>}</li>
- *   <li>{@link com.euclideanspace.casl.editor.impl.MfixImpl#getLeft <em>Left</em>}</li>
  * </ul>
  * </p>
  *
@@ -141,16 +140,6 @@ public class MfixImpl extends MinimalEObjectImpl.Container implements Mfix
    * @ordered
    */
   protected String op = OP_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLeft()
-   * @generated
-   * @ordered
-   */
-  protected Mfix left;
 
   /**
    * <!-- begin-user-doc -->
@@ -512,54 +501,6 @@ public class MfixImpl extends MinimalEObjectImpl.Container implements Mfix
    * <!-- end-user-doc -->
    * @generated
    */
-  public Mfix getLeft()
-  {
-    return left;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetLeft(Mfix newLeft, NotificationChain msgs)
-  {
-    Mfix oldLeft = left;
-    left = newLeft;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, EditorPackage.MFIX__LEFT, oldLeft, newLeft);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setLeft(Mfix newLeft)
-  {
-    if (newLeft != left)
-    {
-      NotificationChain msgs = null;
-      if (left != null)
-        msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - EditorPackage.MFIX__LEFT, null, msgs);
-      if (newLeft != null)
-        msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - EditorPackage.MFIX__LEFT, null, msgs);
-      msgs = basicSetLeft(newLeft, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.MFIX__LEFT, newLeft, newLeft));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -577,8 +518,6 @@ public class MfixImpl extends MinimalEObjectImpl.Container implements Mfix
         return basicSetOp5(null, msgs);
       case EditorPackage.MFIX__OP6:
         return basicSetOp6(null, msgs);
-      case EditorPackage.MFIX__LEFT:
-        return basicSetLeft(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -609,8 +548,6 @@ public class MfixImpl extends MinimalEObjectImpl.Container implements Mfix
         return getOp6();
       case EditorPackage.MFIX__OP:
         return getOp();
-      case EditorPackage.MFIX__LEFT:
-        return getLeft();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -648,9 +585,6 @@ public class MfixImpl extends MinimalEObjectImpl.Container implements Mfix
         return;
       case EditorPackage.MFIX__OP:
         setOp((String)newValue);
-        return;
-      case EditorPackage.MFIX__LEFT:
-        setLeft((Mfix)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -690,9 +624,6 @@ public class MfixImpl extends MinimalEObjectImpl.Container implements Mfix
       case EditorPackage.MFIX__OP:
         setOp(OP_EDEFAULT);
         return;
-      case EditorPackage.MFIX__LEFT:
-        setLeft((Mfix)null);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -723,8 +654,6 @@ public class MfixImpl extends MinimalEObjectImpl.Container implements Mfix
         return op6 != null;
       case EditorPackage.MFIX__OP:
         return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
-      case EditorPackage.MFIX__LEFT:
-        return left != null;
     }
     return super.eIsSet(featureID);
   }

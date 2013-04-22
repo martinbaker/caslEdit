@@ -347,15 +347,6 @@ public interface EditorFactory extends EFactory
   FormulaEquiv createFormulaEquiv();
 
   /**
-   * Returns a new object of class '<em>Unary Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Unary Expression</em>'.
-   * @generated
-   */
-  UnaryExpression createUnaryExpression();
-
-  /**
    * Returns a new object of class '<em>Misfix</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -363,15 +354,6 @@ public interface EditorFactory extends EFactory
    * @generated
    */
   Misfix createMisfix();
-
-  /**
-   * Returns a new object of class '<em>Misfix When</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Misfix When</em>'.
-   * @generated
-   */
-  MisfixWhen createMisfixWhen();
 
   /**
    * Returns the package supported by this factory.

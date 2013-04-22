@@ -333,27 +333,11 @@ public class EditorSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case EditorPackage.UNARY_EXPRESSION:
-      {
-        UnaryExpression unaryExpression = (UnaryExpression)theEObject;
-        T result = caseUnaryExpression(unaryExpression);
-        if (result == null) result = caseFormu(unaryExpression);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case EditorPackage.MISFIX:
       {
         Misfix misfix = (Misfix)theEObject;
         T result = caseMisfix(misfix);
         if (result == null) result = caseMfix(misfix);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case EditorPackage.MISFIX_WHEN:
-      {
-        MisfixWhen misfixWhen = (MisfixWhen)theEObject;
-        T result = caseMisfixWhen(misfixWhen);
-        if (result == null) result = caseMfix(misfixWhen);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -938,22 +922,6 @@ public class EditorSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Unary Expression</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Unary Expression</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseUnaryExpression(UnaryExpression object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Misfix</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -965,22 +933,6 @@ public class EditorSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseMisfix(Misfix object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Misfix When</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Misfix When</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseMisfixWhen(MisfixWhen object)
   {
     return null;
   }

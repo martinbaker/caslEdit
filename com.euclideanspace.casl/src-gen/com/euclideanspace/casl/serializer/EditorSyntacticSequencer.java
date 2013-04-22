@@ -186,7 +186,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'type' | 'types'
+	 *     'types' | 'type'
 	 */
 	protected void emit_BasicItems_TypeKeyword_2_1_0_or_TypesKeyword_2_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -250,7 +250,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'preds' | 'pred'
+	 *     'pred' | 'preds'
 	 */
 	protected void emit_SigItems_PredKeyword_2_0_0_or_PredsKeyword_2_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -290,7 +290,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'sorts' | 'sort'
+	 *     'sort' | 'sorts'
 	 */
 	protected void emit_SigItems_SortKeyword_0_0_0_or_SortsKeyword_0_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
