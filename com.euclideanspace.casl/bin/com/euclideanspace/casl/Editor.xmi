@@ -38,22 +38,24 @@
       <elements xsi:type="xtext:Assignment" feature="s" operator="=">
         <terminal xsi:type="xtext:RuleCall" rule="//@rules.3"/>
       </elements>
-      <elements xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Keyword" value="free"/>
-        <elements xsi:type="xtext:Alternatives">
-          <elements xsi:type="xtext:Keyword" value="type"/>
-          <elements xsi:type="xtext:Keyword" value="types"/>
-        </elements>
-        <elements xsi:type="xtext:Assignment" feature="datatypeDecl" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="//@rules.13"/>
-        </elements>
-        <elements xsi:type="xtext:Group" cardinality="*">
-          <elements xsi:type="xtext:Keyword" value=";"/>
-          <elements xsi:type="xtext:Assignment" feature="datatypeDecl2" operator="+=">
+      <elements xsi:type="xtext:Group" predicated="true">
+        <elements xsi:type="xtext:Group">
+          <elements xsi:type="xtext:Keyword" value="free"/>
+          <elements xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="type"/>
+            <elements xsi:type="xtext:Keyword" value="types"/>
+          </elements>
+          <elements xsi:type="xtext:Assignment" feature="datatypeDecl" operator="=">
             <terminal xsi:type="xtext:RuleCall" rule="//@rules.13"/>
           </elements>
+          <elements xsi:type="xtext:Group" cardinality="*">
+            <elements xsi:type="xtext:Keyword" value=";"/>
+            <elements xsi:type="xtext:Assignment" feature="datatypeDecl2" operator="+=">
+              <terminal xsi:type="xtext:RuleCall" rule="//@rules.13"/>
+            </elements>
+          </elements>
+          <elements xsi:type="xtext:Keyword" cardinality="?" value=";"/>
         </elements>
-        <elements xsi:type="xtext:Keyword" cardinality="?" value=";"/>
       </elements>
       <elements xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="generated"/>

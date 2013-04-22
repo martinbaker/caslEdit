@@ -19,12 +19,12 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected EditorGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Alternative_QuestionMarkKeyword_1_2_q;
-	protected AbstractElementAlias match_BasicItems_SemicolonKeyword_1_4_q;
+	protected AbstractElementAlias match_BasicItems_SemicolonKeyword_1_0_4_q;
 	protected AbstractElementAlias match_BasicItems_SemicolonKeyword_2_4_q;
 	protected AbstractElementAlias match_BasicItems_SemicolonKeyword_3_4_q;
 	protected AbstractElementAlias match_BasicItems_SemicolonKeyword_4_3_q;
 	protected AbstractElementAlias match_BasicItems_SemicolonKeyword_5_6_q;
-	protected AbstractElementAlias match_BasicItems_TypeKeyword_1_1_0_or_TypesKeyword_1_1_1;
+	protected AbstractElementAlias match_BasicItems_TypeKeyword_1_0_1_0_or_TypesKeyword_1_0_1_1;
 	protected AbstractElementAlias match_BasicItems_TypeKeyword_2_1_0_or_TypesKeyword_2_1_1;
 	protected AbstractElementAlias match_BasicItems_VarKeyword_4_0_0_or_VarsKeyword_4_0_1;
 	protected AbstractElementAlias match_Component_QuestionMarkKeyword_0_3_q;
@@ -45,12 +45,12 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (EditorGrammarAccess) access;
 		match_Alternative_QuestionMarkKeyword_1_2_q = new TokenAlias(false, true, grammarAccess.getAlternativeAccess().getQuestionMarkKeyword_1_2());
-		match_BasicItems_SemicolonKeyword_1_4_q = new TokenAlias(false, true, grammarAccess.getBasicItemsAccess().getSemicolonKeyword_1_4());
+		match_BasicItems_SemicolonKeyword_1_0_4_q = new TokenAlias(false, true, grammarAccess.getBasicItemsAccess().getSemicolonKeyword_1_0_4());
 		match_BasicItems_SemicolonKeyword_2_4_q = new TokenAlias(false, true, grammarAccess.getBasicItemsAccess().getSemicolonKeyword_2_4());
 		match_BasicItems_SemicolonKeyword_3_4_q = new TokenAlias(false, true, grammarAccess.getBasicItemsAccess().getSemicolonKeyword_3_4());
 		match_BasicItems_SemicolonKeyword_4_3_q = new TokenAlias(false, true, grammarAccess.getBasicItemsAccess().getSemicolonKeyword_4_3());
 		match_BasicItems_SemicolonKeyword_5_6_q = new TokenAlias(false, true, grammarAccess.getBasicItemsAccess().getSemicolonKeyword_5_6());
-		match_BasicItems_TypeKeyword_1_1_0_or_TypesKeyword_1_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getBasicItemsAccess().getTypeKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getBasicItemsAccess().getTypesKeyword_1_1_1()));
+		match_BasicItems_TypeKeyword_1_0_1_0_or_TypesKeyword_1_0_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getBasicItemsAccess().getTypeKeyword_1_0_1_0()), new TokenAlias(false, false, grammarAccess.getBasicItemsAccess().getTypesKeyword_1_0_1_1()));
 		match_BasicItems_TypeKeyword_2_1_0_or_TypesKeyword_2_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getBasicItemsAccess().getTypeKeyword_2_1_0()), new TokenAlias(false, false, grammarAccess.getBasicItemsAccess().getTypesKeyword_2_1_1()));
 		match_BasicItems_VarKeyword_4_0_0_or_VarsKeyword_4_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getBasicItemsAccess().getVarKeyword_4_0_0()), new TokenAlias(false, false, grammarAccess.getBasicItemsAccess().getVarsKeyword_4_0_1()));
 		match_Component_QuestionMarkKeyword_0_3_q = new TokenAlias(false, true, grammarAccess.getComponentAccess().getQuestionMarkKeyword_0_3());
@@ -82,8 +82,8 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if(match_Alternative_QuestionMarkKeyword_1_2_q.equals(syntax))
 				emit_Alternative_QuestionMarkKeyword_1_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_BasicItems_SemicolonKeyword_1_4_q.equals(syntax))
-				emit_BasicItems_SemicolonKeyword_1_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_BasicItems_SemicolonKeyword_1_0_4_q.equals(syntax))
+				emit_BasicItems_SemicolonKeyword_1_0_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_BasicItems_SemicolonKeyword_2_4_q.equals(syntax))
 				emit_BasicItems_SemicolonKeyword_2_4_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_BasicItems_SemicolonKeyword_3_4_q.equals(syntax))
@@ -92,8 +92,8 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_BasicItems_SemicolonKeyword_4_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_BasicItems_SemicolonKeyword_5_6_q.equals(syntax))
 				emit_BasicItems_SemicolonKeyword_5_6_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_BasicItems_TypeKeyword_1_1_0_or_TypesKeyword_1_1_1.equals(syntax))
-				emit_BasicItems_TypeKeyword_1_1_0_or_TypesKeyword_1_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_BasicItems_TypeKeyword_1_0_1_0_or_TypesKeyword_1_0_1_1.equals(syntax))
+				emit_BasicItems_TypeKeyword_1_0_1_0_or_TypesKeyword_1_0_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_BasicItems_TypeKeyword_2_1_0_or_TypesKeyword_2_1_1.equals(syntax))
 				emit_BasicItems_TypeKeyword_2_1_0_or_TypesKeyword_2_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_BasicItems_VarKeyword_4_0_0_or_VarsKeyword_4_0_1.equals(syntax))
@@ -140,7 +140,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Syntax:
 	 *     ';'?
 	 */
-	protected void emit_BasicItems_SemicolonKeyword_1_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_BasicItems_SemicolonKeyword_1_0_4_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -178,15 +178,15 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'type' | 'types'
+	 *     'types' | 'type'
 	 */
-	protected void emit_BasicItems_TypeKeyword_1_1_0_or_TypesKeyword_1_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_BasicItems_TypeKeyword_1_0_1_0_or_TypesKeyword_1_0_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Syntax:
-	 *     'types' | 'type'
+	 *     'type' | 'types'
 	 */
 	protected void emit_BasicItems_TypeKeyword_2_1_0_or_TypesKeyword_2_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -194,7 +194,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'var' | 'vars'
+	 *     'vars' | 'var'
 	 */
 	protected void emit_BasicItems_VarKeyword_4_0_0_or_VarsKeyword_4_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -242,7 +242,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'ops' | 'op'
+	 *     'op' | 'ops'
 	 */
 	protected void emit_SigItems_OpKeyword_1_0_0_or_OpsKeyword_1_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -250,7 +250,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'pred' | 'preds'
+	 *     'preds' | 'pred'
 	 */
 	protected void emit_SigItems_PredKeyword_2_0_0_or_PredsKeyword_2_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -290,7 +290,7 @@ public class EditorSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'sort' | 'sorts'
+	 *     'sorts' | 'sort'
 	 */
 	protected void emit_SigItems_SortKeyword_0_0_0_or_SortsKeyword_0_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

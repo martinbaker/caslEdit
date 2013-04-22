@@ -39,7 +39,7 @@ public class EditorParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getBasicSpecAccess().getAlternatives(), "rule__BasicSpec__Alternatives");
 					put(grammarAccess.getBasicItemsAccess().getAlternatives(), "rule__BasicItems__Alternatives");
-					put(grammarAccess.getBasicItemsAccess().getAlternatives_1_1(), "rule__BasicItems__Alternatives_1_1");
+					put(grammarAccess.getBasicItemsAccess().getAlternatives_1_0_1(), "rule__BasicItems__Alternatives_1_0_1");
 					put(grammarAccess.getBasicItemsAccess().getAlternatives_2_1(), "rule__BasicItems__Alternatives_2_1");
 					put(grammarAccess.getBasicItemsAccess().getAlternatives_4_0(), "rule__BasicItems__Alternatives_4_0");
 					put(grammarAccess.getSigItemsAccess().getAlternatives(), "rule__SigItems__Alternatives");
@@ -61,7 +61,8 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLiteralAccess().getAlternatives(), "rule__Literal__Alternatives");
 					put(grammarAccess.getBasicSpecAccess().getGroup_1(), "rule__BasicSpec__Group_1__0");
 					put(grammarAccess.getBasicItemsAccess().getGroup_1(), "rule__BasicItems__Group_1__0");
-					put(grammarAccess.getBasicItemsAccess().getGroup_1_3(), "rule__BasicItems__Group_1_3__0");
+					put(grammarAccess.getBasicItemsAccess().getGroup_1_0(), "rule__BasicItems__Group_1_0__0");
+					put(grammarAccess.getBasicItemsAccess().getGroup_1_0_3(), "rule__BasicItems__Group_1_0_3__0");
 					put(grammarAccess.getBasicItemsAccess().getGroup_2(), "rule__BasicItems__Group_2__0");
 					put(grammarAccess.getBasicItemsAccess().getGroup_2_3(), "rule__BasicItems__Group_2_3__0");
 					put(grammarAccess.getBasicItemsAccess().getGroup_3(), "rule__BasicItems__Group_3__0");
@@ -149,8 +150,8 @@ public class EditorParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBasicSpecAccess().getBasicItemsAssignment_0(), "rule__BasicSpec__BasicItemsAssignment_0");
 					put(grammarAccess.getBasicSpecAccess().getEmptyAssignment_1_0(), "rule__BasicSpec__EmptyAssignment_1_0");
 					put(grammarAccess.getBasicItemsAccess().getSAssignment_0(), "rule__BasicItems__SAssignment_0");
-					put(grammarAccess.getBasicItemsAccess().getDatatypeDeclAssignment_1_2(), "rule__BasicItems__DatatypeDeclAssignment_1_2");
-					put(grammarAccess.getBasicItemsAccess().getDatatypeDecl2Assignment_1_3_1(), "rule__BasicItems__DatatypeDecl2Assignment_1_3_1");
+					put(grammarAccess.getBasicItemsAccess().getDatatypeDeclAssignment_1_0_2(), "rule__BasicItems__DatatypeDeclAssignment_1_0_2");
+					put(grammarAccess.getBasicItemsAccess().getDatatypeDecl2Assignment_1_0_3_1(), "rule__BasicItems__DatatypeDecl2Assignment_1_0_3_1");
 					put(grammarAccess.getBasicItemsAccess().getDatatypeDeclAssignment_2_2(), "rule__BasicItems__DatatypeDeclAssignment_2_2");
 					put(grammarAccess.getBasicItemsAccess().getDatatypeDecl2Assignment_2_3_1(), "rule__BasicItems__DatatypeDecl2Assignment_2_3_1");
 					put(grammarAccess.getBasicItemsAccess().getS2Assignment_3_2(), "rule__BasicItems__S2Assignment_3_2");

@@ -76,17 +76,18 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cSAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
 		private final RuleCall cSSigItemsParserRuleCall_0_0 = (RuleCall)cSAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cFreeKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
-		private final Keyword cTypeKeyword_1_1_0 = (Keyword)cAlternatives_1_1.eContents().get(0);
-		private final Keyword cTypesKeyword_1_1_1 = (Keyword)cAlternatives_1_1.eContents().get(1);
-		private final Assignment cDatatypeDeclAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cDatatypeDeclDatatypeDeclParserRuleCall_1_2_0 = (RuleCall)cDatatypeDeclAssignment_1_2.eContents().get(0);
-		private final Group cGroup_1_3 = (Group)cGroup_1.eContents().get(3);
-		private final Keyword cSemicolonKeyword_1_3_0 = (Keyword)cGroup_1_3.eContents().get(0);
-		private final Assignment cDatatypeDecl2Assignment_1_3_1 = (Assignment)cGroup_1_3.eContents().get(1);
-		private final RuleCall cDatatypeDecl2DatatypeDeclParserRuleCall_1_3_1_0 = (RuleCall)cDatatypeDecl2Assignment_1_3_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
+		private final Group cGroup_1_0 = (Group)cGroup_1.eContents().get(0);
+		private final Keyword cFreeKeyword_1_0_0 = (Keyword)cGroup_1_0.eContents().get(0);
+		private final Alternatives cAlternatives_1_0_1 = (Alternatives)cGroup_1_0.eContents().get(1);
+		private final Keyword cTypeKeyword_1_0_1_0 = (Keyword)cAlternatives_1_0_1.eContents().get(0);
+		private final Keyword cTypesKeyword_1_0_1_1 = (Keyword)cAlternatives_1_0_1.eContents().get(1);
+		private final Assignment cDatatypeDeclAssignment_1_0_2 = (Assignment)cGroup_1_0.eContents().get(2);
+		private final RuleCall cDatatypeDeclDatatypeDeclParserRuleCall_1_0_2_0 = (RuleCall)cDatatypeDeclAssignment_1_0_2.eContents().get(0);
+		private final Group cGroup_1_0_3 = (Group)cGroup_1_0.eContents().get(3);
+		private final Keyword cSemicolonKeyword_1_0_3_0 = (Keyword)cGroup_1_0_3.eContents().get(0);
+		private final Assignment cDatatypeDecl2Assignment_1_0_3_1 = (Assignment)cGroup_1_0_3.eContents().get(1);
+		private final RuleCall cDatatypeDecl2DatatypeDeclParserRuleCall_1_0_3_1_0 = (RuleCall)cDatatypeDecl2Assignment_1_0_3_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1_0_4 = (Keyword)cGroup_1_0.eContents().get(4);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final Keyword cGeneratedKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Alternatives cAlternatives_2_1 = (Alternatives)cGroup_2.eContents().get(1);
@@ -135,15 +136,15 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSemicolonKeyword_5_6 = (Keyword)cGroup_5.eContents().get(6);
 		
 		//BasicItems:
-		//	s=SigItems | "free" ("type" | "types") datatypeDecl=DatatypeDecl (";" datatypeDecl2+=DatatypeDecl)* ";"? | "generated"
-		//	("type" | "types") datatypeDecl=DatatypeDecl (";" datatypeDecl2+=DatatypeDecl)* ";"? | "generated" "{" s2+=SigItems+
-		//	"}" ";"? | ("var" | "vars") varDecl=VarDecl (";" varDecl2+=VarDecl)* ";"? | "forall" varDecl=VarDecl (";"
-		//	varDecl2+=VarDecl)* "." formula=Formula (";" formula2+=Formula)* ";"?;
+		//	s=SigItems | => ("free" ("type" | "types") datatypeDecl=DatatypeDecl (";" datatypeDecl2+=DatatypeDecl)* ";"?) |
+		//	"generated" ("type" | "types") datatypeDecl=DatatypeDecl (";" datatypeDecl2+=DatatypeDecl)* ";"? | "generated" "{"
+		//	s2+=SigItems+ "}" ";"? | ("var" | "vars") varDecl=VarDecl (";" varDecl2+=VarDecl)* ";"? | "forall" varDecl=VarDecl
+		//	(";" varDecl2+=VarDecl)* "." formula=Formula (";" formula2+=Formula)* ";"?;
 		public ParserRule getRule() { return rule; }
 
-		//s=SigItems | "free" ("type" | "types") datatypeDecl=DatatypeDecl (";" datatypeDecl2+=DatatypeDecl)* ";"? | "generated"
-		//("type" | "types") datatypeDecl=DatatypeDecl (";" datatypeDecl2+=DatatypeDecl)* ";"? | "generated" "{" s2+=SigItems+
-		//"}" ";"? | ("var" | "vars") varDecl=VarDecl (";" varDecl2+=VarDecl)* ";"? | "forall" varDecl=VarDecl (";"
+		//s=SigItems | => ("free" ("type" | "types") datatypeDecl=DatatypeDecl (";" datatypeDecl2+=DatatypeDecl)* ";"?) |
+		//"generated" ("type" | "types") datatypeDecl=DatatypeDecl (";" datatypeDecl2+=DatatypeDecl)* ";"? | "generated" "{"
+		//s2+=SigItems+ "}" ";"? | ("var" | "vars") varDecl=VarDecl (";" varDecl2+=VarDecl)* ";"? | "forall" varDecl=VarDecl (";"
 		//varDecl2+=VarDecl)* "." formula=Formula (";" formula2+=Formula)* ";"?
 		public Alternatives getAlternatives() { return cAlternatives; }
 
@@ -153,41 +154,44 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 		//SigItems
 		public RuleCall getSSigItemsParserRuleCall_0_0() { return cSSigItemsParserRuleCall_0_0; }
 
-		//"free" ("type" | "types") datatypeDecl=DatatypeDecl (";" datatypeDecl2+=DatatypeDecl)* ";"?
+		//=> ("free" ("type" | "types") datatypeDecl=DatatypeDecl (";" datatypeDecl2+=DatatypeDecl)* ";"?)
 		public Group getGroup_1() { return cGroup_1; }
 
+		//"free" ("type" | "types") datatypeDecl=DatatypeDecl (";" datatypeDecl2+=DatatypeDecl)* ";"?
+		public Group getGroup_1_0() { return cGroup_1_0; }
+
 		//"free"
-		public Keyword getFreeKeyword_1_0() { return cFreeKeyword_1_0; }
+		public Keyword getFreeKeyword_1_0_0() { return cFreeKeyword_1_0_0; }
 
 		//"type" | "types"
-		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
+		public Alternatives getAlternatives_1_0_1() { return cAlternatives_1_0_1; }
 
 		//"type"
-		public Keyword getTypeKeyword_1_1_0() { return cTypeKeyword_1_1_0; }
+		public Keyword getTypeKeyword_1_0_1_0() { return cTypeKeyword_1_0_1_0; }
 
 		//"types"
-		public Keyword getTypesKeyword_1_1_1() { return cTypesKeyword_1_1_1; }
+		public Keyword getTypesKeyword_1_0_1_1() { return cTypesKeyword_1_0_1_1; }
 
 		//datatypeDecl=DatatypeDecl
-		public Assignment getDatatypeDeclAssignment_1_2() { return cDatatypeDeclAssignment_1_2; }
+		public Assignment getDatatypeDeclAssignment_1_0_2() { return cDatatypeDeclAssignment_1_0_2; }
 
 		//DatatypeDecl
-		public RuleCall getDatatypeDeclDatatypeDeclParserRuleCall_1_2_0() { return cDatatypeDeclDatatypeDeclParserRuleCall_1_2_0; }
+		public RuleCall getDatatypeDeclDatatypeDeclParserRuleCall_1_0_2_0() { return cDatatypeDeclDatatypeDeclParserRuleCall_1_0_2_0; }
 
 		//(";" datatypeDecl2+=DatatypeDecl)*
-		public Group getGroup_1_3() { return cGroup_1_3; }
+		public Group getGroup_1_0_3() { return cGroup_1_0_3; }
 
 		//";"
-		public Keyword getSemicolonKeyword_1_3_0() { return cSemicolonKeyword_1_3_0; }
+		public Keyword getSemicolonKeyword_1_0_3_0() { return cSemicolonKeyword_1_0_3_0; }
 
 		//datatypeDecl2+=DatatypeDecl
-		public Assignment getDatatypeDecl2Assignment_1_3_1() { return cDatatypeDecl2Assignment_1_3_1; }
+		public Assignment getDatatypeDecl2Assignment_1_0_3_1() { return cDatatypeDecl2Assignment_1_0_3_1; }
 
 		//DatatypeDecl
-		public RuleCall getDatatypeDecl2DatatypeDeclParserRuleCall_1_3_1_0() { return cDatatypeDecl2DatatypeDeclParserRuleCall_1_3_1_0; }
+		public RuleCall getDatatypeDecl2DatatypeDeclParserRuleCall_1_0_3_1_0() { return cDatatypeDecl2DatatypeDeclParserRuleCall_1_0_3_1_0; }
 
 		//";"?
-		public Keyword getSemicolonKeyword_1_4() { return cSemicolonKeyword_1_4; }
+		public Keyword getSemicolonKeyword_1_0_4() { return cSemicolonKeyword_1_0_4; }
 
 		//"generated" ("type" | "types") datatypeDecl=DatatypeDecl (";" datatypeDecl2+=DatatypeDecl)* ";"?
 		public Group getGroup_2() { return cGroup_2; }
@@ -2471,10 +2475,10 @@ public class EditorGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BasicItems:
-	//	s=SigItems | "free" ("type" | "types") datatypeDecl=DatatypeDecl (";" datatypeDecl2+=DatatypeDecl)* ";"? | "generated"
-	//	("type" | "types") datatypeDecl=DatatypeDecl (";" datatypeDecl2+=DatatypeDecl)* ";"? | "generated" "{" s2+=SigItems+
-	//	"}" ";"? | ("var" | "vars") varDecl=VarDecl (";" varDecl2+=VarDecl)* ";"? | "forall" varDecl=VarDecl (";"
-	//	varDecl2+=VarDecl)* "." formula=Formula (";" formula2+=Formula)* ";"?;
+	//	s=SigItems | => ("free" ("type" | "types") datatypeDecl=DatatypeDecl (";" datatypeDecl2+=DatatypeDecl)* ";"?) |
+	//	"generated" ("type" | "types") datatypeDecl=DatatypeDecl (";" datatypeDecl2+=DatatypeDecl)* ";"? | "generated" "{"
+	//	s2+=SigItems+ "}" ";"? | ("var" | "vars") varDecl=VarDecl (";" varDecl2+=VarDecl)* ";"? | "forall" varDecl=VarDecl
+	//	(";" varDecl2+=VarDecl)* "." formula=Formula (";" formula2+=Formula)* ";"?;
 	public BasicItemsElements getBasicItemsAccess() {
 		return (pBasicItems != null) ? pBasicItems : (pBasicItems = new BasicItemsElements());
 	}

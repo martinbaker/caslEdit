@@ -12,7 +12,7 @@ BasicSpec:
 
 BasicItems:
 	s=SigItems |
-	('free' ('type'|'types')
+	=>('free' ('type'|'types')
        datatypeDecl=DatatypeDecl
        (';' datatypeDecl2 += DatatypeDecl)* ';'?)|
 	('generated' ('type'|'types')

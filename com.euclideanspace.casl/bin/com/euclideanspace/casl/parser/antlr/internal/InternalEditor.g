@@ -194,23 +194,37 @@ ruleBasicItems returns [EObject current=null]
 
 )
 )
-    |(	otherlv_1='free' 
+    |(((	'free' 
+(	'type' 
+
+    |	'types' 
+)(
+(
+ruleDatatypeDecl
+)
+)(	';' 
+(
+(
+ruleDatatypeDecl
+)
+))*(	';' 
+)?))=>(	otherlv_1='free' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getBasicItemsAccess().getFreeKeyword_1_0());
+    	newLeafNode(otherlv_1, grammarAccess.getBasicItemsAccess().getFreeKeyword_1_0_0());
     }
 (	otherlv_2='type' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getBasicItemsAccess().getTypeKeyword_1_1_0());
+    	newLeafNode(otherlv_2, grammarAccess.getBasicItemsAccess().getTypeKeyword_1_0_1_0());
     }
 
     |	otherlv_3='types' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getBasicItemsAccess().getTypesKeyword_1_1_1());
+    	newLeafNode(otherlv_3, grammarAccess.getBasicItemsAccess().getTypesKeyword_1_0_1_1());
     }
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBasicItemsAccess().getDatatypeDeclDatatypeDeclParserRuleCall_1_2_0()); 
+	        newCompositeNode(grammarAccess.getBasicItemsAccess().getDatatypeDeclDatatypeDeclParserRuleCall_1_0_2_0()); 
 	    }
 		lv_datatypeDecl_4_0=ruleDatatypeDecl		{
 	        if ($current==null) {
@@ -227,12 +241,12 @@ ruleBasicItems returns [EObject current=null]
 )
 )(	otherlv_5=';' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getBasicItemsAccess().getSemicolonKeyword_1_3_0());
+    	newLeafNode(otherlv_5, grammarAccess.getBasicItemsAccess().getSemicolonKeyword_1_0_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getBasicItemsAccess().getDatatypeDecl2DatatypeDeclParserRuleCall_1_3_1_0()); 
+	        newCompositeNode(grammarAccess.getBasicItemsAccess().getDatatypeDecl2DatatypeDeclParserRuleCall_1_0_3_1_0()); 
 	    }
 		lv_datatypeDecl2_6_0=ruleDatatypeDecl		{
 	        if ($current==null) {
@@ -249,9 +263,9 @@ ruleBasicItems returns [EObject current=null]
 )
 ))*(	otherlv_7=';' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getBasicItemsAccess().getSemicolonKeyword_1_4());
+    	newLeafNode(otherlv_7, grammarAccess.getBasicItemsAccess().getSemicolonKeyword_1_0_4());
     }
-)?)
+)?))
     |(	otherlv_8='generated' 
     {
     	newLeafNode(otherlv_8, grammarAccess.getBasicItemsAccess().getGeneratedKeyword_2_0());
