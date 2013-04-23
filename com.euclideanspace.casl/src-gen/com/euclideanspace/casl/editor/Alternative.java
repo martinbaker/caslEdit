@@ -2,8 +2,6 @@
  */
 package com.euclideanspace.casl.editor;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.euclideanspace.casl.editor.Alternative#getOpName <em>Op Name</em>}</li>
  *   <li>{@link com.euclideanspace.casl.editor.Alternative#getComponent <em>Component</em>}</li>
- *   <li>{@link com.euclideanspace.casl.editor.Alternative#getComponent2 <em>Component2</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,21 +74,5 @@ public interface Alternative extends EObject
    * @generated
    */
   void setComponent(Component value);
-
-  /**
-   * Returns the value of the '<em><b>Component2</b></em>' containment reference list.
-   * The list contents are of type {@link com.euclideanspace.casl.editor.Component}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Component2</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Component2</em>' containment reference list.
-   * @see com.euclideanspace.casl.editor.EditorPackage#getAlternative_Component2()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Component> getComponent2();
 
 } // Alternative

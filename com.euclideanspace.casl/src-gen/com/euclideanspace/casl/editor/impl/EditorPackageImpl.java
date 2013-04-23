@@ -414,9 +414,59 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getBasicSpec_Name1()
+  {
+    return (EAttribute)basicSpecEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBasicSpec_Name2()
+  {
+    return (EAttribute)basicSpecEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBasicSpec_Name3()
+  {
+    return (EAttribute)basicSpecEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBasicSpec_Name4()
+  {
+    return (EAttribute)basicSpecEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBasicSpec_Name()
+  {
+    return (EAttribute)basicSpecEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getBasicSpec_BasicItems()
   {
-    return (EReference)basicSpecEClass.getEStructuralFeatures().get(0);
+    return (EReference)basicSpecEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -426,7 +476,7 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    */
   public EAttribute getBasicSpec_Empty()
   {
-    return (EAttribute)basicSpecEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)basicSpecEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -1034,16 +1084,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAlternative_Component2()
-  {
-    return (EReference)alternativeEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getComponent()
   {
     return componentEClass;
@@ -1464,9 +1504,79 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getOpName_Name()
+  public EAttribute getOpName_Prefix()
   {
     return (EAttribute)opNameEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOpName_Name()
+  {
+    return (EAttribute)opNameEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOpName_Num()
+  {
+    return (EAttribute)opNameEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOpName_Op()
+  {
+    return (EAttribute)opNameEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOpName_Suffix()
+  {
+    return (EAttribute)opNameEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOpName_OpName()
+  {
+    return (EAttribute)opNameEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOpName_OpName2()
+  {
+    return (EAttribute)opNameEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOpName_OpType2()
+  {
+    return (EReference)opNameEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -1494,9 +1604,39 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPredName_Name()
+  public EAttribute getPredName_Prefix()
   {
     return (EAttribute)predNameEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPredName_Name()
+  {
+    return (EAttribute)predNameEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPredName_Op()
+  {
+    return (EAttribute)predNameEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPredName_Suffix()
+  {
+    return (EAttribute)predNameEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1703,6 +1843,11 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     createEReference(modelEClass, MODEL__BASIC_SPEC);
 
     basicSpecEClass = createEClass(BASIC_SPEC);
+    createEAttribute(basicSpecEClass, BASIC_SPEC__NAME1);
+    createEAttribute(basicSpecEClass, BASIC_SPEC__NAME2);
+    createEAttribute(basicSpecEClass, BASIC_SPEC__NAME3);
+    createEAttribute(basicSpecEClass, BASIC_SPEC__NAME4);
+    createEAttribute(basicSpecEClass, BASIC_SPEC__NAME);
     createEReference(basicSpecEClass, BASIC_SPEC__BASIC_ITEMS);
     createEAttribute(basicSpecEClass, BASIC_SPEC__EMPTY);
 
@@ -1778,7 +1923,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     alternativeEClass = createEClass(ALTERNATIVE);
     createEReference(alternativeEClass, ALTERNATIVE__OP_NAME);
     createEReference(alternativeEClass, ALTERNATIVE__COMPONENT);
-    createEReference(alternativeEClass, ALTERNATIVE__COMPONENT2);
 
     componentEClass = createEClass(COMPONENT);
     createEReference(componentEClass, COMPONENT__OP_NAME);
@@ -1833,11 +1977,21 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     opNameEClass = createEClass(OP_NAME);
     createEReference(opNameEClass, OP_NAME__OP_TYPE);
+    createEAttribute(opNameEClass, OP_NAME__PREFIX);
     createEAttribute(opNameEClass, OP_NAME__NAME);
+    createEAttribute(opNameEClass, OP_NAME__NUM);
+    createEAttribute(opNameEClass, OP_NAME__OP);
+    createEAttribute(opNameEClass, OP_NAME__SUFFIX);
+    createEAttribute(opNameEClass, OP_NAME__OP_NAME);
+    createEAttribute(opNameEClass, OP_NAME__OP_NAME2);
+    createEReference(opNameEClass, OP_NAME__OP_TYPE2);
 
     predNameEClass = createEClass(PRED_NAME);
     createEReference(predNameEClass, PRED_NAME__PRED_TYPE);
+    createEAttribute(predNameEClass, PRED_NAME__PREFIX);
     createEAttribute(predNameEClass, PRED_NAME__NAME);
+    createEAttribute(predNameEClass, PRED_NAME__OP);
+    createEAttribute(predNameEClass, PRED_NAME__SUFFIX);
 
     varEClass = createEClass(VAR);
     createEReference(varEClass, VAR__SORT);
@@ -1911,6 +2065,11 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEReference(getModel_BasicSpec(), this.getBasicSpec(), null, "basicSpec", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(basicSpecEClass, BasicSpec.class, "BasicSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBasicSpec_Name1(), ecorePackage.getEString(), "name1", null, 0, 1, BasicSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBasicSpec_Name2(), ecorePackage.getEString(), "name2", null, 0, -1, BasicSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBasicSpec_Name3(), ecorePackage.getEInt(), "name3", null, 0, 1, BasicSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBasicSpec_Name4(), ecorePackage.getEInt(), "name4", null, 0, -1, BasicSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBasicSpec_Name(), ecorePackage.getEString(), "name", null, 0, 1, BasicSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBasicSpec_BasicItems(), this.getBasicItems(), null, "basicItems", null, 0, -1, BasicSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getBasicSpec_Empty(), ecorePackage.getEString(), "empty", null, 0, 1, BasicSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1986,7 +2145,6 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
     initEClass(alternativeEClass, Alternative.class, "Alternative", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAlternative_OpName(), this.getOpName(), null, "opName", null, 0, 1, Alternative.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAlternative_Component(), this.getComponent(), null, "component", null, 0, 1, Alternative.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAlternative_Component2(), this.getComponent(), null, "component2", null, 0, -1, Alternative.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getComponent_OpName(), this.getOpName(), null, "opName", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2041,11 +2199,21 @@ public class EditorPackageImpl extends EPackageImpl implements EditorPackage
 
     initEClass(opNameEClass, OpName.class, "OpName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOpName_OpType(), this.getOpType(), null, "opType", null, 0, 1, OpName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOpName_Prefix(), ecorePackage.getEString(), "prefix", null, 0, 1, OpName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getOpName_Name(), ecorePackage.getEString(), "name", null, 0, 1, OpName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOpName_Num(), ecorePackage.getEInt(), "num", null, 0, 1, OpName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOpName_Op(), ecorePackage.getEString(), "op", null, 0, 1, OpName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOpName_Suffix(), ecorePackage.getEString(), "suffix", null, 0, 1, OpName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOpName_OpName(), ecorePackage.getEString(), "opName", null, 0, 1, OpName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOpName_OpName2(), ecorePackage.getEString(), "opName2", null, 0, -1, OpName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOpName_OpType2(), this.getOpType(), null, "opType2", null, 0, -1, OpName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(predNameEClass, PredName.class, "PredName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPredName_PredType(), this.getPredType(), null, "predType", null, 0, 1, PredName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPredName_Prefix(), ecorePackage.getEString(), "prefix", null, 0, 1, PredName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPredName_Name(), ecorePackage.getEString(), "name", null, 0, 1, PredName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPredName_Op(), ecorePackage.getEString(), "op", null, 0, 1, PredName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPredName_Suffix(), ecorePackage.getEString(), "suffix", null, 0, 1, PredName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(varEClass, Var.class, "Var", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVar_Sort(), this.getSort(), null, "sort", null, 0, 1, Var.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

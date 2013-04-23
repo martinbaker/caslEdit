@@ -316,7 +316,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (opName=OpName (component=Component component2+=Component*)?)
+	 *     (opName=OpName component=Component?)
 	 */
 	protected void sequence_Alternative(EObject context, Alternative semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -350,7 +350,7 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (basicItems+=BasicItems+ | empty='{')
+	 *     ((name1=ID name2+=ID*)? (name3=INT name4+=INT*)? name=ID (basicItems+=BasicItems+ | empty='{'))
 	 */
 	protected void sequence_BasicSpec(EObject context, BasicSpec semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -529,7 +529,49 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     name=ID
+	 *     (
+	 *         prefix=Place? 
+	 *         (
+	 *             name=ID | 
+	 *             num=INT | 
+	 *             op='!' | 
+	 *             op='+' | 
+	 *             op='-' | 
+	 *             op='*' | 
+	 *             op='/' | 
+	 *             op='-!' | 
+	 *             op='-+' | 
+	 *             op='--' | 
+	 *             op='-*' | 
+	 *             op='-/' | 
+	 *             op='-^' | 
+	 *             op='-?' | 
+	 *             op='+!' | 
+	 *             op='++' | 
+	 *             op='+-' | 
+	 *             op='+*' | 
+	 *             op='+/' | 
+	 *             op='+^' | 
+	 *             op='+?' | 
+	 *             op='/!' | 
+	 *             op='/+' | 
+	 *             op='/-' | 
+	 *             op='//' | 
+	 *             op='/^' | 
+	 *             op='/?' | 
+	 *             op='*!' | 
+	 *             op='*+' | 
+	 *             op='*-' | 
+	 *             op='**' | 
+	 *             op='*^' | 
+	 *             op='*?' | 
+	 *             op='^' | 
+	 *             op='@' | 
+	 *             op='@@'
+	 *         ) 
+	 *         suffix=Place? 
+	 *         (opName=ID opType=OpType (opName2+=ID opType2+=OpType)*)?
+	 *     )
 	 */
 	protected void sequence_OpName(EObject context, OpName semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -538,20 +580,53 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name=ID opType=OpType)
+	 *     (
+	 *         prefix=Place? 
+	 *         (
+	 *             name=ID | 
+	 *             num=INT | 
+	 *             op='!' | 
+	 *             op='+' | 
+	 *             op='-' | 
+	 *             op='*' | 
+	 *             op='/' | 
+	 *             op='-!' | 
+	 *             op='-+' | 
+	 *             op='--' | 
+	 *             op='-*' | 
+	 *             op='-/' | 
+	 *             op='-^' | 
+	 *             op='-?' | 
+	 *             op='+!' | 
+	 *             op='++' | 
+	 *             op='+-' | 
+	 *             op='+*' | 
+	 *             op='+/' | 
+	 *             op='+^' | 
+	 *             op='+?' | 
+	 *             op='/!' | 
+	 *             op='/+' | 
+	 *             op='/-' | 
+	 *             op='//' | 
+	 *             op='/^' | 
+	 *             op='/?' | 
+	 *             op='*!' | 
+	 *             op='*+' | 
+	 *             op='*-' | 
+	 *             op='**' | 
+	 *             op='*^' | 
+	 *             op='*?' | 
+	 *             op='^' | 
+	 *             op='@' | 
+	 *             op='@@'
+	 *         ) 
+	 *         suffix=Place? 
+	 *         (opName=ID opType=OpType (opName2+=ID opType2+=OpType)*)? 
+	 *         opType=OpType
+	 *     )
 	 */
 	protected void sequence_OpName_QualOpName(EObject context, OpName semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.OP_NAME__OP_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.OP_NAME__OP_TYPE));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.OP_NAME__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.OP_NAME__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getOpNameAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getQualOpNameAccess().getOpTypeOpTypeParserRuleCall_4_0(), semanticObject.getOpType());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -584,7 +659,20 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     name=ID
+	 *     (
+	 *         prefix=Place? 
+	 *         (
+	 *             name=ID | 
+	 *             op='<' | 
+	 *             op='<=' | 
+	 *             op='=<' | 
+	 *             op='=' | 
+	 *             op='>' | 
+	 *             op='>=' | 
+	 *             op='=>'
+	 *         ) 
+	 *         suffix=Place?
+	 *     )
 	 */
 	protected void sequence_PredName(EObject context, PredName semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -593,20 +681,24 @@ public class EditorSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name=ID predType=PredType)
+	 *     (
+	 *         prefix=Place? 
+	 *         (
+	 *             name=ID | 
+	 *             op='<' | 
+	 *             op='<=' | 
+	 *             op='=<' | 
+	 *             op='=' | 
+	 *             op='>' | 
+	 *             op='>=' | 
+	 *             op='=>'
+	 *         ) 
+	 *         suffix=Place? 
+	 *         predType=PredType
+	 *     )
 	 */
 	protected void sequence_PredName_QualVarName(EObject context, PredName semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.PRED_NAME__PRED_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.PRED_NAME__PRED_TYPE));
-			if(transientValues.isValueTransient(semanticObject, EditorPackage.Literals.PRED_NAME__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, EditorPackage.Literals.PRED_NAME__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getPredNameAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getQualVarNameAccess().getPredTypePredTypeParserRuleCall_4_0(), semanticObject.getPredType());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

@@ -1,4 +1,4 @@
-grammar com.euclideanspace.casl.Editor
+grammar com.euclideanspace.casl.Editor hidden(WS,ML_COMMENT,ML_COMMENT2,ML_COMMENT3,SL_COMMENT)
 
 generate editor "http://www.euclideanspace.com/casl/Editor"
 
@@ -8,9 +8,30 @@ Model:
 	basicSpec=BasicSpec;
 	
 BasicSpec:
-	basicItems += BasicItems+ | empty='{''}';
+	('%implies'? &
+	('library' name1=ID ('/' name2+=ID)* )? &
+	('version' name3=INT ('.' name4+=INT)*)? &
+/*	('%authors' RESTLINE)? &
+	('%date' RESTLINE)? &
+	('%display' RESTLINE)* &
+	('%left_assoc' RESTLINE)* &
+	('%number' RESTLINE)* &
+	('%floating' RESTLINE)* &*/
+	AUTHORS? &
+    DATE? &
+    DISPLAY* &
+    LEFTASSOC? &
+    NUMBER? &
+    FLOATING? &
+    PREC1* &
+	PREC*)
+	'spec' name=ID '=' 
+	(basicItems += BasicItems+ | empty='{''}');
 
 BasicItems:
+	('%mono'? &
+	'%implies'? )	
+	(
 	s=SigItems |
 	=>('free' ('type'|'types')
        datatypeDecl=DatatypeDecl
@@ -25,6 +46,7 @@ BasicItems:
        (';' varDecl2 += VarDecl )*
        '.' formula = Formula
        (';' formula2 += Formula )* ';'?)
+    )
 	;
 
 SigItems:
@@ -43,20 +65,27 @@ SigItems:
     ;
     
 SortItem:
-	sort=Sort
+	'%implies'? sort=Sort
        (',' sort2 += Sort)* ;
 
 OpItem:
+	'%implies'?
+    (
 	(opName=OpName
        (',' opName2 += OpName)* ':' opType=OpType
        (',' opAttr += OpAttr)*) |
 	(opName=OpName
        opHead=OpHead '=' term=Term)
+    )
     ;
 
+/* The type of an operation would be something like:
+ * Nat -> Nat
+ * that is, a function type
+ */
 OpType:
 	('?')? sort = Sort |
-	sort = Sort ('*' sort2+=Sort)* ('?')? '->' sort3 = Sort;
+	sort = Sort ('*' sort2+=Sort)* '->' ('?')? sort3 = Sort;
 
 OpAttr:
 	op='assoc'|op='comm'|op='idem'|op='unit' term=Term;
@@ -70,10 +99,12 @@ ArgDecl:
 	var = Var (';' var2 += Var )* ':' sort=Sort;
 
 PredItem:
+	'%implies'?
+	(
 	(predName=PredName (',' predName2 += PredName )*
 	':' predType += PredType) |
-	predName=PredName predHead=PredHead? '<=>' formula=Formula
-	;
+	(predName=PredName predHead=PredHead? '<=>' formula=Formula)
+	);
 
 PredType:
 	sort=Sort
@@ -81,15 +112,25 @@ PredType:
     ;
 
 PredHead:
-	argDecl=ArgDecl (';' argDecl2+=ArgDecl)*;
+	'(' argDecl=ArgDecl (';' argDecl2+=ArgDecl)* ')';
 
+/* a number of alternative function calls separated
+ * by vertical bars
+ */
 DatatypeDecl:
-	Sort '::=' alternative=Alternative (';' alternative2+=Alternative)*;
+	Sort '::=' alternative=Alternative ('|' alternative2+=Alternative)*;
 
+/* a function calls separated containing function name and
+ * optionally parameters
+ */
 Alternative:
-	opName=OpName
-    (component=Component (';' component2+=Component)* '?'?)?;
+	opName=OpName // ID
+    ('(' component=Component ')' '?'?)?
+    ;
 
+/* function parameter or parameters separated by
+ * commas
+ */
 Component:
 	(opName=OpName (',' opName2 += OpName)* ':' '?'?)
     sort=Sort;
@@ -208,11 +249,36 @@ QualOpName:
 Sort:
 	name=ID;
 
+/* the name of an operation can be +,*,! or alpha
+ * or numeric
+ */
 OpName:
-	name=ID;
+	prefix=Place?
+	(name=ID | num=INT |op='!'|op='+'|op='-'|op='*'|op='/'
+		|op='-!'|op='-+'|op='--'|op='-*'|op='-/'|op='-^'|op='-?'
+		|op='+!'|op='++'|op='+-'|op='+*'|op='+/'|op='+^'|op='+?'
+		|op='/!'|op='/+'|op='/-'|op='//'|op='/^'|op='/?'
+		|op='*!'|op='*+'|op='*-'|op='**'|op='*^'|op='*?'
+		|op='^'|op='@'|op='@@'
+	)
+	suffix=Place?
+	// Rule ruleOpItem has non-LL(*) decision due to recursive rule invocations reachable from alts 1,2.
+    // Resolve by left-factoring or using syntactic predicates
+	// =>('(' opItem=OpItem ')')?
+	=>('(' opName=ID ':' opType=OpType
+		(';' opName2+=ID ':' opType2+=OpType)*
+	')')?
+	;
 
+/* predicate name can be something like: '<','>=','<='
+ * and so on
+ */
 PredName:
-	name=ID;
+	prefix=Place?
+	(name=ID|op='<'|op='<='|op='=<'|op='='
+	       |op='>'|op='>='|op='=>')
+	suffix=Place?
+	;
 	
 Var:
 	name=ID;
@@ -235,9 +301,20 @@ terminal STRING :
 "'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'"
 ;
 terminal ML_COMMENT : '%{' -> '}%';
+terminal ML_COMMENT2 : '%[' -> ']%';
+terminal ML_COMMENT3 : '%(' -> ')%';
+terminal PREC : '%prec(' -> ')%';
 terminal SL_COMMENT : '%%' !('\n'|'\r')* ('\r'? '\n')?;
 
 terminal WS : (' '|'\t'|'\r'|'\n')+;
+//terminal RESTLINE : !('\n'|'\r')* ('\r'? '\n')?;
+terminal AUTHORS :'%authors' !('\n'|'\r')* ('\r'? '\n')?;
+terminal DATE :'%date' !('\n'|'\r')* ('\r'? '\n')?;
+terminal DISPLAY :'%display' !('\n'|'\r')* ('\r'? '\n')?;
+terminal LEFTASSOC :'%left_assoc' !('\n'|'\r')* ('\r'? '\n')?;
+terminal NUMBER :'%number' !('\n'|'\r')* ('\r'? '\n')?;
+terminal FLOATING :'%floating' !('\n'|'\r')* ('\r'? '\n')?;
+terminal PREC1 :'%prec' !('\n'|'\r')* ('\r'? '\n')?;
 
 terminal ANY_OTHER: .;
 

@@ -7,21 +7,14 @@ import com.euclideanspace.casl.editor.Component;
 import com.euclideanspace.casl.editor.EditorPackage;
 import com.euclideanspace.casl.editor.OpName;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +25,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.euclideanspace.casl.editor.impl.AlternativeImpl#getOpName <em>Op Name</em>}</li>
  *   <li>{@link com.euclideanspace.casl.editor.impl.AlternativeImpl#getComponent <em>Component</em>}</li>
- *   <li>{@link com.euclideanspace.casl.editor.impl.AlternativeImpl#getComponent2 <em>Component2</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,16 +51,6 @@ public class AlternativeImpl extends MinimalEObjectImpl.Container implements Alt
    * @ordered
    */
   protected Component component;
-
-  /**
-   * The cached value of the '{@link #getComponent2() <em>Component2</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getComponent2()
-   * @generated
-   * @ordered
-   */
-  protected EList<Component> component2;
 
   /**
    * <!-- begin-user-doc -->
@@ -192,20 +174,6 @@ public class AlternativeImpl extends MinimalEObjectImpl.Container implements Alt
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Component> getComponent2()
-  {
-    if (component2 == null)
-    {
-      component2 = new EObjectContainmentEList<Component>(Component.class, this, EditorPackage.ALTERNATIVE__COMPONENT2);
-    }
-    return component2;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -215,8 +183,6 @@ public class AlternativeImpl extends MinimalEObjectImpl.Container implements Alt
         return basicSetOpName(null, msgs);
       case EditorPackage.ALTERNATIVE__COMPONENT:
         return basicSetComponent(null, msgs);
-      case EditorPackage.ALTERNATIVE__COMPONENT2:
-        return ((InternalEList<?>)getComponent2()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -235,8 +201,6 @@ public class AlternativeImpl extends MinimalEObjectImpl.Container implements Alt
         return getOpName();
       case EditorPackage.ALTERNATIVE__COMPONENT:
         return getComponent();
-      case EditorPackage.ALTERNATIVE__COMPONENT2:
-        return getComponent2();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -246,7 +210,6 @@ public class AlternativeImpl extends MinimalEObjectImpl.Container implements Alt
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -257,10 +220,6 @@ public class AlternativeImpl extends MinimalEObjectImpl.Container implements Alt
         return;
       case EditorPackage.ALTERNATIVE__COMPONENT:
         setComponent((Component)newValue);
-        return;
-      case EditorPackage.ALTERNATIVE__COMPONENT2:
-        getComponent2().clear();
-        getComponent2().addAll((Collection<? extends Component>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -282,9 +241,6 @@ public class AlternativeImpl extends MinimalEObjectImpl.Container implements Alt
       case EditorPackage.ALTERNATIVE__COMPONENT:
         setComponent((Component)null);
         return;
-      case EditorPackage.ALTERNATIVE__COMPONENT2:
-        getComponent2().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -303,8 +259,6 @@ public class AlternativeImpl extends MinimalEObjectImpl.Container implements Alt
         return opName != null;
       case EditorPackage.ALTERNATIVE__COMPONENT:
         return component != null;
-      case EditorPackage.ALTERNATIVE__COMPONENT2:
-        return component2 != null && !component2.isEmpty();
     }
     return super.eIsSet(featureID);
   }

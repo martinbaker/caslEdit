@@ -15,7 +15,7 @@ public class EditorParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrPa
 	
 	@Override
 	protected void setInitialHiddenTokens(XtextTokenStream tokenStream) {
-		tokenStream.setInitialHiddenTokens();
+		tokenStream.setInitialHiddenTokens("RULE_WS", "RULE_ML_COMMENT", "RULE_ML_COMMENT2", "RULE_ML_COMMENT3", "RULE_SL_COMMENT");
 	}
 	
 	@Override

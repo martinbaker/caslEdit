@@ -11,6 +11,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Model/basicSpec"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//BasicSpec">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//BasicSpec/name1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//BasicSpec/name2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//BasicSpec/name3"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//BasicSpec/name4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//BasicSpec/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//BasicSpec/basicItems"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//BasicSpec/empty"/>
     </genClasses>
@@ -85,7 +90,6 @@
     <genClasses ecoreClass="Editor.ecore#//Alternative">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Alternative/opName"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Alternative/component"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Alternative/component2"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Component">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Component/opName"/>
@@ -137,11 +141,21 @@
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//OpName">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//OpName/opType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//OpName/prefix"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//OpName/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//OpName/num"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//OpName/op"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//OpName/suffix"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//OpName/opName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//OpName/opName2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//OpName/opType2"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//PredName">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//PredName/predType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//PredName/prefix"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//PredName/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//PredName/op"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Editor.ecore#//PredName/suffix"/>
     </genClasses>
     <genClasses ecoreClass="Editor.ecore#//Var">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Editor.ecore#//Var/sort"/>

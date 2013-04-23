@@ -95,13 +95,58 @@ public interface EditorPackage extends EPackage
   int BASIC_SPEC = 1;
 
   /**
+   * The feature id for the '<em><b>Name1</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASIC_SPEC__NAME1 = 0;
+
+  /**
+   * The feature id for the '<em><b>Name2</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASIC_SPEC__NAME2 = 1;
+
+  /**
+   * The feature id for the '<em><b>Name3</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASIC_SPEC__NAME3 = 2;
+
+  /**
+   * The feature id for the '<em><b>Name4</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASIC_SPEC__NAME4 = 3;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BASIC_SPEC__NAME = 4;
+
+  /**
    * The feature id for the '<em><b>Basic Items</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BASIC_SPEC__BASIC_ITEMS = 0;
+  int BASIC_SPEC__BASIC_ITEMS = 5;
 
   /**
    * The feature id for the '<em><b>Empty</b></em>' attribute.
@@ -110,7 +155,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BASIC_SPEC__EMPTY = 1;
+  int BASIC_SPEC__EMPTY = 6;
 
   /**
    * The number of structural features of the '<em>Basic Spec</em>' class.
@@ -119,7 +164,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BASIC_SPEC_FEATURE_COUNT = 2;
+  int BASIC_SPEC_FEATURE_COUNT = 7;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.casl.editor.impl.BasicItemsImpl <em>Basic Items</em>}' class.
@@ -783,22 +828,13 @@ public interface EditorPackage extends EPackage
   int ALTERNATIVE__COMPONENT = 1;
 
   /**
-   * The feature id for the '<em><b>Component2</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ALTERNATIVE__COMPONENT2 = 2;
-
-  /**
    * The number of structural features of the '<em>Alternative</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ALTERNATIVE_FEATURE_COUNT = 3;
+  int ALTERNATIVE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.casl.editor.impl.ComponentImpl <em>Component</em>}' class.
@@ -1290,13 +1326,76 @@ public interface EditorPackage extends EPackage
   int OP_NAME__OP_TYPE = QUAL_OP_NAME_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Prefix</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_NAME__PREFIX = QUAL_OP_NAME_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OP_NAME__NAME = QUAL_OP_NAME_FEATURE_COUNT + 1;
+  int OP_NAME__NAME = QUAL_OP_NAME_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Num</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_NAME__NUM = QUAL_OP_NAME_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_NAME__OP = QUAL_OP_NAME_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Suffix</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_NAME__SUFFIX = QUAL_OP_NAME_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Op Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_NAME__OP_NAME = QUAL_OP_NAME_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Op Name2</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_NAME__OP_NAME2 = QUAL_OP_NAME_FEATURE_COUNT + 7;
+
+  /**
+   * The feature id for the '<em><b>Op Type2</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OP_NAME__OP_TYPE2 = QUAL_OP_NAME_FEATURE_COUNT + 8;
 
   /**
    * The number of structural features of the '<em>Op Name</em>' class.
@@ -1305,7 +1404,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OP_NAME_FEATURE_COUNT = QUAL_OP_NAME_FEATURE_COUNT + 2;
+  int OP_NAME_FEATURE_COUNT = QUAL_OP_NAME_FEATURE_COUNT + 9;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.casl.editor.impl.PredNameImpl <em>Pred Name</em>}' class.
@@ -1327,13 +1426,40 @@ public interface EditorPackage extends EPackage
   int PRED_NAME__PRED_TYPE = QUAL_VAR_NAME_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Prefix</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRED_NAME__PREFIX = QUAL_VAR_NAME_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRED_NAME__NAME = QUAL_VAR_NAME_FEATURE_COUNT + 1;
+  int PRED_NAME__NAME = QUAL_VAR_NAME_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRED_NAME__OP = QUAL_VAR_NAME_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Suffix</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRED_NAME__SUFFIX = QUAL_VAR_NAME_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Pred Name</em>' class.
@@ -1342,7 +1468,7 @@ public interface EditorPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PRED_NAME_FEATURE_COUNT = QUAL_VAR_NAME_FEATURE_COUNT + 2;
+  int PRED_NAME_FEATURE_COUNT = QUAL_VAR_NAME_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link com.euclideanspace.casl.editor.impl.VarImpl <em>Var</em>}' class.
@@ -2005,6 +2131,61 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EClass getBasicSpec();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.BasicSpec#getName1 <em>Name1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name1</em>'.
+   * @see com.euclideanspace.casl.editor.BasicSpec#getName1()
+   * @see #getBasicSpec()
+   * @generated
+   */
+  EAttribute getBasicSpec_Name1();
+
+  /**
+   * Returns the meta object for the attribute list '{@link com.euclideanspace.casl.editor.BasicSpec#getName2 <em>Name2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Name2</em>'.
+   * @see com.euclideanspace.casl.editor.BasicSpec#getName2()
+   * @see #getBasicSpec()
+   * @generated
+   */
+  EAttribute getBasicSpec_Name2();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.BasicSpec#getName3 <em>Name3</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name3</em>'.
+   * @see com.euclideanspace.casl.editor.BasicSpec#getName3()
+   * @see #getBasicSpec()
+   * @generated
+   */
+  EAttribute getBasicSpec_Name3();
+
+  /**
+   * Returns the meta object for the attribute list '{@link com.euclideanspace.casl.editor.BasicSpec#getName4 <em>Name4</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Name4</em>'.
+   * @see com.euclideanspace.casl.editor.BasicSpec#getName4()
+   * @see #getBasicSpec()
+   * @generated
+   */
+  EAttribute getBasicSpec_Name4();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.BasicSpec#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.euclideanspace.casl.editor.BasicSpec#getName()
+   * @see #getBasicSpec()
+   * @generated
+   */
+  EAttribute getBasicSpec_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link com.euclideanspace.casl.editor.BasicSpec#getBasicItems <em>Basic Items</em>}'.
@@ -2676,17 +2857,6 @@ public interface EditorPackage extends EPackage
   EReference getAlternative_Component();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.euclideanspace.casl.editor.Alternative#getComponent2 <em>Component2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Component2</em>'.
-   * @see com.euclideanspace.casl.editor.Alternative#getComponent2()
-   * @see #getAlternative()
-   * @generated
-   */
-  EReference getAlternative_Component2();
-
-  /**
    * Returns the meta object for class '{@link com.euclideanspace.casl.editor.Component <em>Component</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3137,6 +3307,17 @@ public interface EditorPackage extends EPackage
   EReference getOpName_OpType();
 
   /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.OpName#getPrefix <em>Prefix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Prefix</em>'.
+   * @see com.euclideanspace.casl.editor.OpName#getPrefix()
+   * @see #getOpName()
+   * @generated
+   */
+  EAttribute getOpName_Prefix();
+
+  /**
    * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.OpName#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3146,6 +3327,72 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EAttribute getOpName_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.OpName#getNum <em>Num</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Num</em>'.
+   * @see com.euclideanspace.casl.editor.OpName#getNum()
+   * @see #getOpName()
+   * @generated
+   */
+  EAttribute getOpName_Num();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.OpName#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see com.euclideanspace.casl.editor.OpName#getOp()
+   * @see #getOpName()
+   * @generated
+   */
+  EAttribute getOpName_Op();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.OpName#getSuffix <em>Suffix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Suffix</em>'.
+   * @see com.euclideanspace.casl.editor.OpName#getSuffix()
+   * @see #getOpName()
+   * @generated
+   */
+  EAttribute getOpName_Suffix();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.OpName#getOpName <em>Op Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op Name</em>'.
+   * @see com.euclideanspace.casl.editor.OpName#getOpName()
+   * @see #getOpName()
+   * @generated
+   */
+  EAttribute getOpName_OpName();
+
+  /**
+   * Returns the meta object for the attribute list '{@link com.euclideanspace.casl.editor.OpName#getOpName2 <em>Op Name2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Op Name2</em>'.
+   * @see com.euclideanspace.casl.editor.OpName#getOpName2()
+   * @see #getOpName()
+   * @generated
+   */
+  EAttribute getOpName_OpName2();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.euclideanspace.casl.editor.OpName#getOpType2 <em>Op Type2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Op Type2</em>'.
+   * @see com.euclideanspace.casl.editor.OpName#getOpType2()
+   * @see #getOpName()
+   * @generated
+   */
+  EReference getOpName_OpType2();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.casl.editor.PredName <em>Pred Name</em>}'.
@@ -3169,6 +3416,17 @@ public interface EditorPackage extends EPackage
   EReference getPredName_PredType();
 
   /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.PredName#getPrefix <em>Prefix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Prefix</em>'.
+   * @see com.euclideanspace.casl.editor.PredName#getPrefix()
+   * @see #getPredName()
+   * @generated
+   */
+  EAttribute getPredName_Prefix();
+
+  /**
    * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.PredName#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3178,6 +3436,28 @@ public interface EditorPackage extends EPackage
    * @generated
    */
   EAttribute getPredName_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.PredName#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see com.euclideanspace.casl.editor.PredName#getOp()
+   * @see #getPredName()
+   * @generated
+   */
+  EAttribute getPredName_Op();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.euclideanspace.casl.editor.PredName#getSuffix <em>Suffix</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Suffix</em>'.
+   * @see com.euclideanspace.casl.editor.PredName#getSuffix()
+   * @see #getPredName()
+   * @generated
+   */
+  EAttribute getPredName_Suffix();
 
   /**
    * Returns the meta object for class '{@link com.euclideanspace.casl.editor.Var <em>Var</em>}'.
@@ -3407,6 +3687,46 @@ public interface EditorPackage extends EPackage
      * @generated
      */
     EClass BASIC_SPEC = eINSTANCE.getBasicSpec();
+
+    /**
+     * The meta object literal for the '<em><b>Name1</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BASIC_SPEC__NAME1 = eINSTANCE.getBasicSpec_Name1();
+
+    /**
+     * The meta object literal for the '<em><b>Name2</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BASIC_SPEC__NAME2 = eINSTANCE.getBasicSpec_Name2();
+
+    /**
+     * The meta object literal for the '<em><b>Name3</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BASIC_SPEC__NAME3 = eINSTANCE.getBasicSpec_Name3();
+
+    /**
+     * The meta object literal for the '<em><b>Name4</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BASIC_SPEC__NAME4 = eINSTANCE.getBasicSpec_Name4();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BASIC_SPEC__NAME = eINSTANCE.getBasicSpec_Name();
 
     /**
      * The meta object literal for the '<em><b>Basic Items</b></em>' containment reference list feature.
@@ -3931,14 +4251,6 @@ public interface EditorPackage extends EPackage
     EReference ALTERNATIVE__COMPONENT = eINSTANCE.getAlternative_Component();
 
     /**
-     * The meta object literal for the '<em><b>Component2</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ALTERNATIVE__COMPONENT2 = eINSTANCE.getAlternative_Component2();
-
-    /**
      * The meta object literal for the '{@link com.euclideanspace.casl.editor.impl.ComponentImpl <em>Component</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4299,12 +4611,68 @@ public interface EditorPackage extends EPackage
     EReference OP_NAME__OP_TYPE = eINSTANCE.getOpName_OpType();
 
     /**
+     * The meta object literal for the '<em><b>Prefix</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OP_NAME__PREFIX = eINSTANCE.getOpName_Prefix();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute OP_NAME__NAME = eINSTANCE.getOpName_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Num</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OP_NAME__NUM = eINSTANCE.getOpName_Num();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OP_NAME__OP = eINSTANCE.getOpName_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Suffix</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OP_NAME__SUFFIX = eINSTANCE.getOpName_Suffix();
+
+    /**
+     * The meta object literal for the '<em><b>Op Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OP_NAME__OP_NAME = eINSTANCE.getOpName_OpName();
+
+    /**
+     * The meta object literal for the '<em><b>Op Name2</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OP_NAME__OP_NAME2 = eINSTANCE.getOpName_OpName2();
+
+    /**
+     * The meta object literal for the '<em><b>Op Type2</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OP_NAME__OP_TYPE2 = eINSTANCE.getOpName_OpType2();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.casl.editor.impl.PredNameImpl <em>Pred Name</em>}' class.
@@ -4325,12 +4693,36 @@ public interface EditorPackage extends EPackage
     EReference PRED_NAME__PRED_TYPE = eINSTANCE.getPredName_PredType();
 
     /**
+     * The meta object literal for the '<em><b>Prefix</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PRED_NAME__PREFIX = eINSTANCE.getPredName_Prefix();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute PRED_NAME__NAME = eINSTANCE.getPredName_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PRED_NAME__OP = eINSTANCE.getPredName_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Suffix</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PRED_NAME__SUFFIX = eINSTANCE.getPredName_Suffix();
 
     /**
      * The meta object literal for the '{@link com.euclideanspace.casl.editor.impl.VarImpl <em>Var</em>}' class.

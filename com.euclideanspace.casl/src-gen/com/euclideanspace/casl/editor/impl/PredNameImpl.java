@@ -22,7 +22,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.euclideanspace.casl.editor.impl.PredNameImpl#getPredType <em>Pred Type</em>}</li>
+ *   <li>{@link com.euclideanspace.casl.editor.impl.PredNameImpl#getPrefix <em>Prefix</em>}</li>
  *   <li>{@link com.euclideanspace.casl.editor.impl.PredNameImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.euclideanspace.casl.editor.impl.PredNameImpl#getOp <em>Op</em>}</li>
+ *   <li>{@link com.euclideanspace.casl.editor.impl.PredNameImpl#getSuffix <em>Suffix</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +42,26 @@ public class PredNameImpl extends QualVarNameImpl implements PredName
    * @ordered
    */
   protected PredType predType;
+
+  /**
+   * The default value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrefix()
+   * @generated
+   * @ordered
+   */
+  protected static final String PREFIX_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrefix()
+   * @generated
+   * @ordered
+   */
+  protected String prefix = PREFIX_EDEFAULT;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -59,6 +82,46 @@ public class PredNameImpl extends QualVarNameImpl implements PredName
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOp()
+   * @generated
+   * @ordered
+   */
+  protected static final String OP_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOp()
+   * @generated
+   * @ordered
+   */
+  protected String op = OP_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getSuffix() <em>Suffix</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSuffix()
+   * @generated
+   * @ordered
+   */
+  protected static final String SUFFIX_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getSuffix() <em>Suffix</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSuffix()
+   * @generated
+   * @ordered
+   */
+  protected String suffix = SUFFIX_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -134,6 +197,29 @@ public class PredNameImpl extends QualVarNameImpl implements PredName
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getPrefix()
+  {
+    return prefix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPrefix(String newPrefix)
+  {
+    String oldPrefix = prefix;
+    prefix = newPrefix;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.PRED_NAME__PREFIX, oldPrefix, prefix));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getName()
   {
     return name;
@@ -150,6 +236,52 @@ public class PredNameImpl extends QualVarNameImpl implements PredName
     name = newName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.PRED_NAME__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getOp()
+  {
+    return op;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOp(String newOp)
+  {
+    String oldOp = op;
+    op = newOp;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.PRED_NAME__OP, oldOp, op));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getSuffix()
+  {
+    return suffix;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setSuffix(String newSuffix)
+  {
+    String oldSuffix = suffix;
+    suffix = newSuffix;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, EditorPackage.PRED_NAME__SUFFIX, oldSuffix, suffix));
   }
 
   /**
@@ -180,8 +312,14 @@ public class PredNameImpl extends QualVarNameImpl implements PredName
     {
       case EditorPackage.PRED_NAME__PRED_TYPE:
         return getPredType();
+      case EditorPackage.PRED_NAME__PREFIX:
+        return getPrefix();
       case EditorPackage.PRED_NAME__NAME:
         return getName();
+      case EditorPackage.PRED_NAME__OP:
+        return getOp();
+      case EditorPackage.PRED_NAME__SUFFIX:
+        return getSuffix();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -199,8 +337,17 @@ public class PredNameImpl extends QualVarNameImpl implements PredName
       case EditorPackage.PRED_NAME__PRED_TYPE:
         setPredType((PredType)newValue);
         return;
+      case EditorPackage.PRED_NAME__PREFIX:
+        setPrefix((String)newValue);
+        return;
       case EditorPackage.PRED_NAME__NAME:
         setName((String)newValue);
+        return;
+      case EditorPackage.PRED_NAME__OP:
+        setOp((String)newValue);
+        return;
+      case EditorPackage.PRED_NAME__SUFFIX:
+        setSuffix((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -219,8 +366,17 @@ public class PredNameImpl extends QualVarNameImpl implements PredName
       case EditorPackage.PRED_NAME__PRED_TYPE:
         setPredType((PredType)null);
         return;
+      case EditorPackage.PRED_NAME__PREFIX:
+        setPrefix(PREFIX_EDEFAULT);
+        return;
       case EditorPackage.PRED_NAME__NAME:
         setName(NAME_EDEFAULT);
+        return;
+      case EditorPackage.PRED_NAME__OP:
+        setOp(OP_EDEFAULT);
+        return;
+      case EditorPackage.PRED_NAME__SUFFIX:
+        setSuffix(SUFFIX_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -238,8 +394,14 @@ public class PredNameImpl extends QualVarNameImpl implements PredName
     {
       case EditorPackage.PRED_NAME__PRED_TYPE:
         return predType != null;
+      case EditorPackage.PRED_NAME__PREFIX:
+        return PREFIX_EDEFAULT == null ? prefix != null : !PREFIX_EDEFAULT.equals(prefix);
       case EditorPackage.PRED_NAME__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case EditorPackage.PRED_NAME__OP:
+        return OP_EDEFAULT == null ? op != null : !OP_EDEFAULT.equals(op);
+      case EditorPackage.PRED_NAME__SUFFIX:
+        return SUFFIX_EDEFAULT == null ? suffix != null : !SUFFIX_EDEFAULT.equals(suffix);
     }
     return super.eIsSet(featureID);
   }
@@ -255,8 +417,14 @@ public class PredNameImpl extends QualVarNameImpl implements PredName
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
+    result.append(" (prefix: ");
+    result.append(prefix);
+    result.append(", name: ");
     result.append(name);
+    result.append(", op: ");
+    result.append(op);
+    result.append(", suffix: ");
+    result.append(suffix);
     result.append(')');
     return result.toString();
   }
